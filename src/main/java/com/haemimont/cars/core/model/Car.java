@@ -131,21 +131,12 @@ public class Car {
             this.engineInformation.getEngineStatistics().setTorque(Integer.parseInt(torque));
             return this;
         }
-
-        @Override
-        public String toString() {
-            return "CarBuilder{" +
-                    "dimension=" + dimension +
-                    ", engineInformation=" + engineInformation +
-                   // ", engineStatistics=" + engineStatistics +
-                    ", fuelInformation=" + fuelInformation +
-                    ", identification=" + identification +
-                    '}';
-        }
-
         public Car build()
         {
             return new Car(this);
+        }
+        public String getValues() {
+            return ""+dimension.getHeight()+dimension.getLength();
         }
 
 
