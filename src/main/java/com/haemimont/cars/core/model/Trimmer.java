@@ -2,11 +2,11 @@ package com.haemimont.cars.core.model;
 
 public class Trimmer {
     public static String[] customTrim(String rawLine){
-        String[] values = rawLine.split(",");
-        for (int n = 0; n < values.length; n++) {
-            values[n] = values[n].replace('"', ' ').trim();
+        String[] valuesInTheLine = rawLine.split(",");
+        for (int n = 0; n < valuesInTheLine.length; n++) {
+            valuesInTheLine[n] = valuesInTheLine[n].replace('"', ' ').trim();
 
         }
-        return values;
+        return valuesInTheLine;
     }
 }

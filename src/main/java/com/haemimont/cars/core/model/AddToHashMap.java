@@ -1,9 +1,9 @@
 package com.haemimont.cars.core.model;
 
-import java.util.ArrayList;
+import java.util.Map;
 
-public class addToLinkList {
-    public static ArrayList addToArrayList(ArrayList arrayList, String path, int numberOfRows) {
+public class AddToHashMap {
+    public static Map addToHashMap(Map<Integer,Car> hashMap, String path, int numberOfRows) {
         Dimension dimension = new Dimension();
         EngineInformation engineInformation= new EngineInformation();
         EngineStatistics engineStatistics = new EngineStatistics();
@@ -11,10 +11,11 @@ public class addToLinkList {
         Identification identification = new Identification();
         engineInformation.setEngineStatistics(engineStatistics);
         String[] rawLines = FileReader.Reader(path,numberOfRows);
-        for(int i =0;i< rawLines.length;i++) {
-            if (i > 0) {//actual data starts from line 1
+
+        for(int i = 0;i<numberOfRows;i++){
+            if (i>0) {
                 String[] values = Trimmer.customTrim(rawLines[i]);
-                arrayList.add(Car.CarBuilder.newInstance().setDimension(dimension).setIdentification(identification)
+                hashMap.put(i, Car.CarBuilder.newInstance().setDimension(dimension).setIdentification(identification)
                         .setEngineInformation(engineInformation).setFuelInformation(fuelInformation)
                         .setHeight(values[0]).setLength(values[1])
                         .setWidth(values[2]).setDriveLine(values[3]).setEngineType(values[4]).setHybrid(values[5])
@@ -24,6 +25,6 @@ public class addToLinkList {
                         .setHorsePower(values[16]).setTorque(values[17]).build());
             }
         }
-        return arrayList;
+        return hashMap;
     }
 }
