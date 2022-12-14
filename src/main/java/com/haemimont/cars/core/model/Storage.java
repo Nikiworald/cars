@@ -4,8 +4,11 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
-public class Storage {
-    Map<Object,Object> map = new Map<Object, Object>(){
+public class Storage<T> {
+    T objT;
+
+
+    Map<Integer,T> mapInStorage = new Map<Integer, T>() {
         @Override
         public int size() {
             return 0;
@@ -27,22 +30,22 @@ public class Storage {
         }
 
         @Override
-        public Object get(Object key) {
+        public T get(Object key) {
             return null;
         }
 
         @Override
-        public Object put(Object key, Object value) {
+        public T put(Integer key, T value) {
             return null;
         }
 
         @Override
-        public Object remove(Object key) {
+        public T remove(Object key) {
             return null;
         }
 
         @Override
-        public void putAll(Map<?, ?> m) {
+        public void putAll(Map<? extends Integer, ? extends T> m) {
 
         }
 
@@ -52,20 +55,32 @@ public class Storage {
         }
 
         @Override
-        public Set<Object> keySet() {
+        public Set<Integer> keySet() {
             return null;
         }
 
         @Override
-        public Collection<Object> values() {
+        public Collection<T> values() {
             return null;
         }
 
         @Override
-        public Set<Entry<Object, Object>> entrySet() {
+        public Set<Entry<Integer, T>> entrySet() {
             return null;
         }
     };
+    public Storage() {
+
+    }
+
+    public void carsToStorage(T[] ts){
+        for(int i =0;i< ts.length;i++){
+            mapInStorage.put(i,ts[i]);
+        }
+
+    }
+
+
 
 
 
