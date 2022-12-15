@@ -1,87 +1,27 @@
 package com.haemimont.cars.core.model;
 
+import java.lang.reflect.Constructor;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
 public class Storage<T> {
-    T objT;
-
-
-    Map<Integer,T> mapInStorage = new Map<Integer, T>() {
-        @Override
-        public int size() {
-            return 0;
-        }
-
-        @Override
-        public boolean isEmpty() {
-            return false;
-        }
-
-        @Override
-        public boolean containsKey(Object key) {
-            return false;
-        }
-
-        @Override
-        public boolean containsValue(Object value) {
-            return false;
-        }
-
-        @Override
-        public T get(Object key) {
-            return null;
-        }
-
-        @Override
-        public T put(Integer key, T value) {
-            return null;
-        }
-
-        @Override
-        public T remove(Object key) {
-            return null;
-        }
-
-        @Override
-        public void putAll(Map<? extends Integer, ? extends T> m) {
-
-        }
-
-        @Override
-        public void clear() {
-
-        }
-
-        @Override
-        public Set<Integer> keySet() {
-            return null;
-        }
-
-        @Override
-        public Collection<T> values() {
-            return null;
-        }
-
-        @Override
-        public Set<Entry<Integer, T>> entrySet() {
-            return null;
-        }
-    };
-    public Storage() {
-
+    T obj;
+    T[] objs;
+    public Storage(T[] objs){
+        this.objs = objs;
+        inToMap(objs);
     }
-
-    public void carsToStorage(T[] ts){
-        for(int i =0;i< ts.length;i++){
-            mapInStorage.put(i,ts[i]);
+    HashMap map = new HashMap();
+    void inToMap(T[] objs) {
+        for (int i = 1; i < objs.length;i++)
+        {
+            map.put(i,objs[i]);
+            T cart = objs[i];
         }
 
     }
-
-
-
 
 
 }

@@ -9,8 +9,7 @@ public class Main {
     public static void main(String[] args) {
 
         String path="src/main/java/csv/cars.csv";
-        FromLinesToCars.linesToCars(path,656);//There is no data on the first line
-        Storage<Car> storageForCars = new Storage<Car>();
-        storageForCars.carsToStorage(FromLinesToCars.linesToCars(path,6));
+        Car[] cars = FromLinesToCars.linesToCars(path,656);//There is no data on the first line (n-1)
+        Storage<Car> carStorage = new Storage<>(cars);
         }
     }
