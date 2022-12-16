@@ -1,9 +1,9 @@
-package com.haemimont.cars.core.model;
+package com.haemimont.cars.core.tools;
 
-import java.util.Map;
+import com.haemimont.cars.core.model.*;
 
-public class FromLinesToCars {
-    public static Car[] linesToCars( String path, int numberOfRows) {
+public class FromLinesToObjects {
+    public static Car[] linesToCars(String path, int numberOfRows) {
         Car[] cars = new Car[numberOfRows];
         Dimension dimension = new Dimension();
         EngineInformation engineInformation= new EngineInformation();
@@ -16,7 +16,7 @@ public class FromLinesToCars {
         for(int i = 0;i<numberOfRows;i++){
             if (i>0) {
                 String[] values = Trimmer.customTrim(rawLines[i]);
-                cars[i] =  Car.CarBuilder.newInstance().setDimension(dimension).setIdentification(identification)
+                cars[i] =  CarBuilder.newInstance().setDimension(dimension).setIdentification(identification)
                         .setEngineInformation(engineInformation).setFuelInformation(fuelInformation)
                         .setHeight(values[0]).setLength(values[1])
                         .setWidth(values[2]).setDriveLine(values[3]).setEngineType(values[4]).setHybrid(values[5])

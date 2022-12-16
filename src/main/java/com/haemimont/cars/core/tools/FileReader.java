@@ -1,4 +1,4 @@
-package com.haemimont.cars.core.model;
+package com.haemimont.cars.core.tools;
 
 import java.io.*;
 import java.util.Scanner;

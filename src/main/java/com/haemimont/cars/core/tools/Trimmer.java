@@ -1,4 +1,4 @@
-package com.haemimont.cars.core.model;
+package com.haemimont.cars.core.tools;
 
 public class Trimmer {
     public static String[] customTrim(String rawLine){
