@@ -30,4 +30,8 @@ public class Car {
         return identification;
     }
 
+    public String getId(){
+        return getIdentification().getId();
+    }
+
 }
