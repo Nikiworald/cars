@@ -33,5 +33,20 @@ public class Car {
     public String getId(){
         return getIdentification().getId();
     }
+    public int getYear(){
+        return getIdentification().getYear();
+    }
+    public String getModel() {
+        return getIdentification().getModelYear();
+    }
+    public String getMake(){
+        return getIdentification().getMake();
+    }
+    public String getDriveLin(){
+        return getEngineInformation().getDriveLine();
+    }
+    public String getClassification(){
+        return getIdentification().getClassification();
+    }
 
 }

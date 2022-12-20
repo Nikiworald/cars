@@ -1,11 +1,24 @@
 package com.haemimont.cars.core.model;
 
+import java.util.Random;
+
 public class Identification {
-    private  String classification;
+    private String[] arrayOfColors = {"R", "B", "G"};
+    private String classification;
     private String id;
-    private  String make;
+    private String make;
     private String modelYear;
     private int year;
+
+    private String color = getRandomColor();
+
+    private String getRandomColor() {
+        Random random = new Random();
+        int select = random.nextInt(arrayOfColors.length);
+        return arrayOfColors[select];
+
+    }
+
 
     public String getClassification() {
         return classification;
@@ -45,5 +58,8 @@ public class Identification {
 
     public void setYear(int year) {
         this.year = year;
+    }
+    public String getColor(){
+        return this.color;
     }
 }
