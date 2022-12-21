@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
 
         String path="src/main/java/csv/cars.csv";
-        Car[] cars = FromLinesToObjects.linesToCars(path,5);//There is no data on the first line (n-1)
+        Car[] cars = FromLinesToObjects.linesToCars(path,50);//There is no data on the first line (n-1)
         Storage<Integer,Car> storageForCars = new Storage<>();
         ImportCarsInToStorage.objectsToStorage(storageForCars,cars);
 
