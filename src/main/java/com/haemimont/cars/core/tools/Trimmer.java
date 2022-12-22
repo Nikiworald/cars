@@ -5,7 +5,6 @@ public class Trimmer {
         String[] valuesInTheLine = rawLine.split(",");
         for (int n = 0; n < valuesInTheLine.length; n++) {
             valuesInTheLine[n] = valuesInTheLine[n].replace('"', ' ').trim();
-
         }
         return valuesInTheLine;
     }

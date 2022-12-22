@@ -3,20 +3,20 @@ package com.haemimont.cars.core.model;
 import java.util.Random;
 
 public class Identification {
-    private String[] arrayOfColors = {"R", "B", "G"};
+    private final String[] arrayOfColors = {"R", "B", "G"};
     private String classification;
     private String id;
     private String make;
     private String modelYear;
     private int year;
+    private final String color = getRandomColor();
 
-    private String color = getRandomColor();
+    private final int price = getYear()*10/3;
 
     private String getRandomColor() {
         Random random = new Random();
         int select = random.nextInt(arrayOfColors.length);
         return arrayOfColors[select];
-
     }
 
 
