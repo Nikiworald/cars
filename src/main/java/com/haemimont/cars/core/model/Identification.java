@@ -19,7 +19,6 @@ public class Identification {
         return arrayOfColors[select];
     }
 
-
     public String getClassification() {
         return classification;
     }

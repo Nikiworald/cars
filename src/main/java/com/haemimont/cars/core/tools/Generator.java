@@ -16,10 +16,12 @@ public class Generator {
         value[0] = "" + temp.charAt(0);
 
         temp = car.getModel();
-        value[1] = "" + temp.charAt(temp.length() - 2) + temp.charAt(temp.length() - 1);
+        value[1] = "" + temp.charAt(temp.length() - 2)
+                + temp.charAt(temp.length() - 1);
 
         temp = "" + car.getYear();
-        value[2] = "" + temp.charAt(temp.length() - 2) + temp.charAt(temp.length() - 1);
+        value[2] = "" + temp.charAt(temp.length() - 2)
+                + temp.charAt(temp.length() - 1);
 
         temp = car.getDriveLin();
         value[3] = "" + temp.charAt(0);
@@ -32,12 +34,8 @@ public class Generator {
             if (storage.get(vin) == null) {
                 return vin;
             }
-
-
         }
         return vin;
-
-
     }
 
 }

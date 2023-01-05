@@ -5,14 +5,6 @@ import com.haemimont.cars.core.model.*;
 public class FromLinesToObjects {
     public static Car[] linesToCars(String path, int numberOfRows) {
         Car[] cars = new Car[numberOfRows];
-        /*Dimension dimension = new Dimension();
-        EngineInformation engineInformation= new EngineInformation();
-        EngineStatistics engineStatistics = new EngineStatistics();
-        FuelInformation fuelInformation = new FuelInformation();
-        Identification identification = new Identification();
-        engineInformation.setEngineStatistics(engineStatistics);
-
-         */
         String[] rawLines = FileReader.Reader(path,numberOfRows);
 
         for(int i = 0;i<numberOfRows;i++){
