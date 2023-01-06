@@ -54,7 +54,7 @@ public class CarBuilder{
         return this;
     }
     public CarBuilder setWidth(final String width){
-        this.dimension.setWith(Integer.parseInt(width));
+        this.dimension.setWidth(Integer.parseInt(width));
         return this;
     }
     public CarBuilder setDriveLine(final String driveLine){

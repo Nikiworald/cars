@@ -2,7 +2,7 @@ package com.haemimont.cars.core.model;
 
 public class Dimension {
     private int height;
-    private int with;
+    private int width;
     private int length;
 
     public int getHeight() {
@@ -13,12 +13,12 @@ public class Dimension {
         this.height = height;
     }
 
-    public int getWith() {
-        return with;
+    public int getWidth() {
+        return width;
     }
 
-    public void setWith(int with) {
-        this.with = with;
+    public void setWidth(int width) {
+        this.width = width;
     }
 
     public int getLength() {
