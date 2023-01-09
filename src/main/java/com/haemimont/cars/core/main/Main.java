@@ -1,4 +1,5 @@
 package com.haemimont.cars.core.main;
+import com.haemimont.cars.core.SqlQuery.Queries;
 import com.haemimont.cars.core.model.*;
 import com.haemimont.cars.core.storage.Storage;
 import com.haemimont.cars.core.tools.FromLinesToObjects;
@@ -16,20 +17,38 @@ public class Main {
     private static com.haemimont.cars.core.model.Car Car;
 
     public static void main(String[] args) {
-
-        String path = "src/main/java/csv/cars.csv";
-        Car[] cars = FromLinesToObjects.linesToCars(path, 50);//There is no data on the first line (n-1)
-        Storage<String, Car> storageForCars = new Storage<>();
-        ImportCarsInToStorage.objectsToStorage(storageForCars, cars);
         String name = "root";
         String password = "niki";
         String url = "jdbc:mysql://localhost:3306/cars";
+        String path = "src/main/java/csv/cars.csv";
 
-        try {
+        Car[] cars = FromLinesToObjects.linesToCars(path, 50);//There is no data on the first line (n-1)
+        Storage<String, Car> storageForCars = new Storage<>();
+        ImportCarsInToStorage.objectsToStorage(storageForCars, cars);
+        String[] keys = storageForCars.keySet().toArray(new String[0]);
+        Queries queries = new Queries(url,name,password);
+
+
+
+
+        //Queries queries = new Queries(url,name,password);
+
+        for(String key:keys){
+            queries.fillDimension(key,storageForCars);
+            queries.fillFuelInformation(key,storageForCars);
+            queries.fillIdentification(key,storageForCars);
+            queries.fillEngineStatistics(key,storageForCars);
+
+            int idDimension= queries.getDimensionId();
+            int idFuel = queries.getFuelId();
+            int idIdentification = queries.getIdentificationId();
+            int idEngineStatistics = queries.getEngineStatisticsId();
+        }
+
+        /*try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection(url, name, password);
             Statement statement = connection.createStatement();
-            String[] keys = new String[storageForCars.size()];
             int i =0;
             for(String key : storageForCars.keySet()){keys[i]= key;i++;}
             Arrays.stream(keys).sorted();
@@ -55,7 +74,7 @@ public class Main {
             throw new RuntimeException(e);
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }
+        }*/
 
 
     }
