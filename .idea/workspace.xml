@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef3bf76b-8d8b-4f5a-8b3f-3165c1ba23b5" name="Changes" comment="1.3.5">
+    <list default="true" id="ef3bf76b-8d8b-4f5a-8b3f-3165c1ba23b5" name="Changes" comment="1.3.6">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/SqlQuery/Queries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/SqlQuery/Queries.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/main/Main.java" afterDir="false" />
@@ -182,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673017616246</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="1.3.6">
+      <created>1673279376603</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1673279376603</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -218,7 +225,8 @@
     <MESSAGE value="1.3.3" />
     <MESSAGE value="1.3.4" />
     <MESSAGE value="1.3.5" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.3.5" />
+    <MESSAGE value="1.3.6" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.3.6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

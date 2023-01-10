@@ -14,7 +14,7 @@ import java.util.Set;
 
 public class Main {
 
-    private static com.haemimont.cars.core.model.Car Car;
+    //private static com.haemimont.cars.core.model.Car Car;
 
     public static void main(String[] args) {
         String name = "root";
@@ -28,53 +28,23 @@ public class Main {
         String[] keys = storageForCars.keySet().toArray(new String[0]);
         Queries queries = new Queries(url,name,password);
 
-
-
-
-        //Queries queries = new Queries(url,name,password);
-
         for(String key:keys){
+            int idDimension,idFuel,idIdentification,idEngineStatistics,idEngineInformation;
             queries.fillDimension(key,storageForCars);
             queries.fillFuelInformation(key,storageForCars);
             queries.fillIdentification(key,storageForCars);
             queries.fillEngineStatistics(key,storageForCars);
+             idEngineStatistics = queries.getEngineStatisticsId();
+            queries.fillEngineInformation(key,storageForCars,idEngineStatistics);
 
-            int idDimension= queries.getDimensionId();
-            int idFuel = queries.getFuelId();
-            int idIdentification = queries.getIdentificationId();
-            int idEngineStatistics = queries.getEngineStatisticsId();
+            idDimension= queries.getDimensionId();
+            idFuel = queries.getFuelId();
+            idIdentification = queries.getIdentificationId();
+            idEngineInformation = queries.getEngineInformationId();
+
+            queries.fillCar(key,storageForCars,idDimension,idEngineInformation,idFuel,idIdentification);
+
         }
-
-        /*try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection(url, name, password);
-            Statement statement = connection.createStatement();
-            int i =0;
-            for(String key : storageForCars.keySet()){keys[i]= key;i++;}
-            Arrays.stream(keys).sorted();
-            for(String key : storageForCars.keySet()){
-                String[] carLongName = storageForCars.get(key).toString().split("[.]");
-                String carShorterName = carLongName[carLongName.length-1];
-                String[] dimLongName = storageForCars.get(key).getDimension().toString().split("[.]");
-                String dimShortName = dimLongName[dimLongName.length-1];
-                String query = "INSERT into car(idcar,car) values('"
-                        +key.toString()+ "'" + ","+
-                       "'"+carShorterName+ "'"+
-                        ")";
-                statement.execute(query);
-                query = "INSERT into dimension(height,width,length) values("+
-                        storageForCars.get(key).getDimension().getHeight()+","+
-                        storageForCars.get(key).getDimension().getWidth()+","+
-                        storageForCars.get(key).getDimension().getLength()+
-                        ")";
-                statement.execute(query);
-
-            }
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }*/
 
 
     }

@@ -1,12 +1,13 @@
 package com.haemimont.cars.core.SqlQuery;
 import com.haemimont.cars.core.storage.Storage;
 import com.haemimont.cars.core.model.*;
+import com.haemimont.cars.core.tools.Generator;
 
 import java.sql.*;
 
 public class Queries {
     String url, name, password;
-    int dimensionId, fuelId,identificationId,engineStatisticsId,row = 0;
+    int dimensionId, fuelId, identificationId, engineStatisticsId, engineInformationId, row = 0;
 
     public Queries(String url, String name, String password) {
         this.url = url;
@@ -16,7 +17,7 @@ public class Queries {
 
     public void fillDimension(String key, Storage<String, Car> storageForCars) {
         try {
-            //Class.forName("com.mysql.jdbc.Driver");
+
             Connection connection = DriverManager.getConnection(url, name, password);
             Statement statement = connection.createStatement();
             String query = "INSERT into dimension(height,width,length) values(" +
@@ -25,17 +26,17 @@ public class Queries {
                     storageForCars.get(key).getDimension().getLength() +
                     ")";
             statement.execute(query);
-            row++;connection.close();statement.close();
+            row++;
+            connection.close();
+            statement.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        } //catch (ClassNotFoundException e) {
-        // throw new RuntimeException(e);
-        //}
+        }
     }
 
     public int getDimensionId() {
         try {
-            //Class.forName("com.mysql.jdbc.Driver");
+
             Connection connection = DriverManager.getConnection(url, name, password);
             Statement statement = connection.createStatement();
             String query = "SELECT * FROM cars.dimension;";
@@ -44,73 +45,76 @@ public class Queries {
             while (resultSet.next() && i != 0) {
                 dimensionId = resultSet.getInt("id_dimension");
                 i--;
-            }connection.close();statement.close();
+            }
+            connection.close();
+            statement.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        } //catch (ClassNotFoundException e) {
-        //throw new RuntimeException(e);
-        //}
+        }
         return dimensionId;
     }
 
     public void fillFuelInformation(String key, Storage<String, Car> storageForCars) {
         try {
-            //Class.forName("com.mysql.jdbc.Driver");
+
             Connection connection = DriverManager.getConnection(url, name, password);
             Statement statement = connection.createStatement();
-            String query = "INSERT into fuel_inforamtion(city_mpg,fuel_type,highway_mpg) values(" +
+            String query = "INSERT into fuel_information(city_mpg,fuel_type,highway_mpg) values(" +
                     storageForCars.get(key).getFuelInformation().getCityMpg() + "," +
-                    "'" +storageForCars.get(key).getFuelInformation().getFuelType()+ "'" + "," +
+                    "'" + storageForCars.get(key).getFuelInformation().getFuelType() + "'" + "," +
                     storageForCars.get(key).getFuelInformation().getHighwayMpg() +
                     ")";
-            statement.execute(query);connection.close();statement.close();
+            statement.execute(query);
+            connection.close();
+            statement.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        } //catch (ClassNotFoundException e) {
-        // throw new RuntimeException(e);
-        //}
+        }
     }
-    public int getFuelId(){
+
+    public int getFuelId() {
         try {
-            //Class.forName("com.mysql.jdbc.Driver");
+
             Connection connection = DriverManager.getConnection(url, name, password);
             Statement statement = connection.createStatement();
-            String query = "SELECT * FROM cars.fuel_inforamtion;";
+            String query = "SELECT * FROM cars.fuel_information;";
             ResultSet resultSet = statement.executeQuery(query);
             int i = row;
             while (resultSet.next() && i != 0) {
-                fuelId = resultSet.getInt("id_fuel_inforamtion");
+                fuelId = resultSet.getInt("id_fuel_information");
                 i--;
-            }connection.close();statement.close();
+            }
+            connection.close();
+            statement.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        } //catch (ClassNotFoundException e) {
-        //throw new RuntimeException(e);
-        //}
+        }
         return fuelId;
     }
-    public void fillIdentification(String key,Storage<String, Car> storageForCars){
+
+    public void fillIdentification(String key, Storage<String, Car> storageForCars) {
         try {
-            //Class.forName("com.mysql.jdbc.Driver");
+
             Connection connection = DriverManager.getConnection(url, name, password);
             Statement statement = connection.createStatement();
             String query = "INSERT into identification(classification,id,make,model_year,year) values(" +
-                   "'"+ storageForCars.get(key).getIdentification().getClassification()+"'" + "," +
-                    "'" +storageForCars.get(key).getIdentification().getId()+ "'" + "," +
-                    "'"+storageForCars.get(key).getIdentification().getMake()+"'" +","+
-                    "'"+storageForCars.get(key).getIdentification().getModelYear()+"'"+","+
-                    storageForCars.get(key).getIdentification().getYear()+
+                    "'" + storageForCars.get(key).getIdentification().getClassification() + "'" + "," +
+                    "'" + storageForCars.get(key).getIdentification().getId() + "'" + "," +
+                    "'" + storageForCars.get(key).getIdentification().getMake() + "'" + "," +
+                    "'" + storageForCars.get(key).getIdentification().getModelYear() + "'" + "," +
+                    storageForCars.get(key).getIdentification().getYear() +
                     ")";
-            statement.execute(query);connection.close();statement.close();
+            statement.execute(query);
+            connection.close();
+            statement.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        } //catch (ClassNotFoundException e) {
-        // throw new RuntimeException(e);
-        //}
+        }
     }
-    public int getIdentificationId(){
+
+    public int getIdentificationId() {
         try {
-            //Class.forName("com.mysql.jdbc.Driver");
+
             Connection connection = DriverManager.getConnection(url, name, password);
             Statement statement = connection.createStatement();
             String query = "SELECT * FROM cars.identification;";
@@ -119,36 +123,35 @@ public class Queries {
             while (resultSet.next() && i != 0) {
                 identificationId = resultSet.getInt("id_identification");
                 i--;
-            }connection.close();statement.close();
+            }
+            connection.close();
+            statement.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        } //catch (ClassNotFoundException e) {
-        //throw new RuntimeException(e);
-        //}
+        }
         return identificationId;
 
     }
-    public void fillEngineStatistics(String key,Storage<String, Car> storageForCars) {
+
+    public void fillEngineStatistics(String key, Storage<String, Car> storageForCars) {
         try {
-            //Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection(url, name, password);
             Statement statement = connection.createStatement();
             String query = "INSERT into cars.engine_statistics(hoursepower,torque) values(" +
-                      storageForCars.get(key).getEngineInformation().getEngineStatistics().getHorsePower()  + "," +
-                    storageForCars.get(key).getEngineInformation().getEngineStatistics().getTorque()+
+                    storageForCars.get(key).getEngineInformation().getEngineStatistics().getHorsePower() + "," +
+                    storageForCars.get(key).getEngineInformation().getEngineStatistics().getTorque() +
                     ")";
             statement.execute(query);
             connection.close();
             statement.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        } //catch (ClassNotFoundException e) {
-        // throw new RuntimeException(e);
-        //}
+        }
     }
-    public int getEngineStatisticsId(){
+
+    public int getEngineStatisticsId() {
         try {
-            //Class.forName("com.mysql.jdbc.Driver");
+
             Connection connection = DriverManager.getConnection(url, name, password);
             Statement statement = connection.createStatement();
             String query = "SELECT * FROM cars.engine_statistics;";
@@ -157,13 +160,91 @@ public class Queries {
             while (resultSet.next() && i != 0) {
                 engineStatisticsId = resultSet.getInt("id_engine_statistics");
                 i--;
-            }connection.close();statement.close();
+            }
+            connection.close();
+            statement.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        } //catch (ClassNotFoundException e) {
-        //throw new RuntimeException(e);
-        //}
+        }
         return engineStatisticsId;
+    }
+
+    public void fillEngineInformation(String key, Storage<String, Car> storageForCars, int engineStatisticsId) {
+        try {
+
+            Connection connection = DriverManager.getConnection(url, name, password);
+            Statement statement = connection.createStatement();
+            String query = "INSERT into cars.engine_information(driveline,engine_type,hybrid," +
+                    "number_of_forward_gears,transmission,id_engine_statistics) values(" +
+                    "'" + storageForCars.get(key).getEngineInformation().getDriveLine() + "'" + "," +
+                    "'" + storageForCars.get(key).getEngineInformation().getEngineType() + "'" + "," +
+                    "'" + storageForCars.get(key).getEngineInformation().isHybrid() + "'" + "," +
+                    storageForCars.get(key).getEngineInformation().getNumberOfForwardGears() + "," +
+                    "'" + storageForCars.get(key).getEngineInformation().getTransmission() + "'" + "," +
+                    engineStatisticsId +
+                    ")";
+            statement.execute(query);
+            connection.close();
+            statement.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public int getEngineInformationId() {
+        try {
+            Connection connection = DriverManager.getConnection(url, name, password);
+            Statement statement = connection.createStatement();
+            String query = "SELECT * FROM cars.engine_information;";
+            ResultSet resultSet = statement.executeQuery(query);
+            int i = row;
+            while (resultSet.next() && i != 0) {
+                engineInformationId = resultSet.getInt("id_engine_information");
+                i--;
+            }
+            connection.close();
+            statement.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return engineInformationId;
+    }
+
+    public void fillCar(String key, Storage<String, Car> storageForCars, int dimensionId, int engineInformationId,
+                        int fuelId, int identificationId) {
+        try {
+            //Class.forName("com.mysql.jdbc.Driver");
+            Connection connection = DriverManager.getConnection(url, name, password);
+            Statement statement = connection.createStatement();
+            String query = "INSERT into cars.car(id_car,car,id_dimension,id_engine_information," +
+                    "id_fuel_information,id_identification) values(" +
+                    row + "," +
+                    "'" + Generator.vinGenerator(storageForCars.get(key),storageForCars) + "'" + "," +
+                    dimensionId + "," + engineInformationId + "," + fuelId + "," + identificationId +
+                    ")";
+            statement.execute(query);
+            connection.close();
+            statement.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void fromRowToCar(){
+        try {
+            Connection connection = DriverManager.getConnection(url, name, password);
+            Statement statement = connection.createStatement();
+            String query = "SELECT * FROM cars.car";
+            ResultSet resultSet = statement.executeQuery(query);
+            int i = row;
+            while (resultSet.next() && i != 0) {
+                engineInformationId = resultSet.getInt("id_engine_information");
+                i--;
+            }
+            connection.close();
+            statement.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
