@@ -29,7 +29,7 @@ public class Main {
         Queries queries = new Queries(url,name,password);
 
         for(String key:keys){
-            int idDimension,idFuel,idIdentification,idEngineStatistics,idEngineInformation;
+            /*int idDimension,idFuel,idIdentification,idEngineStatistics,idEngineInformation;
             queries.fillDimension(key,storageForCars);
             queries.fillFuelInformation(key,storageForCars);
             queries.fillIdentification(key,storageForCars);
@@ -42,9 +42,9 @@ public class Main {
             idIdentification = queries.getIdentificationId();
             idEngineInformation = queries.getEngineInformationId();
 
-            queries.fillCar(key,storageForCars,idDimension,idEngineInformation,idFuel,idIdentification);
-
+            queries.fillCar(key,storageForCars,idDimension,idEngineInformation,idFuel,idIdentification);*/
         }
+        queries.fromRowToCar(7);
 
 
     }

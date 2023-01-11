@@ -229,17 +229,27 @@ public class Queries {
             throw new RuntimeException(e);
         }
     }
-    public void fromRowToCar(){
+    public void fromRowToCar(int row){
         try {
             Connection connection = DriverManager.getConnection(url, name, password);
             Statement statement = connection.createStatement();
             String query = "SELECT * FROM cars.car";
             ResultSet resultSet = statement.executeQuery(query);
-            int i = row;
+            int i = row;int tempDimension,tempEngineInfo,tempEngineStat,tempFuelInfo,tempIdentification;
             while (resultSet.next() && i != 0) {
-                engineInformationId = resultSet.getInt("id_engine_information");
-                i--;
+               tempDimension= resultSet.getInt("id_dimension");
+               tempEngineInfo= resultSet.getInt("id_engine_information");
+               tempFuelInfo= resultSet.getInt("id_fuel_information");
+               tempIdentification =  resultSet.getInt("id_identification");
             }
+            Car car = CarBuilder.newInstance().setDimension().setIdentification(identification)
+                    .setEngineInformation(engineInformation).setFuelInformation(fuelInformation)
+                    .setHeight(values[0]).setLength(values[1])
+                    .setWidth(values[2]).setDriveLine(values[3]).setEngineType(values[4]).setHybrid(values[5])
+                    .setNumberOfForwardGears(values[6]).setTransmission(values[7]).setCityMpg(values[8])
+                    .setFuelType(values[9]).setHighwayMpg(values[10]).setClassification(values[11])
+                    .setId(values[12]).setMake(values[13]).setModelYear(values[14]).setYear(values[15])
+                    .setHorsePower(values[16]).setTorque(values[17]).build();
             connection.close();
             statement.close();
         } catch (SQLException e) {
