@@ -1,10 +1,10 @@
 package com.haemimont.cars.core.tools;
-
 import com.haemimont.cars.core.model.*;
-
 import java.util.Random;
-
+//converts lines from CSV to objects
 public class FromLinesToObjects {
+    //reads lines one by one trims each and makes an object out of it
+    //and then returns an array of all the objects
     public static Car[] linesToCars(String path, int numberOfRows) {
         Car[] cars = new Car[numberOfRows];
         String[] rawLines = FileReader.Reader(path,numberOfRows);

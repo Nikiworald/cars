@@ -9,8 +9,6 @@ public class Identification {
     private double price ;
     private String vin;
 
-
-
     public String getClassification() {
         return classification;
     }

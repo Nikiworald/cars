@@ -1,9 +1,8 @@
 package com.haemimont.cars.core.tools;
-
 import com.haemimont.cars.core.model.Car;
 import com.haemimont.cars.core.storage.Storage;
-
 public class Generator {
+    //generates a vin using parameters of a car
     public static String vinGenerator(Car car, Storage storage) {
         String temp = "";
         String vin = "";
@@ -28,9 +27,10 @@ public class Generator {
             vin = value[0] + value[1] + value[2]
                     + value[3] + value[4] + (char) i;
             if (storage.get(vin) == null) {
-                return vin;
+                car.getIdentification().setVin(vin);return vin;
             }
         }
+        car.getIdentification().setVin(vin);
         return vin;
     }
 

@@ -1,20 +1,20 @@
 package com.haemimont.cars.core.Sql;
 import com.haemimont.cars.core.storage.Storage;
 import com.haemimont.cars.core.model.*;
-import com.haemimont.cars.core.tools.Generator;
+
 import java.sql.*;
 import java.util.ArrayList;
 
 public class Queries {//preset of queries
     String url, name, password;
-    int dimensionId, fuelId, identificationId, engineStatisticsId, engineInformationId, rowOfTheCar = 1;
-
+    int dimensionId, fuelId, identificationId, engineStatisticsId, engineInformationId, numberOfCars = 1;
+    //passing in the url,username and password when making an object of class Queries
     public Queries(String url, String name, String password) {
         this.url = url;
         this.name = name;
         this.password = password;
-    }//passing in the url,username and password when making an object of class Queries
-
+    }
+    //trying to connect to the sql db and inserting the information from an object to the dimension table
     public void fillDimension(String key, Storage<String, Car> storageForCars) {
         try {
             Connection connection = DriverManager.getConnection(url, name, password);
@@ -30,8 +30,8 @@ public class Queries {//preset of queries
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }//trying to connect to the sql db and inserting the information from an object to the dimension table
-
+    }
+//gets the max value of id_dimension(the latest one)
     public int getLatestDimensionId() {
         try {
             Connection connection = DriverManager.getConnection(url, name, password);
@@ -212,13 +212,12 @@ public class Queries {//preset of queries
     public void fillCar(String key, Storage<String, Car> storageForCars, int dimensionId, int engineInformationId,
                         int fuelId, int identificationId) {
         try {
-            //Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection(url, name, password);
             Statement statement = connection.createStatement();
             String query = "INSERT into cars.car(id_car,vin,id_dimension,id_engine_information," +
                     "id_fuel_information,id_identification) values(" +
-                    rowOfTheCar + "," +
-                    "'" + Generator.vinGenerator(storageForCars.get(key), storageForCars) + "'" + "," +
+                    numberOfCars + "," +
+                    "'" + storageForCars.get(key).getIdentification().getVin() + "'" + "," +
                     dimensionId + "," + engineInformationId + "," + fuelId + "," + identificationId +
                     ")";
             statement.execute(query);
@@ -227,19 +226,18 @@ public class Queries {//preset of queries
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        rowOfTheCar++;
+        numberOfCars++;
     }
-
-    public ArrayList<Car> fromCarMakeToCarObj(String make) {
+//get data with a matching identification.make and makes an object
+    public ArrayList<Car> fromDbMakeToCarObj(String make) {
         ArrayList<Car> cars = new ArrayList<>();
         try {
-
             Connection connection = DriverManager.getConnection(url, name, password);
             Statement statement = connection.createStatement();
             String query = "SELECT  car.id_car,car.vin,dimension.height,dimension.width,dimension.length,engine_information.driveline,engine_information.engine_type,\n" +
                     "engine_information.hybrid,engine_information.number_of_forward_gears,engine_information.transmission,\n" +
                     "engine_statistics.hoursepower,engine_statistics.torque,fuel_information.city_mpg,fuel_information.fuel_type,fuel_information.highway_mpg,\n" +
-                    "identification.classification,identification.id,identification.make,identification.model_year,identification.year FROM cars.car\n" +
+                    "identification.classification,identification.id,identification.make,identification.model_year,identification.year,identification.color,identification.price FROM cars.car\n" +
                     " join identification on identification.id_identification = car.id_identification \n" +
                     " join fuel_information on fuel_information.id_fuel_information = car.id_fuel_information\n" +
                     " join dimension on dimension.id_dimension = car.id_dimension\n" +

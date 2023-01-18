@@ -14,11 +14,11 @@ public class Main {
         String path = "src/main/java/csv/cars.csv";
 
         Car[] cars = FromLinesToObjects.linesToCars(path, 500);//There is no data on the first line (n-1)
-        Storage<String, Car> storageForCars = new Storage<>();
-        StorageTools.importObjectsInToStorage(storageForCars, cars);
-        String[] keys = storageForCars.keySet().toArray(new String[0]);
+        Storage<String, Car> storageForCars = new Storage<>();//creating a new storage for cars
+        StorageTools.importObjectsInToStorage(storageForCars, cars);//importing cars in to the storage
+        String[] keys = storageForCars.keySet().toArray(new String[0]);//getting all the keys for the storage
         Queries queries = new Queries(url,name,password);
-
+        //for each key we get its object and put it in the db
         for(String key:keys){
             int idDimension,idFuel,idIdentification,idEngineStatistics,idEngineInformation;
             queries.fillDimension(key,storageForCars);
@@ -37,8 +37,6 @@ public class Main {
 
         }
 
-        ArrayList testCars =  queries.fromCarMakeToCarObj("BMW");
-        int a = 0;
-
+        ArrayList testCars =  queries.fromDbMakeToCarObj("BMW");//gets all the cars with make = ?
     }
 }

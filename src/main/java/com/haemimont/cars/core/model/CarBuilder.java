@@ -1,9 +1,6 @@
 package com.haemimont.cars.core.model;
 
 
-import com.haemimont.cars.core.tools.Generator;
-import com.haemimont.cars.core.tools.Verification;
-
 public class CarBuilder{
     private Dimension dimension;
     private  EngineInformation engineInformation;
@@ -175,9 +172,4 @@ public class CarBuilder{
         this.identification.setPrice(price);
         return this;
     }
-    public CarBuilder generateVin(){
-        this.identification.setVin("");
-        return this;
-    }
-
 }
