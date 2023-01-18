@@ -1,11 +1,7 @@
 package com.haemimont.cars.core.tools;
 
 import com.haemimont.cars.core.model.Car;
-import com.haemimont.cars.core.model.Identification;
 import com.haemimont.cars.core.storage.Storage;
-import jdk.internal.org.objectweb.asm.tree.analysis.Value;
-
-import java.time.Year;
 
 public class Generator {
     public static String vinGenerator(Car car, Storage storage) {

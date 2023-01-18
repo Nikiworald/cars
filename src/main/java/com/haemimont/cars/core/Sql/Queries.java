@@ -1,23 +1,22 @@
-package com.haemimont.cars.core.SqlQuery;
+package com.haemimont.cars.core.Sql;
 import com.haemimont.cars.core.storage.Storage;
 import com.haemimont.cars.core.model.*;
 import com.haemimont.cars.core.tools.Generator;
-
 import java.sql.*;
+import java.util.ArrayList;
 
-public class Queries {
+public class Queries {//preset of queries
     String url, name, password;
-    int dimensionId, fuelId, identificationId, engineStatisticsId, engineInformationId, row = 0;
+    int dimensionId, fuelId, identificationId, engineStatisticsId, engineInformationId, rowOfTheCar = 1;
 
     public Queries(String url, String name, String password) {
         this.url = url;
         this.name = name;
         this.password = password;
-    }
+    }//passing in the url,username and password when making an object of class Queries
 
     public void fillDimension(String key, Storage<String, Car> storageForCars) {
         try {
-
             Connection connection = DriverManager.getConnection(url, name, password);
             Statement statement = connection.createStatement();
             String query = "INSERT into dimension(height,width,length) values(" +
@@ -26,25 +25,23 @@ public class Queries {
                     storageForCars.get(key).getDimension().getLength() +
                     ")";
             statement.execute(query);
-            row++;
             connection.close();
             statement.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }
+    }//trying to connect to the sql db and inserting the information from an object to the dimension table
 
-    public int getDimensionId() {
+    public int getLatestDimensionId() {
         try {
-
             Connection connection = DriverManager.getConnection(url, name, password);
             Statement statement = connection.createStatement();
-            String query = "SELECT * FROM cars.dimension;";
+            String query = "SELECT Max(id_dimension)\n" +
+                    "  FROM dimension\n" +
+                    "  ORDER BY dimension.id_dimension DESC";
             ResultSet resultSet = statement.executeQuery(query);
-            int i = row;
-            while (resultSet.next() && i != 0) {
-                dimensionId = resultSet.getInt("id_dimension");
-                i--;
+            while(resultSet.next()) {
+                dimensionId = resultSet.getInt("Max(id_dimension)");
             }
             connection.close();
             statement.close();
@@ -72,17 +69,17 @@ public class Queries {
         }
     }
 
-    public int getFuelId() {
+    public int getLatestFuelId() {
         try {
 
             Connection connection = DriverManager.getConnection(url, name, password);
             Statement statement = connection.createStatement();
-            String query = "SELECT * FROM cars.fuel_information;";
+            String query = "SELECT Max(id_fuel_information)\n" +
+                    "  FROM fuel_information\n" +
+                    "  ORDER BY id_fuel_information DESC";
             ResultSet resultSet = statement.executeQuery(query);
-            int i = row;
-            while (resultSet.next() && i != 0) {
-                fuelId = resultSet.getInt("id_fuel_information");
-                i--;
+            while(resultSet.next()) {
+                fuelId = resultSet.getInt("Max(id_fuel_information)");
             }
             connection.close();
             statement.close();
@@ -97,12 +94,14 @@ public class Queries {
 
             Connection connection = DriverManager.getConnection(url, name, password);
             Statement statement = connection.createStatement();
-            String query = "INSERT into identification(classification,id,make,model_year,year) values(" +
+            String query = "INSERT into identification(classification,id,make,model_year,year,color,price) values(" +
                     "'" + storageForCars.get(key).getIdentification().getClassification() + "'" + "," +
                     "'" + storageForCars.get(key).getIdentification().getId() + "'" + "," +
                     "'" + storageForCars.get(key).getIdentification().getMake() + "'" + "," +
                     "'" + storageForCars.get(key).getIdentification().getModelYear() + "'" + "," +
-                    storageForCars.get(key).getIdentification().getYear() +
+                    storageForCars.get(key).getIdentification().getYear() +","+
+                    "'"+storageForCars.get(key).getIdentification().getColor()+"'"+","+
+                    storageForCars.get(key).getIdentification().getPrice()+
                     ")";
             statement.execute(query);
             connection.close();
@@ -112,17 +111,17 @@ public class Queries {
         }
     }
 
-    public int getIdentificationId() {
+    public int getLatestIdentificationId() {
         try {
 
             Connection connection = DriverManager.getConnection(url, name, password);
             Statement statement = connection.createStatement();
-            String query = "SELECT * FROM cars.identification;";
+            String query = "SELECT Max(id_identification)\n" +
+                    "  FROM identification\n" +
+                    "  ORDER BY id_identification DESC";
             ResultSet resultSet = statement.executeQuery(query);
-            int i = row;
-            while (resultSet.next() && i != 0) {
-                identificationId = resultSet.getInt("id_identification");
-                i--;
+            while(resultSet.next()) {
+                identificationId = resultSet.getInt("Max(id_identification)");
             }
             connection.close();
             statement.close();
@@ -149,17 +148,17 @@ public class Queries {
         }
     }
 
-    public int getEngineStatisticsId() {
+    public int getLatestEngineStatisticsId() {
         try {
 
             Connection connection = DriverManager.getConnection(url, name, password);
             Statement statement = connection.createStatement();
-            String query = "SELECT * FROM cars.engine_statistics;";
+            String query = "SELECT Max(id_engine_statistics)\n" +
+                    "  FROM engine_statistics\n" +
+                    "  ORDER BY id_engine_statistics DESC";
             ResultSet resultSet = statement.executeQuery(query);
-            int i = row;
-            while (resultSet.next() && i != 0) {
-                engineStatisticsId = resultSet.getInt("id_engine_statistics");
-                i--;
+            while(resultSet.next()) {
+                engineStatisticsId = resultSet.getInt("Max(id_engine_statistics)");
             }
             connection.close();
             statement.close();
@@ -191,16 +190,16 @@ public class Queries {
         }
     }
 
-    public int getEngineInformationId() {
+    public int getLatestEngineInformationId() {
         try {
             Connection connection = DriverManager.getConnection(url, name, password);
             Statement statement = connection.createStatement();
-            String query = "SELECT * FROM cars.engine_information;";
+            String query = "SELECT Max(id_engine_information)\n" +
+                    "  FROM engine_information\n" +
+                    "  ORDER BY id_engine_information DESC";
             ResultSet resultSet = statement.executeQuery(query);
-            int i = row;
-            while (resultSet.next() && i != 0) {
-                engineInformationId = resultSet.getInt("id_engine_information");
-                i--;
+            while(resultSet.next()) {
+                engineInformationId = resultSet.getInt("Max(id_engine_information)");
             }
             connection.close();
             statement.close();
@@ -216,9 +215,9 @@ public class Queries {
             //Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection(url, name, password);
             Statement statement = connection.createStatement();
-            String query = "INSERT into cars.car(id_car,car,id_dimension,id_engine_information," +
+            String query = "INSERT into cars.car(id_car,vin,id_dimension,id_engine_information," +
                     "id_fuel_information,id_identification) values(" +
-                    row + "," +
+                    rowOfTheCar + "," +
                     "'" + Generator.vinGenerator(storageForCars.get(key), storageForCars) + "'" + "," +
                     dimensionId + "," + engineInformationId + "," + fuelId + "," + identificationId +
                     ")";
@@ -228,88 +227,64 @@ public class Queries {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        rowOfTheCar++;
     }
 
-    public Car fromRowToCar(int row) {
-        Car car;
+    public ArrayList<Car> fromCarMakeToCarObj(String make) {
+        ArrayList<Car> cars = new ArrayList<>();
         try {
+
             Connection connection = DriverManager.getConnection(url, name, password);
             Statement statement = connection.createStatement();
-            String query = "SELECT * FROM cars.car";
-            ResultSet resultSet = statement.executeQuery(query);
-            ResultSet resultSetForD;
-            ResultSet resultSetForEi;
-            ResultSet resultSetForFi;
-            ResultSet resultSetForI;
-            ResultSet resultSetForEs;
-            int i = row; /*tempDimension = 0, tempEngineInfo = 0, tempEngineStat = 0, tempFuelInfo = 0,
-                    tempIdentification = 0, height=0, width=0, length=0, number_of_forward_gears=0,
-                    id_engine_statistics = 0, hoursepower=0, torque=0, city_mpg=0, highway_mpg=0, year=0;*/
-            String driveline="", engine_type="", hybrid="", transmission="", fuel_type="" ,
-                    classification="", id="", make="", model_year="",tempDimension = "", tempEngineInfo = "", tempEngineStat = "", tempFuelInfo = "",
-                    tempIdentification = "", height="", width="", length="", number_of_forward_gears="",
-                    id_engine_statistics = "", hoursepower="", torque="", city_mpg="", highway_mpg="", year="";
+            String query = "SELECT  car.id_car,car.vin,dimension.height,dimension.width,dimension.length,engine_information.driveline,engine_information.engine_type,\n" +
+                    "engine_information.hybrid,engine_information.number_of_forward_gears,engine_information.transmission,\n" +
+                    "engine_statistics.hoursepower,engine_statistics.torque,fuel_information.city_mpg,fuel_information.fuel_type,fuel_information.highway_mpg,\n" +
+                    "identification.classification,identification.id,identification.make,identification.model_year,identification.year FROM cars.car\n" +
+                    " join identification on identification.id_identification = car.id_identification \n" +
+                    " join fuel_information on fuel_information.id_fuel_information = car.id_fuel_information\n" +
+                    " join dimension on dimension.id_dimension = car.id_dimension\n" +
+                    " join engine_information on engine_information.id_engine_information = car.id_engine_information\n" +
+                    " join engine_statistics on  engine_statistics.id_engine_statistics = engine_information.id_engine_statistics" +
+                    " where make = '"+make+"'";
 
-            while (resultSet.next() && i != 0) {
-                tempDimension = resultSet.getString("id_dimension");
-                tempEngineInfo = resultSet.getString("id_engine_information");
-                tempFuelInfo = resultSet.getString("id_fuel_information");
-                tempIdentification = resultSet.getString("id_identification");
-                i--;
+            ResultSet resultSet = statement.executeQuery(query);
+            while(resultSet.next()){
+                int height = resultSet.getInt("height");
+                int width = resultSet.getInt("width");
+                int length = resultSet.getInt("length");
+                int number_of_forward_gears = resultSet.getInt("number_of_forward_gears");
+                int hoursepower = resultSet.getInt("hoursepower");
+                int torque = resultSet.getInt("torque");
+                int city_mpg = resultSet.getInt("city_mpg");
+                int highway_mpg = resultSet.getInt("highway_mpg");
+                int year =  resultSet.getInt("year");
+                double price = resultSet.getDouble("price");
+                String driveline= resultSet.getString("driveline");
+                String engine_type = resultSet.getString("engine_type");
+                String hybrid = resultSet.getString("hybrid");
+                String transmission = resultSet.getString("transmission");
+                String fuel_type = resultSet.getString("fuel_type");
+                String classification = resultSet.getString("classification");
+                String id = resultSet.getString("id");
+                //String dbMake = resultSet.getString("make");
+                String model_year = resultSet.getString("model_year");
+                String color = resultSet.getString("color");
+                EngineInformation engineInformation = new EngineInformation();
+                engineInformation.setEngineStatistics(new EngineStatistics());
+                 cars.add(CarBuilder.newInstance().setDimension(new Dimension()).setIdentification(new Identification())
+                         .setEngineInformation(engineInformation).setFuelInformation(new FuelInformation())
+                         .setHeight(height).setLength(length)
+                         .setWidth(width).setDriveLine(driveline).setEngineType(engine_type).setHybrid(hybrid)
+                         .setNumberOfForwardGears(number_of_forward_gears).setTransmission(transmission).setCityMpg(city_mpg)
+                         .setFuelType(fuel_type).setHighwayMpg(highway_mpg).setClassification(classification)
+                         .setId(id).setMake(make).setModelYear(model_year).setYear(year)
+                         .setHorsePower(hoursepower).setTorque(torque).setColor(color).setPrice(price).build());
             }
-            query = "SELECT * FROM dimension WHERE id_dimension=" + tempDimension;
-            resultSetForD = statement.executeQuery(query);
-            while (resultSetForD.next()) {
-                height = resultSetForD.getString("width");
-                width = resultSetForD.getString("width");
-                length = resultSetForD.getString("length");
-            }
-            query = "SELECT * FROM engine_information WHERE id_engine_information=" + tempEngineInfo;
-            resultSetForEi = statement.executeQuery(query);
-            while (resultSetForEi.next()) {
-                driveline = resultSetForEi.getString("driveline");
-                engine_type = resultSetForEi.getString("engine_type");
-                hybrid = resultSetForEi.getString("hybrid");
-                number_of_forward_gears = resultSetForEi.getString("number_of_forward_gears");
-                transmission = resultSetForEi.getString("transmission");
-                id_engine_statistics = resultSetForEi.getString("id_engine_statistics");
-            }
-            query = "SELECT * FROM engine_statistics WHERE id_engine_statistics=" + id_engine_statistics;
-            resultSetForEs = statement.executeQuery(query);
-            while (resultSetForEs.next()) {
-                hoursepower = resultSetForEs.getString("hoursepower");
-                torque = resultSetForEs.getString("torque");
-            }
-            query = "SELECT * FROM fuel_information WHERE id_fuel_information=" + tempFuelInfo;
-            resultSetForFi = statement.executeQuery(query);
-            while (resultSetForFi.next()) {
-                city_mpg = resultSetForFi.getString("city_mpg");
-                fuel_type = resultSetForFi.getString("fuel_type");
-                highway_mpg = resultSetForFi.getString("highway_mpg");
-            }
-            query = "SELECT * FROM identification WHERE id_identification=" + tempIdentification;
-            resultSetForI = statement.executeQuery(query);
-            while (resultSetForI.next()) {
-                classification = resultSetForI.getString("classification");
-                id = resultSetForI.getString("id");
-                make = resultSetForI.getString("make");
-                model_year = resultSetForI.getString("model_year");
-                year = resultSetForI.getString("year");
-            }
-             car = CarBuilder.newInstance().setDimension(new Dimension()).setIdentification(new Identification())
-                    .setEngineInformation(new EngineInformation()).setFuelInformation(new FuelInformation())
-                    .setHeight(height).setLength(length)
-                    .setWidth(width).setDriveLine(driveline).setEngineType(engine_type).setHybrid(hybrid)
-                    .setNumberOfForwardGears(number_of_forward_gears).setTransmission(transmission).setCityMpg(city_mpg)
-                    .setFuelType(fuel_type).setHighwayMpg(highway_mpg).setClassification(classification)
-                    .setId(id).setMake(make).setModelYear(model_year).setYear(year)
-                    .setHorsePower(hoursepower).setTorque(torque).build();
-            connection.close();
-            statement.close();
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return car;
+        return cars;
     }
 
 }

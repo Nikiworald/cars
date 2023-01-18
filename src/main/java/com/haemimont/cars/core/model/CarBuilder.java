@@ -1,6 +1,9 @@
 package com.haemimont.cars.core.model;
 
 
+import com.haemimont.cars.core.tools.Generator;
+import com.haemimont.cars.core.tools.Verification;
+
 public class CarBuilder{
     private Dimension dimension;
     private  EngineInformation engineInformation;
@@ -44,6 +47,52 @@ public class CarBuilder{
     public CarBuilder setIdentification(final Identification identification){
         this.identification = identification;
         return this;
+    }
+    public CarBuilder setHeight(final int height){
+        this.dimension.setHeight(height);
+        return this;
+    }
+    public CarBuilder setLength(final int length){
+        this.dimension.setLength(length);
+        return this;
+    }
+    public CarBuilder setWidth(final int width){
+        this.dimension.setWidth(width);
+        return this;
+    }
+    public CarBuilder setHybrid(final Boolean hybrid){
+        this.engineInformation.setHybrid(hybrid);
+        return this;
+    }
+    public CarBuilder setNumberOfForwardGears(final int numberOfForwardGears){
+        this.engineInformation.setNumberOfForwardGears(numberOfForwardGears);
+        return this;
+    }
+
+    public CarBuilder setCityMpg(final int cityMpg){
+        this.fuelInformation.setCityMpg(cityMpg);
+        return this;
+    }
+    public CarBuilder setHighwayMpg(final int highwayMpg) {
+        this.fuelInformation.setHighwayMpg(highwayMpg);
+        return this;
+    }
+    public CarBuilder setYear(final int year){
+        this.identification.setYear(year);
+        return this;
+    }
+    public CarBuilder setHorsePower(final int horsePower){
+        this.engineInformation.getEngineStatistics().setHorsePower(horsePower);
+        return this;
+
+    }
+    public CarBuilder setTorque(final int torque){
+        this.engineInformation.getEngineStatistics().setTorque(torque);
+        return this;
+    }
+    public Car build()
+    {
+        return new Car(this);
     }
     public CarBuilder setHeight(final String height){
         this.dimension.setHeight(Integer.parseInt(height));
@@ -118,11 +167,17 @@ public class CarBuilder{
         this.engineInformation.getEngineStatistics().setTorque(Integer.parseInt(torque));
         return this;
     }
-    public Car build()
-    {
-        return new Car(this);
+    public CarBuilder setColor(final String color){
+        this.identification.setColor(color);
+        return this;
     }
-    public String getValues() {
-        return ""+dimension.getHeight()+dimension.getLength();
+    public CarBuilder setPrice(final double price){
+        this.identification.setPrice(price);
+        return this;
     }
+    public CarBuilder generateVin(){
+        this.identification.setVin("");
+        return this;
+    }
+
 }

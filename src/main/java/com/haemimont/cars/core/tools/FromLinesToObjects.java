@@ -2,11 +2,12 @@ package com.haemimont.cars.core.tools;
 
 import com.haemimont.cars.core.model.*;
 
+import java.util.Random;
+
 public class FromLinesToObjects {
     public static Car[] linesToCars(String path, int numberOfRows) {
         Car[] cars = new Car[numberOfRows];
         String[] rawLines = FileReader.Reader(path,numberOfRows);
-
         for(int i = 0;i<numberOfRows;i++){
             if (i>0) {
                 String[] values = Trimmer.customTrim(rawLines[i]);
@@ -15,6 +16,8 @@ public class FromLinesToObjects {
                 EngineStatistics engineStatistics = new EngineStatistics();
                 FuelInformation fuelInformation = new FuelInformation();
                 Identification identification = new Identification();
+                Random random = new Random();
+                String[] colors = {"Blue","Red","Gray","White","Black"};
                 engineInformation.setEngineStatistics(engineStatistics);
                 cars[i] =  CarBuilder.newInstance().setDimension(dimension).setIdentification(identification)
                         .setEngineInformation(engineInformation).setFuelInformation(fuelInformation)
@@ -23,7 +26,9 @@ public class FromLinesToObjects {
                         .setNumberOfForwardGears(values[6]).setTransmission(values[7]).setCityMpg(values[8])
                         .setFuelType(values[9]).setHighwayMpg(values[10]).setClassification(values[11])
                         .setId(values[12]).setMake(values[13]).setModelYear(values[14]).setYear(values[15])
-                        .setHorsePower(values[16]).setTorque(values[17]).build();
+                        .setHorsePower(values[16]).setTorque(values[17]).setColor(colors[random.nextInt(4)])
+                        .setPrice((Double.valueOf(identification.getYear())/3)*10+random.nextInt(500))
+                        .build();
             }
         }
         return cars;
