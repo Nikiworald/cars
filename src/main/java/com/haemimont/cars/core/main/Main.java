@@ -34,9 +34,7 @@ public class Main {
             idEngineInformation = queries.getLatestEngineInformationId();
 
             queries.fillCar(key,storageForCars,idDimension,idEngineInformation,idFuel,idIdentification);
-
         }
-
         ArrayList testCars =  queries.fromDbMakeToCarObj("BMW");//gets all the cars with make = ?
     }
 }

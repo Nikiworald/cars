@@ -33,5 +33,4 @@ public class Generator {
         car.getIdentification().setVin(vin);
         return vin;
     }
-
 }

@@ -1,10 +1,8 @@
 package com.haemimont.cars.core.Sql;
 import com.haemimont.cars.core.storage.Storage;
 import com.haemimont.cars.core.model.*;
-
 import java.sql.*;
 import java.util.ArrayList;
-
 public class Queries {//preset of queries
     String url, name, password;
     int dimensionId, fuelId, identificationId, engineStatisticsId, engineInformationId, numberOfCars = 1;
@@ -88,7 +86,6 @@ public class Queries {//preset of queries
         }
         return fuelId;
     }
-
     public void fillIdentification(String key, Storage<String, Car> storageForCars) {
         try {
 
@@ -110,7 +107,6 @@ public class Queries {//preset of queries
             throw new RuntimeException(e);
         }
     }
-
     public int getLatestIdentificationId() {
         try {
 
@@ -129,9 +125,7 @@ public class Queries {//preset of queries
             throw new RuntimeException(e);
         }
         return identificationId;
-
     }
-
     public void fillEngineStatistics(String key, Storage<String, Car> storageForCars) {
         try {
             Connection connection = DriverManager.getConnection(url, name, password);
@@ -147,7 +141,6 @@ public class Queries {//preset of queries
             throw new RuntimeException(e);
         }
     }
-
     public int getLatestEngineStatisticsId() {
         try {
 
@@ -167,7 +160,6 @@ public class Queries {//preset of queries
         }
         return engineStatisticsId;
     }
-
     public void fillEngineInformation(String key, Storage<String, Car> storageForCars, int engineStatisticsId) {
         try {
 
@@ -189,7 +181,6 @@ public class Queries {//preset of queries
             throw new RuntimeException(e);
         }
     }
-
     public int getLatestEngineInformationId() {
         try {
             Connection connection = DriverManager.getConnection(url, name, password);
@@ -208,7 +199,6 @@ public class Queries {//preset of queries
         }
         return engineInformationId;
     }
-
     public void fillCar(String key, Storage<String, Car> storageForCars, int dimensionId, int engineInformationId,
                         int fuelId, int identificationId) {
         try {
@@ -244,7 +234,6 @@ public class Queries {//preset of queries
                     " join engine_information on engine_information.id_engine_information = car.id_engine_information\n" +
                     " join engine_statistics on  engine_statistics.id_engine_statistics = engine_information.id_engine_statistics" +
                     " where make = '"+make+"'";
-
             ResultSet resultSet = statement.executeQuery(query);
             while(resultSet.next()){
                 int height = resultSet.getInt("height");
@@ -278,13 +267,11 @@ public class Queries {//preset of queries
                          .setId(id).setMake(make).setModelYear(model_year).setYear(year)
                          .setHorsePower(hoursepower).setTorque(torque).setColor(color).setPrice(price).build());
             }
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return cars;
     }
-
 }
 
 
