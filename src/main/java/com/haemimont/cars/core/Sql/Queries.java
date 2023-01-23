@@ -4,226 +4,167 @@ import com.haemimont.cars.core.model.*;
 import java.sql.*;
 import java.util.ArrayList;
 public class Queries {//preset of queries
-    String url, name, password;
     int dimensionId, fuelId, identificationId, engineStatisticsId, engineInformationId, numberOfCars = 1;
-    //passing in the url,username and password when making an object of class Queries
-    public Queries(String url, String name, String password) {
-        this.url = url;
-        this.name = name;
-        this.password = password;
+    Connection connection;
+    public void connect(String url, String name, String password) {
+        try {
+            connection = DriverManager.getConnection(url, name, password);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
+    public void disconnect(){
+        try {
+            this.connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     //trying to connect to the sql db and inserting the information from an object to the dimension table
-    public void fillDimension(String key, Storage<String, Car> storageForCars) {
+    //and gets the corresponding id_dimension
+    public void fillDimensionAndSetId(String key, Storage<String, Car> storageForCars) {
+        PreparedStatement preparedStatement = null;
         try {
-            Connection connection = DriverManager.getConnection(url, name, password);
-            Statement statement = connection.createStatement();
-            String query = "INSERT into dimension(height,width,length) values(" +
-                    storageForCars.get(key).getDimension().getHeight() + "," +
-                    storageForCars.get(key).getDimension().getWidth() + "," +
-                    storageForCars.get(key).getDimension().getLength() +
-                    ")";
-            statement.execute(query);
-            connection.close();
-            statement.close();
+            preparedStatement = this.connection.prepareStatement("INSERT into dimension(height,width,length) values(?,?,?)");
+            preparedStatement.setInt(1, storageForCars.get(key).getDimension().getHeight());
+            preparedStatement.setInt(2, storageForCars.get(key).getDimension().getWidth());
+            preparedStatement.setInt(3, storageForCars.get(key).getDimension().getLength());
+            //preparedStatement.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.execute();
+            Statement statement = this.connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("select LAST_INSERT_ID()");
+            while (resultSet.next()) {
+                dimensionId = resultSet.getInt("last_insert_id()");
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-//gets the max value of id_dimension(the latest one)
-    public int getLatestDimensionId() {
-        try {
-            Connection connection = DriverManager.getConnection(url, name, password);
-            Statement statement = connection.createStatement();
-            String query = "SELECT Max(id_dimension)\n" +
-                    "  FROM dimension\n" +
-                    "  ORDER BY dimension.id_dimension DESC";
-            ResultSet resultSet = statement.executeQuery(query);
-            while(resultSet.next()) {
-                dimensionId = resultSet.getInt("Max(id_dimension)");
-            }
-            connection.close();
-            statement.close();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    public int getDimensionId() {
         return dimensionId;
     }
 
-    public void fillFuelInformation(String key, Storage<String, Car> storageForCars) {
+    public void fillFuelInformationAndSetId(String key, Storage<String, Car> storageForCars) {
+        PreparedStatement preparedStatement = null;
         try {
-
-            Connection connection = DriverManager.getConnection(url, name, password);
-            Statement statement = connection.createStatement();
-            String query = "INSERT into fuel_information(city_mpg,fuel_type,highway_mpg) values(" +
-                    storageForCars.get(key).getFuelInformation().getCityMpg() + "," +
-                    "'" + storageForCars.get(key).getFuelInformation().getFuelType() + "'" + "," +
-                    storageForCars.get(key).getFuelInformation().getHighwayMpg() +
-                    ")";
-            statement.execute(query);
-            connection.close();
-            statement.close();
+            preparedStatement = this.connection.prepareStatement("INSERT into fuel_information(city_mpg,fuel_type,highway_mpg)" +
+                    " values(?,?,?)");
+            preparedStatement.setInt(1, storageForCars.get(key).getFuelInformation().getCityMpg());
+            preparedStatement.setString(2, storageForCars.get(key).getFuelInformation().getFuelType());
+            preparedStatement.setInt(3, storageForCars.get(key).getFuelInformation().getHighwayMpg());
+            preparedStatement.execute();
+            Statement statement = this.connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("select LAST_INSERT_ID()");
+            while (resultSet.next()) {
+                fuelId = resultSet.getInt("last_insert_id()");
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-
-    public int getLatestFuelId() {
-        try {
-
-            Connection connection = DriverManager.getConnection(url, name, password);
-            Statement statement = connection.createStatement();
-            String query = "SELECT Max(id_fuel_information)\n" +
-                    "  FROM fuel_information\n" +
-                    "  ORDER BY id_fuel_information DESC";
-            ResultSet resultSet = statement.executeQuery(query);
-            while(resultSet.next()) {
-                fuelId = resultSet.getInt("Max(id_fuel_information)");
-            }
-            connection.close();
-            statement.close();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    public int getFuelId() {
         return fuelId;
     }
-    public void fillIdentification(String key, Storage<String, Car> storageForCars) {
-        try {
 
-            Connection connection = DriverManager.getConnection(url, name, password);
-            Statement statement = connection.createStatement();
-            String query = "INSERT into identification(classification,id,make,model_year,year,color,price) values(" +
-                    "'" + storageForCars.get(key).getIdentification().getClassification() + "'" + "," +
-                    "'" + storageForCars.get(key).getIdentification().getId() + "'" + "," +
-                    "'" + storageForCars.get(key).getIdentification().getMake() + "'" + "," +
-                    "'" + storageForCars.get(key).getIdentification().getModelYear() + "'" + "," +
-                    storageForCars.get(key).getIdentification().getYear() +","+
-                    "'"+storageForCars.get(key).getIdentification().getColor()+"'"+","+
-                    storageForCars.get(key).getIdentification().getPrice()+
-                    ")";
-            statement.execute(query);
-            connection.close();
-            statement.close();
+
+    public void fillIdentificationAndSetId(String key, Storage<String, Car> storageForCars) {
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = this.connection.prepareStatement("INSERT into identification(classification,id," +
+                            "make,model_year,year,color,price) values(?,?,?,?,?,?,?)");
+            preparedStatement.setString(1, storageForCars.get(key).getIdentification().getClassification());
+            preparedStatement.setString(2, storageForCars.get(key).getIdentification().getId());
+            preparedStatement.setString(3, storageForCars.get(key).getIdentification().getMake());
+            preparedStatement.setString(4,storageForCars.get(key).getIdentification().getModelYear());
+            preparedStatement.setInt(5,storageForCars.get(key).getIdentification().getYear());
+            preparedStatement.setString(6,storageForCars.get(key).getIdentification().getColor());
+            preparedStatement.setDouble(7,storageForCars.get(key).getIdentification().getPrice());
+            preparedStatement.execute();
+            Statement statement = this.connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("select LAST_INSERT_ID()");
+            while (resultSet.next()) {
+                identificationId = resultSet.getInt("last_insert_id()");
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-    public int getLatestIdentificationId() {
-        try {
 
-            Connection connection = DriverManager.getConnection(url, name, password);
-            Statement statement = connection.createStatement();
-            String query = "SELECT Max(id_identification)\n" +
-                    "  FROM identification\n" +
-                    "  ORDER BY id_identification DESC";
-            ResultSet resultSet = statement.executeQuery(query);
-            while(resultSet.next()) {
-                identificationId = resultSet.getInt("Max(id_identification)");
-            }
-            connection.close();
-            statement.close();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    public int getIdentificationId() {
         return identificationId;
     }
-    public void fillEngineStatistics(String key, Storage<String, Car> storageForCars) {
-        try {
-            Connection connection = DriverManager.getConnection(url, name, password);
-            Statement statement = connection.createStatement();
-            String query = "INSERT into cars.engine_statistics(hoursepower,torque) values(" +
-                    storageForCars.get(key).getEngineInformation().getEngineStatistics().getHorsePower() + "," +
-                    storageForCars.get(key).getEngineInformation().getEngineStatistics().getTorque() +
-                    ")";
-            statement.execute(query);
-            connection.close();
-            statement.close();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+     public void fillEngineStatisticsAndSetId(String key, Storage<String, Car> storageForCars) {
+         PreparedStatement preparedStatement = null;
+         try {
+             preparedStatement = this.connection.prepareStatement("INSERT into cars.engine_statistics(hoursepower,torque) values(?,?)");
+             preparedStatement.setInt(1, storageForCars.get(key).getEngineInformation().getEngineStatistics().getHorsePower());
+             preparedStatement.setInt(2, storageForCars.get(key).getEngineInformation().getEngineStatistics().getTorque() );
+             preparedStatement.execute();
+             Statement statement = this.connection.createStatement();
+             ResultSet resultSet = statement.executeQuery("select LAST_INSERT_ID()");
+             while (resultSet.next()) {
+                 engineStatisticsId= resultSet.getInt("last_insert_id()");
+             }
+         } catch (SQLException e) {
+             throw new RuntimeException(e);
+         }
     }
-    public int getLatestEngineStatisticsId() {
-        try {
-
-            Connection connection = DriverManager.getConnection(url, name, password);
-            Statement statement = connection.createStatement();
-            String query = "SELECT Max(id_engine_statistics)\n" +
-                    "  FROM engine_statistics\n" +
-                    "  ORDER BY id_engine_statistics DESC";
-            ResultSet resultSet = statement.executeQuery(query);
-            while(resultSet.next()) {
-                engineStatisticsId = resultSet.getInt("Max(id_engine_statistics)");
-            }
-            connection.close();
-            statement.close();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    public int getEngineStatisticsId() {
         return engineStatisticsId;
     }
-    public void fillEngineInformation(String key, Storage<String, Car> storageForCars, int engineStatisticsId) {
+    public void fillEngineInformationAndSetId(String key, Storage<String, Car> storageForCars, int engineStatisticsId) {
+        PreparedStatement preparedStatement = null;
         try {
-
-            Connection connection = DriverManager.getConnection(url, name, password);
-            Statement statement = connection.createStatement();
-            String query = "INSERT into cars.engine_information(driveline,engine_type,hybrid," +
-                    "number_of_forward_gears,transmission,id_engine_statistics) values(" +
-                    "'" + storageForCars.get(key).getEngineInformation().getDriveLine() + "'" + "," +
-                    "'" + storageForCars.get(key).getEngineInformation().getEngineType() + "'" + "," +
-                    "'" + storageForCars.get(key).getEngineInformation().isHybrid() + "'" + "," +
-                    storageForCars.get(key).getEngineInformation().getNumberOfForwardGears() + "," +
-                    "'" + storageForCars.get(key).getEngineInformation().getTransmission() + "'" + "," +
-                    engineStatisticsId +
-                    ")";
-            statement.execute(query);
-            connection.close();
-            statement.close();
+            preparedStatement = this.connection.prepareStatement("INSERT into cars.engine_information" +
+                    "(driveline,engine_type,hybrid,number_of_forward_gears,transmission,id_engine_statistics) " +
+                    "values(?,?,?,?,?,?)");
+            preparedStatement.setString(1, storageForCars.get(key).getEngineInformation().getDriveLine());
+            preparedStatement.setString(2, storageForCars.get(key).getEngineInformation().getEngineType());
+            preparedStatement.setBoolean(3, storageForCars.get(key).getEngineInformation().isHybrid());
+            preparedStatement.setInt(4,storageForCars.get(key).getEngineInformation().getNumberOfForwardGears());
+            preparedStatement.setString(5,storageForCars.get(key).getEngineInformation().getTransmission());
+            preparedStatement.setInt(6,engineStatisticsId);
+            preparedStatement.execute();
+            Statement statement = this.connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("select LAST_INSERT_ID()");
+            while (resultSet.next()) {
+                engineInformationId = resultSet.getInt("last_insert_id()");
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-    public int getLatestEngineInformationId() {
-        try {
-            Connection connection = DriverManager.getConnection(url, name, password);
-            Statement statement = connection.createStatement();
-            String query = "SELECT Max(id_engine_information)\n" +
-                    "  FROM engine_information\n" +
-                    "  ORDER BY id_engine_information DESC";
-            ResultSet resultSet = statement.executeQuery(query);
-            while(resultSet.next()) {
-                engineInformationId = resultSet.getInt("Max(id_engine_information)");
-            }
-            connection.close();
-            statement.close();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    public int getEngineInformationId() {
         return engineInformationId;
     }
+
     public void fillCar(String key, Storage<String, Car> storageForCars, int dimensionId, int engineInformationId,
                         int fuelId, int identificationId) {
+        PreparedStatement preparedStatement = null;
         try {
-            Connection connection = DriverManager.getConnection(url, name, password);
-            Statement statement = connection.createStatement();
-            String query = "INSERT into cars.car(id_car,vin,id_dimension,id_engine_information," +
-                    "id_fuel_information,id_identification) values(" +
-                    numberOfCars + "," +
-                    "'" + storageForCars.get(key).getIdentification().getVin() + "'" + "," +
-                    dimensionId + "," + engineInformationId + "," + fuelId + "," + identificationId +
-                    ")";
-            statement.execute(query);
-            connection.close();
-            statement.close();
+            preparedStatement = this.connection.prepareStatement("INSERT into cars.car" +
+                    "(id_car,vin,id_dimension,id_engine_information," +
+                    "id_fuel_information,id_identification) values(?,?,?,?,?,?)");
+            preparedStatement.setInt(1, numberOfCars);
+            preparedStatement.setString(2, storageForCars.get(key).getIdentification().getVin());
+            preparedStatement.setInt(3, dimensionId);
+            preparedStatement.setInt(4,engineInformationId);
+            preparedStatement.setInt(5,fuelId);
+            preparedStatement.setInt(6,identificationId);
+            preparedStatement.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         numberOfCars++;
     }
-//get data with a matching identification.make and makes an object
+
+    //get data with a matching identification.make and makes an object
     public ArrayList<Car> fromDbMakeToCarObj(String make) {
         ArrayList<Car> cars = new ArrayList<>();
+        Statement statement = null;
         try {
-            Connection connection = DriverManager.getConnection(url, name, password);
-            Statement statement = connection.createStatement();
+            statement = this.connection.createStatement();
             String query = "SELECT  car.id_car,car.vin,dimension.height,dimension.width,dimension.length,engine_information.driveline,engine_information.engine_type,\n" +
                     "engine_information.hybrid,engine_information.number_of_forward_gears,engine_information.transmission,\n" +
                     "engine_statistics.hoursepower,engine_statistics.torque,fuel_information.city_mpg,fuel_information.fuel_type,fuel_information.highway_mpg,\n" +
@@ -233,9 +174,9 @@ public class Queries {//preset of queries
                     " join dimension on dimension.id_dimension = car.id_dimension\n" +
                     " join engine_information on engine_information.id_engine_information = car.id_engine_information\n" +
                     " join engine_statistics on  engine_statistics.id_engine_statistics = engine_information.id_engine_statistics" +
-                    " where make = '"+make+"'";
+                    " where make = '" + make + "'";
             ResultSet resultSet = statement.executeQuery(query);
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 int height = resultSet.getInt("height");
                 int width = resultSet.getInt("width");
                 int length = resultSet.getInt("length");
@@ -244,9 +185,9 @@ public class Queries {//preset of queries
                 int torque = resultSet.getInt("torque");
                 int city_mpg = resultSet.getInt("city_mpg");
                 int highway_mpg = resultSet.getInt("highway_mpg");
-                int year =  resultSet.getInt("year");
+                int year = resultSet.getInt("year");
                 double price = resultSet.getDouble("price");
-                String driveline= resultSet.getString("driveline");
+                String driveline = resultSet.getString("driveline");
                 String engine_type = resultSet.getString("engine_type");
                 String hybrid = resultSet.getString("hybrid");
                 String transmission = resultSet.getString("transmission");
@@ -258,14 +199,14 @@ public class Queries {//preset of queries
                 String color = resultSet.getString("color");
                 EngineInformation engineInformation = new EngineInformation();
                 engineInformation.setEngineStatistics(new EngineStatistics());
-                 cars.add(CarBuilder.newInstance().setDimension(new Dimension()).setIdentification(new Identification())
-                         .setEngineInformation(engineInformation).setFuelInformation(new FuelInformation())
-                         .setHeight(height).setLength(length)
-                         .setWidth(width).setDriveLine(driveline).setEngineType(engine_type).setHybrid(hybrid)
-                         .setNumberOfForwardGears(number_of_forward_gears).setTransmission(transmission).setCityMpg(city_mpg)
-                         .setFuelType(fuel_type).setHighwayMpg(highway_mpg).setClassification(classification)
-                         .setId(id).setMake(make).setModelYear(model_year).setYear(year)
-                         .setHorsePower(hoursepower).setTorque(torque).setColor(color).setPrice(price).build());
+                cars.add(CarBuilder.newInstance().setDimension(new Dimension()).setIdentification(new Identification())
+                        .setEngineInformation(engineInformation).setFuelInformation(new FuelInformation())
+                        .setHeight(height).setLength(length)
+                        .setWidth(width).setDriveLine(driveline).setEngineType(engine_type).setHybrid(hybrid)
+                        .setNumberOfForwardGears(number_of_forward_gears).setTransmission(transmission).setCityMpg(city_mpg)
+                        .setFuelType(fuel_type).setHighwayMpg(highway_mpg).setClassification(classification)
+                        .setId(id).setMake(make).setModelYear(model_year).setYear(year)
+                        .setHorsePower(hoursepower).setTorque(torque).setColor(color).setPrice(price).build());
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
