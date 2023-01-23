@@ -26,16 +26,15 @@ public class Queries {//preset of queries
     public void fillDimensionAndSetId(String key, Storage<String, Car> storageForCars) {
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = this.connection.prepareStatement("INSERT into dimension(height,width,length) values(?,?,?)");
+            String query = "INSERT into dimension(height,width,length) values(?,?,?)";
+            preparedStatement = this.connection.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setInt(1, storageForCars.get(key).getDimension().getHeight());
             preparedStatement.setInt(2, storageForCars.get(key).getDimension().getWidth());
             preparedStatement.setInt(3, storageForCars.get(key).getDimension().getLength());
-            //preparedStatement.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
-            preparedStatement.execute();
-            Statement statement = this.connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("select LAST_INSERT_ID()");
-            while (resultSet.next()) {
-                dimensionId = resultSet.getInt("last_insert_id()");
+            preparedStatement.executeUpdate();
+            ResultSet resultSet = preparedStatement.getGeneratedKeys();
+            if(resultSet.next()) {
+                dimensionId = resultSet.getInt(1);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -48,16 +47,16 @@ public class Queries {//preset of queries
     public void fillFuelInformationAndSetId(String key, Storage<String, Car> storageForCars) {
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = this.connection.prepareStatement("INSERT into fuel_information(city_mpg,fuel_type,highway_mpg)" +
-                    " values(?,?,?)");
+            String query = "INSERT into fuel_information(city_mpg,fuel_type,highway_mpg)" +
+                    " values(?,?,?)";
+            preparedStatement = this.connection.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setInt(1, storageForCars.get(key).getFuelInformation().getCityMpg());
             preparedStatement.setString(2, storageForCars.get(key).getFuelInformation().getFuelType());
             preparedStatement.setInt(3, storageForCars.get(key).getFuelInformation().getHighwayMpg());
-            preparedStatement.execute();
-            Statement statement = this.connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("select LAST_INSERT_ID()");
-            while (resultSet.next()) {
-                fuelId = resultSet.getInt("last_insert_id()");
+            preparedStatement.executeUpdate();
+            ResultSet resultSet = preparedStatement.getGeneratedKeys();
+            if(resultSet.next()) {
+                fuelId = resultSet.getInt(1);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -71,8 +70,9 @@ public class Queries {//preset of queries
     public void fillIdentificationAndSetId(String key, Storage<String, Car> storageForCars) {
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = this.connection.prepareStatement("INSERT into identification(classification,id," +
-                            "make,model_year,year,color,price) values(?,?,?,?,?,?,?)");
+            String query = "INSERT into identification(classification,id," +
+                    "make,model_year,year,color,price) values(?,?,?,?,?,?,?)";
+            preparedStatement = this.connection.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, storageForCars.get(key).getIdentification().getClassification());
             preparedStatement.setString(2, storageForCars.get(key).getIdentification().getId());
             preparedStatement.setString(3, storageForCars.get(key).getIdentification().getMake());
@@ -80,11 +80,10 @@ public class Queries {//preset of queries
             preparedStatement.setInt(5,storageForCars.get(key).getIdentification().getYear());
             preparedStatement.setString(6,storageForCars.get(key).getIdentification().getColor());
             preparedStatement.setDouble(7,storageForCars.get(key).getIdentification().getPrice());
-            preparedStatement.execute();
-            Statement statement = this.connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("select LAST_INSERT_ID()");
-            while (resultSet.next()) {
-                identificationId = resultSet.getInt("last_insert_id()");
+            preparedStatement.executeUpdate();
+            ResultSet resultSet = preparedStatement.getGeneratedKeys();
+            if(resultSet.next()) {
+                identificationId = resultSet.getInt(1);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -97,14 +96,14 @@ public class Queries {//preset of queries
      public void fillEngineStatisticsAndSetId(String key, Storage<String, Car> storageForCars) {
          PreparedStatement preparedStatement = null;
          try {
-             preparedStatement = this.connection.prepareStatement("INSERT into cars.engine_statistics(hoursepower,torque) values(?,?)");
+             String query = "INSERT into cars.engine_statistics(hoursepower,torque) values(?,?)";
+             preparedStatement = this.connection.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
              preparedStatement.setInt(1, storageForCars.get(key).getEngineInformation().getEngineStatistics().getHorsePower());
              preparedStatement.setInt(2, storageForCars.get(key).getEngineInformation().getEngineStatistics().getTorque() );
-             preparedStatement.execute();
-             Statement statement = this.connection.createStatement();
-             ResultSet resultSet = statement.executeQuery("select LAST_INSERT_ID()");
-             while (resultSet.next()) {
-                 engineStatisticsId= resultSet.getInt("last_insert_id()");
+             preparedStatement.executeUpdate();
+             ResultSet resultSet = preparedStatement.getGeneratedKeys();
+             if(resultSet.next()) {
+                 engineStatisticsId= resultSet.getInt(1);
              }
          } catch (SQLException e) {
              throw new RuntimeException(e);
@@ -116,20 +115,20 @@ public class Queries {//preset of queries
     public void fillEngineInformationAndSetId(String key, Storage<String, Car> storageForCars, int engineStatisticsId) {
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = this.connection.prepareStatement("INSERT into cars.engine_information" +
+            String query = "INSERT into cars.engine_information" +
                     "(driveline,engine_type,hybrid,number_of_forward_gears,transmission,id_engine_statistics) " +
-                    "values(?,?,?,?,?,?)");
+                    "values(?,?,?,?,?,?)";
+            preparedStatement = this.connection.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, storageForCars.get(key).getEngineInformation().getDriveLine());
             preparedStatement.setString(2, storageForCars.get(key).getEngineInformation().getEngineType());
             preparedStatement.setBoolean(3, storageForCars.get(key).getEngineInformation().isHybrid());
             preparedStatement.setInt(4,storageForCars.get(key).getEngineInformation().getNumberOfForwardGears());
             preparedStatement.setString(5,storageForCars.get(key).getEngineInformation().getTransmission());
             preparedStatement.setInt(6,engineStatisticsId);
-            preparedStatement.execute();
-            Statement statement = this.connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("select LAST_INSERT_ID()");
-            while (resultSet.next()) {
-                engineInformationId = resultSet.getInt("last_insert_id()");
+            preparedStatement.executeUpdate();
+            ResultSet resultSet = preparedStatement.getGeneratedKeys();
+            if(resultSet.next()) {
+                engineInformationId = resultSet.getInt(1);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
