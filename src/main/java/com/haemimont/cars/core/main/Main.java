@@ -13,7 +13,7 @@ public class Main {
         String url = "jdbc:mysql://localhost:3306/cars";
         String path = "src/main/java/csv/cars.csv";
 
-        Car[] cars = FromLinesToObjects.linesToCars(path, 500);//There is no data on the first line (n-1)
+        Car[] cars = FromLinesToObjects.linesToCars(path, 503);//There is no data on the first line (n-1)
         Storage<String, Car> storageForCars = new Storage<>();//creating a new storage for cars
         StorageTools.importObjectsInToStorage(storageForCars, cars);//importing cars in to the storage
         String[] keys = storageForCars.keySet().toArray(new String[0]);//getting all the keys for the storage
@@ -22,20 +22,23 @@ public class Main {
 
         //for each key we get its object and put it in the db
         for(String key:keys){
-            int idDimension,idFuel,idIdentification,idEngineStatistics,idEngineInformation;
-            queries.fillDimensionAndSetId(key,storageForCars);
-            idDimension = queries.getDimensionId();
-            queries.fillFuelInformationAndSetId(key,storageForCars);
-            idFuel = queries.getFuelId();
-            queries.fillIdentificationAndSetId(key,storageForCars);
-            idIdentification = queries.getIdentificationId();
-            queries.fillEngineStatisticsAndSetId(key,storageForCars);
-             idEngineStatistics = queries.getEngineStatisticsId();
-            queries.fillEngineInformationAndSetId(key,storageForCars,idEngineStatistics);
-            idEngineInformation = queries.getEngineInformationId();
+            //check if there is a matching vin in the db if not inserts the information
+            if(!queries.checkForMatchingVin(storageForCars.get(key).getIdentification().getVin())){
+                int idDimension,idFuel,idIdentification,idEngineStatistics,idEngineInformation;
+                queries.fillDimensionAndSetId(key,storageForCars);
+                idDimension = queries.getDimensionId();
+                queries.fillFuelInformationAndSetId(key,storageForCars);
+                idFuel = queries.getFuelId();
+                queries.fillIdentificationAndSetId(key,storageForCars);
+                idIdentification = queries.getIdentificationId();
+                queries.fillEngineStatisticsAndSetId(key,storageForCars);
+                idEngineStatistics = queries.getEngineStatisticsId();
+                queries.fillEngineInformationAndSetId(key,storageForCars,idEngineStatistics);
+                idEngineInformation = queries.getEngineInformationId();
 
-            queries.fillCar(key,storageForCars,idDimension,idEngineInformation,idFuel,idIdentification);
-            int a = 0;
+                queries.fillCar(key,storageForCars,idDimension,idEngineInformation,idFuel,idIdentification);
+            }
+            //nothing
         }
         ArrayList testCars =  queries.fromDbMakeToCarObj("BMW");//gets all the cars with make = ?
         queries.disconnect();

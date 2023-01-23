@@ -4,7 +4,7 @@ import com.haemimont.cars.core.model.*;
 import java.sql.*;
 import java.util.ArrayList;
 public class Queries {//preset of queries
-    int dimensionId, fuelId, identificationId, engineStatisticsId, engineInformationId, numberOfCars = 1;
+    int dimensionId, fuelId, identificationId, engineStatisticsId, engineInformationId;
     Connection connection;
     public void connect(String url, String name, String password) {
         try {
@@ -143,19 +143,35 @@ public class Queries {//preset of queries
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = this.connection.prepareStatement("INSERT into cars.car" +
-                    "(id_car,vin,id_dimension,id_engine_information," +
-                    "id_fuel_information,id_identification) values(?,?,?,?,?,?)");
-            preparedStatement.setInt(1, numberOfCars);
-            preparedStatement.setString(2, storageForCars.get(key).getIdentification().getVin());
-            preparedStatement.setInt(3, dimensionId);
-            preparedStatement.setInt(4,engineInformationId);
-            preparedStatement.setInt(5,fuelId);
-            preparedStatement.setInt(6,identificationId);
+                    "(vin,id_dimension,id_engine_information," +
+                    "id_fuel_information,id_identification) values(?,?,?,?,?)");
+            //preparedStatement.setInt(1, numberOfCars);
+            preparedStatement.setString(1, storageForCars.get(key).getIdentification().getVin());
+            preparedStatement.setInt(2, dimensionId);
+            preparedStatement.setInt(3,engineInformationId);
+            preparedStatement.setInt(4,fuelId);
+            preparedStatement.setInt(5,identificationId);
             preparedStatement.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        numberOfCars++;
+    }
+    public Boolean checkForMatchingVin(String vin){
+        Boolean check=false;
+        PreparedStatement preparedStatement = null;
+        try {
+            String query = "SELECT * FROM cars.car\n" +
+                    "where vin = ?\"\"";
+            preparedStatement = this.connection.prepareStatement(query);
+            preparedStatement.setString(1,vin);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if(resultSet.next()){
+                check = true;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return check;
     }
 
     //get data with a matching identification.make and makes an object
