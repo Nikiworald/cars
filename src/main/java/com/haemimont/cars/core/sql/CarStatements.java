@@ -1,90 +1,82 @@
-package com.haemimont.cars.core.Sql;
-import com.haemimont.cars.core.storage.Storage;
+package com.haemimont.cars.core.sql;
+
 import com.haemimont.cars.core.model.*;
+
 import java.sql.*;
 import java.util.ArrayList;
-public class Queries {//preset of queries
+
+public class CarStatements {//preset of queries
     int dimensionId, fuelId, identificationId, engineStatisticsId, engineInformationId;
-    Connection connection;
-    public void connect(String url, String name, String password) {
+
+    //trying to connect to the sql db and inserting the information from an object to the dimension table
+    //and gets the corresponding id_dimension
+    public void fillDimensionAndSetId(Car car, Connection connection) {
+        PreparedStatement preparedStatement = null;
         try {
-            connection = DriverManager.getConnection(url, name, password);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-    public void disconnect(){
-        try {
-            this.connection.close();
+            String query = "INSERT into dimension(height,width,length) values(?,?,?)";
+            preparedStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setInt(1, car.getDimension().getHeight());
+            preparedStatement.setInt(2, car.getDimension().getWidth());
+            preparedStatement.setInt(3, car.getDimension().getLength());
+            preparedStatement.executeUpdate();
+            ResultSet resultSet = preparedStatement.getGeneratedKeys();
+            if (resultSet.next()) {
+                dimensionId = resultSet.getInt(1);
+            }
+            preparedStatement.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
-    //trying to connect to the sql db and inserting the information from an object to the dimension table
-    //and gets the corresponding id_dimension
-    public void fillDimensionAndSetId(String key, Storage<String, Car> storageForCars) {
-        PreparedStatement preparedStatement = null;
-        try {
-            String query = "INSERT into dimension(height,width,length) values(?,?,?)";
-            preparedStatement = this.connection.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
-            preparedStatement.setInt(1, storageForCars.get(key).getDimension().getHeight());
-            preparedStatement.setInt(2, storageForCars.get(key).getDimension().getWidth());
-            preparedStatement.setInt(3, storageForCars.get(key).getDimension().getLength());
-            preparedStatement.executeUpdate();
-            ResultSet resultSet = preparedStatement.getGeneratedKeys();
-            if(resultSet.next()) {
-                dimensionId = resultSet.getInt(1);
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
     public int getDimensionId() {
         return dimensionId;
     }
 
-    public void fillFuelInformationAndSetId(String key, Storage<String, Car> storageForCars) {
+    public void fillFuelInformationAndSetId(Car car, Connection connection) {
         PreparedStatement preparedStatement = null;
         try {
             String query = "INSERT into fuel_information(city_mpg,fuel_type,highway_mpg)" +
                     " values(?,?,?)";
-            preparedStatement = this.connection.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
-            preparedStatement.setInt(1, storageForCars.get(key).getFuelInformation().getCityMpg());
-            preparedStatement.setString(2, storageForCars.get(key).getFuelInformation().getFuelType());
-            preparedStatement.setInt(3, storageForCars.get(key).getFuelInformation().getHighwayMpg());
+            preparedStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setInt(1, car.getFuelInformation().getCityMpg());
+            preparedStatement.setString(2, car.getFuelInformation().getFuelType());
+            preparedStatement.setInt(3, car.getFuelInformation().getHighwayMpg());
             preparedStatement.executeUpdate();
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
-            if(resultSet.next()) {
+            if (resultSet.next()) {
                 fuelId = resultSet.getInt(1);
             }
+            preparedStatement.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
+
     public int getFuelId() {
         return fuelId;
     }
 
 
-    public void fillIdentificationAndSetId(String key, Storage<String, Car> storageForCars) {
+    public void fillIdentificationAndSetId(Car car, Connection connection) {
         PreparedStatement preparedStatement = null;
         try {
             String query = "INSERT into identification(classification,id," +
                     "make,model_year,year,color,price) values(?,?,?,?,?,?,?)";
-            preparedStatement = this.connection.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
-            preparedStatement.setString(1, storageForCars.get(key).getIdentification().getClassification());
-            preparedStatement.setString(2, storageForCars.get(key).getIdentification().getId());
-            preparedStatement.setString(3, storageForCars.get(key).getIdentification().getMake());
-            preparedStatement.setString(4,storageForCars.get(key).getIdentification().getModelYear());
-            preparedStatement.setInt(5,storageForCars.get(key).getIdentification().getYear());
-            preparedStatement.setString(6,storageForCars.get(key).getIdentification().getColor());
-            preparedStatement.setDouble(7,storageForCars.get(key).getIdentification().getPrice());
+            preparedStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setString(1, car.getIdentification().getClassification());
+            preparedStatement.setString(2, car.getIdentification().getId());
+            preparedStatement.setString(3, car.getIdentification().getMake());
+            preparedStatement.setString(4, car.getIdentification().getModelYear());
+            preparedStatement.setInt(5, car.getIdentification().getYear());
+            preparedStatement.setString(6, car.getIdentification().getColor());
+            preparedStatement.setDouble(7, car.getIdentification().getPrice());
             preparedStatement.executeUpdate();
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
-            if(resultSet.next()) {
+            if (resultSet.next()) {
                 identificationId = resultSet.getInt(1);
             }
+            preparedStatement.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -93,79 +85,87 @@ public class Queries {//preset of queries
     public int getIdentificationId() {
         return identificationId;
     }
-     public void fillEngineStatisticsAndSetId(String key, Storage<String, Car> storageForCars) {
-         PreparedStatement preparedStatement = null;
-         try {
-             String query = "INSERT into cars.engine_statistics(hoursepower,torque) values(?,?)";
-             preparedStatement = this.connection.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
-             preparedStatement.setInt(1, storageForCars.get(key).getEngineInformation().getEngineStatistics().getHorsePower());
-             preparedStatement.setInt(2, storageForCars.get(key).getEngineInformation().getEngineStatistics().getTorque() );
-             preparedStatement.executeUpdate();
-             ResultSet resultSet = preparedStatement.getGeneratedKeys();
-             if(resultSet.next()) {
-                 engineStatisticsId= resultSet.getInt(1);
-             }
-         } catch (SQLException e) {
-             throw new RuntimeException(e);
-         }
+
+    public void fillEngineStatisticsAndSetId(Car car, Connection connection) {
+        PreparedStatement preparedStatement = null;
+        try {
+            String query = "INSERT into cars.engine_statistics(hoursepower,torque) values(?,?)";
+            preparedStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setInt(1, car.getEngineInformation().getEngineStatistics().getHorsePower());
+            preparedStatement.setInt(2, car.getEngineInformation().getEngineStatistics().getTorque());
+            preparedStatement.executeUpdate();
+            ResultSet resultSet = preparedStatement.getGeneratedKeys();
+            if (resultSet.next()) {
+                engineStatisticsId = resultSet.getInt(1);
+            }
+            preparedStatement.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
+
     public int getEngineStatisticsId() {
         return engineStatisticsId;
     }
-    public void fillEngineInformationAndSetId(String key, Storage<String, Car> storageForCars, int engineStatisticsId) {
+
+    public void fillEngineInformationAndSetId(Car car, int engineStatisticsId, Connection connection) {
         PreparedStatement preparedStatement = null;
         try {
             String query = "INSERT into cars.engine_information" +
                     "(driveline,engine_type,hybrid,number_of_forward_gears,transmission,id_engine_statistics) " +
                     "values(?,?,?,?,?,?)";
-            preparedStatement = this.connection.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
-            preparedStatement.setString(1, storageForCars.get(key).getEngineInformation().getDriveLine());
-            preparedStatement.setString(2, storageForCars.get(key).getEngineInformation().getEngineType());
-            preparedStatement.setBoolean(3, storageForCars.get(key).getEngineInformation().isHybrid());
-            preparedStatement.setInt(4,storageForCars.get(key).getEngineInformation().getNumberOfForwardGears());
-            preparedStatement.setString(5,storageForCars.get(key).getEngineInformation().getTransmission());
-            preparedStatement.setInt(6,engineStatisticsId);
+            preparedStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setString(1, car.getEngineInformation().getDriveLine());
+            preparedStatement.setString(2, car.getEngineInformation().getEngineType());
+            preparedStatement.setBoolean(3, car.getEngineInformation().isHybrid());
+            preparedStatement.setInt(4, car.getEngineInformation().getNumberOfForwardGears());
+            preparedStatement.setString(5, car.getEngineInformation().getTransmission());
+            preparedStatement.setInt(6, engineStatisticsId);
             preparedStatement.executeUpdate();
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
-            if(resultSet.next()) {
+            if (resultSet.next()) {
                 engineInformationId = resultSet.getInt(1);
             }
+            preparedStatement.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
+
     public int getEngineInformationId() {
         return engineInformationId;
     }
 
-    public void fillCar(String key, Storage<String, Car> storageForCars, int dimensionId, int engineInformationId,
-                        int fuelId, int identificationId) {
+    public void fillCar(Car car, int dimensionId, int engineInformationId,
+                        int fuelId, int identificationId, Connection connection) {
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = this.connection.prepareStatement("INSERT into cars.car" +
+            preparedStatement = connection.prepareStatement("INSERT into cars.car" +
                     "(vin,id_dimension,id_engine_information," +
                     "id_fuel_information,id_identification) values(?,?,?,?,?)");
             //preparedStatement.setInt(1, numberOfCars);
-            preparedStatement.setString(1, storageForCars.get(key).getIdentification().getVin());
+            preparedStatement.setString(1, car.getIdentification().getVin());
             preparedStatement.setInt(2, dimensionId);
-            preparedStatement.setInt(3,engineInformationId);
-            preparedStatement.setInt(4,fuelId);
-            preparedStatement.setInt(5,identificationId);
+            preparedStatement.setInt(3, engineInformationId);
+            preparedStatement.setInt(4, fuelId);
+            preparedStatement.setInt(5, identificationId);
             preparedStatement.execute();
+            preparedStatement.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-    public Boolean checkForMatchingVin(String vin){
-        Boolean check=false;
+
+    public Boolean checkForMatchingVin(String vin, Connection connection) {
+        Boolean check = false;
         PreparedStatement preparedStatement = null;
         try {
             String query = "SELECT * FROM cars.car\n" +
                     "where vin = ?\"\"";
-            preparedStatement = this.connection.prepareStatement(query);
-            preparedStatement.setString(1,vin);
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, vin);
             ResultSet resultSet = preparedStatement.executeQuery();
-            if(resultSet.next()){
+            if (resultSet.next()) {
                 check = true;
             }
         } catch (SQLException e) {
@@ -175,11 +175,11 @@ public class Queries {//preset of queries
     }
 
     //get data with a matching identification.make and makes an object
-    public ArrayList<Car> fromDbMakeToCarObj(String make) {
+    public ArrayList<Car> fromDbMakeToCarObj(String make, Connection connection) {
         ArrayList<Car> cars = new ArrayList<>();
         Statement statement = null;
         try {
-            statement = this.connection.createStatement();
+            statement = connection.createStatement();
             String query = "SELECT  car.id_car,car.vin,dimension.height,dimension.width,dimension.length,engine_information.driveline,engine_information.engine_type,\n" +
                     "engine_information.hybrid,engine_information.number_of_forward_gears,engine_information.transmission,\n" +
                     "engine_statistics.hoursepower,engine_statistics.torque,fuel_information.city_mpg,fuel_information.fuel_type,fuel_information.highway_mpg,\n" +
@@ -223,6 +223,7 @@ public class Queries {//preset of queries
                         .setId(id).setMake(make).setModelYear(model_year).setYear(year)
                         .setHorsePower(hoursepower).setTorque(torque).setColor(color).setPrice(price).build());
             }
+            statement.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
