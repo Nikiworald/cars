@@ -12,8 +12,10 @@ public class Main {
         String password = "niki";
         String url = "jdbc:mysql://localhost:3306/cars";
         String path = "src/main/java/csv/cars.csv";
+        //int uploaded = 0;
+        //int notUploaded = 0;
 
-        Car[] cars = FromLinesToObjects.linesToCars(path, 503);//There is no data on the first line (n-1)
+        Car[] cars = FromLinesToObjects.linesToCars(path, 1000);//There is no data on the first line (n-1)
         Storage<String, Car> storageForCars = new Storage<>();//creating a new storage for cars
         StorageTools.importObjectsInToStorage(storageForCars, cars);//importing cars in to the storage
         String[] keys = storageForCars.keySet().toArray(new String[0]);//getting all the keys for the storage
@@ -37,10 +39,17 @@ public class Main {
                 idEngineInformation = queries.getEngineInformationId();
 
                 queries.fillCar(key,storageForCars,idDimension,idEngineInformation,idFuel,idIdentification);
+                //System.out.println(storageForCars.get(key).getIdentification().getVin() +"|vin is uploaded");
+                //uploaded++;
             }
-            //nothing
+            else{
+                //System.out.println(storageForCars.get(key).getIdentification().getVin() +"|vin is already in the db");
+                //notUploaded++;
+            }
         }
-        ArrayList testCars =  queries.fromDbMakeToCarObj("BMW");//gets all the cars with make = ?
+        //System.out.println("uploaded:"+uploaded);
+        //System.out.println("not uploaded:"+notUploaded);
+        ArrayList<Car> testCars =  queries.fromDbMakeToCarObj("BMW");//gets all the cars with make = ?
         queries.disconnect();
     }
 }
