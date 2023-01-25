@@ -33,7 +33,7 @@ public class Main {
         //for each key we get its object and put it in the db
         for (String key : keys) {
             Car currentCar = storageForCars.get(key);
-            //check if there is a matching vin in the db if not inserts the information
+            //check if there is a matching vin in the db if not insert the information
             try {
                 int idDimension, idFuel, idIdentification, idEngineStatistics, idEngineInformation;
 
