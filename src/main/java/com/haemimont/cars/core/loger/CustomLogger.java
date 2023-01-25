@@ -1,8 +1,9 @@
 package com.haemimont.cars.core.loger;
 
+import com.haemimont.cars.core.config.Config;
+
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
@@ -15,7 +16,7 @@ public class CustomLogger {
     {
         SimpleDateFormat format = new SimpleDateFormat("M-d_HHmmss");
         try {
-            fh = new FileHandler("C:\\Users\\user\\Desktop\\cars\\logger.log");
+            fh = new FileHandler(Config.getLoggerFilePath());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

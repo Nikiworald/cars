@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         CustomLogger customLogger = new CustomLogger();
-        Car[] cars = FromLinesToObjects.linesToCars(Config.getPath(), 50);//There is no data on the first line (n-1)
+        Car[] cars = FromLinesToObjects.linesToCars(Config.getCsvFilePath(), 50);//There is no data on the first line (n-1)
         Storage<String, Car> storageForCars = new Storage<>();//creating a new storage for cars
         StorageTools.putCarsInStorage(storageForCars, cars);//importing cars in to the storage
         String[] keys = storageForCars.keySet().toArray(new String[0]);//getting all the keys for the storage
