@@ -1,4 +1,6 @@
 package com.haemimont.cars.core.tools;
+import com.haemimont.cars.core.loger.CustomLogger;
+
 import java.io.*;
 import java.util.Scanner;
 //basic file reader
@@ -17,7 +19,7 @@ public class FileReader {
             }
 
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            CustomLogger.LogError("File not found:"+path);
         }
         return outputOfLines;
     }

@@ -1,16 +1,16 @@
 package com.haemimont.cars.core.sql;
 
+import com.haemimont.cars.core.loger.CustomLogger;
 import com.haemimont.cars.core.model.*;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 public class CarStatements {//preset of queries
-    int dimensionId, fuelId, identificationId, engineStatisticsId, engineInformationId;
 
     //trying to connect to the sql db and inserting the information from an object to the dimension table
     //and gets the corresponding id_dimension
-    public void fillDimensionAndSetId(Car car, Connection connection) {
+    public int insertCarInDimension(Car car, Connection connection) {
         PreparedStatement preparedStatement = null;
         try {
             String query = "INSERT into dimension(height,width,length) values(?,?,?)";
@@ -21,19 +21,16 @@ public class CarStatements {//preset of queries
             preparedStatement.executeUpdate();
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
             if (resultSet.next()) {
-                dimensionId = resultSet.getInt(1);
+                return resultSet.getInt(1);
             }
             preparedStatement.close();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            CustomLogger.LogError("Could not insert car:"+car.getIdentification().getVin()+"into dimension");
         }
+        return 0;
     }
 
-    public int getDimensionId() {
-        return dimensionId;
-    }
-
-    public void fillFuelInformationAndSetId(Car car, Connection connection) {
+    public int insertCarInFuelInformation(Car car, Connection connection) {
         PreparedStatement preparedStatement = null;
         try {
             String query = "INSERT into fuel_information(city_mpg,fuel_type,highway_mpg)" +
@@ -45,20 +42,16 @@ public class CarStatements {//preset of queries
             preparedStatement.executeUpdate();
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
             if (resultSet.next()) {
-                fuelId = resultSet.getInt(1);
+                return resultSet.getInt(1);
             }
             preparedStatement.close();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            CustomLogger.LogError("Could not insert car:"+car.getIdentification().getVin()+"fuel_information");
         }
+        return 0;
     }
 
-    public int getFuelId() {
-        return fuelId;
-    }
-
-
-    public void fillIdentificationAndSetId(Car car, Connection connection) {
+    public int insertCarInIdentification(Car car, Connection connection) {
         PreparedStatement preparedStatement = null;
         try {
             String query = "INSERT into identification(classification,id," +
@@ -74,19 +67,15 @@ public class CarStatements {//preset of queries
             preparedStatement.executeUpdate();
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
             if (resultSet.next()) {
-                identificationId = resultSet.getInt(1);
+                 return resultSet.getInt(1);
             }
             preparedStatement.close();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            CustomLogger.LogError("Could not insert car:"+car.getIdentification().getVin()+"identification");
         }
+        return 0;
     }
-
-    public int getIdentificationId() {
-        return identificationId;
-    }
-
-    public void fillEngineStatisticsAndSetId(Car car, Connection connection) {
+    public int insertCarInEngineStatistics(Car car, Connection connection) {
         PreparedStatement preparedStatement = null;
         try {
             String query = "INSERT into cars.engine_statistics(hoursepower,torque) values(?,?)";
@@ -96,19 +85,16 @@ public class CarStatements {//preset of queries
             preparedStatement.executeUpdate();
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
             if (resultSet.next()) {
-                engineStatisticsId = resultSet.getInt(1);
+                return resultSet.getInt(1);
             }
             preparedStatement.close();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            CustomLogger.LogError("Could not insert car:"+car.getIdentification().getVin()+"engine_statistics");
         }
+        return 0;
     }
 
-    public int getEngineStatisticsId() {
-        return engineStatisticsId;
-    }
-
-    public void fillEngineInformationAndSetId(Car car, int engineStatisticsId, Connection connection) {
+    public int insertCarInEngineStatistics(Car car, int engineStatisticsId, Connection connection) {
         PreparedStatement preparedStatement = null;
         try {
             String query = "INSERT into cars.engine_information" +
@@ -124,20 +110,17 @@ public class CarStatements {//preset of queries
             preparedStatement.executeUpdate();
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
             if (resultSet.next()) {
-                engineInformationId = resultSet.getInt(1);
+                return resultSet.getInt(1);
             }
             preparedStatement.close();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            CustomLogger.LogError("Could not insert car:"+car.getIdentification().getVin()+"engine_information");
         }
+        return 0;
     }
 
-    public int getEngineInformationId() {
-        return engineInformationId;
-    }
-
-    public void fillCar(Car car, int dimensionId, int engineInformationId,
-                        int fuelId, int identificationId, Connection connection) {
+    public void insertCarInCar(Car car, int dimensionId, int engineInformationId,
+                               int fuelId, int identificationId, Connection connection) {
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement("INSERT into cars.car" +
@@ -152,7 +135,7 @@ public class CarStatements {//preset of queries
             preparedStatement.execute();
             preparedStatement.close();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            CustomLogger.LogError("Could not insert car:"+car.getIdentification().getVin()+"car");
         }
     }
 
@@ -169,13 +152,13 @@ public class CarStatements {//preset of queries
                 check = true;
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            CustomLogger.LogError("Could not check for vin:"+vin);
         }
         return check;
     }
 
     //get data with a matching identification.make and makes an object
-    public ArrayList<Car> fromDbMakeToCarObj(String make, Connection connection) {
+    public ArrayList<Car> getCarFromDbByMake(String make, Connection connection) {
         ArrayList<Car> cars = new ArrayList<>();
         Statement statement = null;
         try {
@@ -225,7 +208,7 @@ public class CarStatements {//preset of queries
             }
             statement.close();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            CustomLogger.LogError("Could not get car from the DB");
         }
         return cars;
     }

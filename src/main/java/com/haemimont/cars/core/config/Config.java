@@ -1,24 +1,24 @@
 package com.haemimont.cars.core.config;
 
 public class Config {
-    final String name = "root";
-    final String password = "niki";
-    final String url = "jdbc:mysql://localhost:3306/cars";
-    final String path = "src/main/java/csv/cars.csv";
+    final static String name = "root";
+    final static String password = "niki";
+    final static String url = "jdbc:mysql://localhost:3306/cars";
+    final static String path = "src/main/java/csv/cars.csv";
 
-    public String getName() {
+    public static String getName() {
         return name;
     }
 
-    public String getPassword() {
+    public static String getPassword() {
         return password;
     }
 
-    public String getUrl() {
+    public static String getUrl() {
         return url;
     }
 
-    public String getPath() {
+    public static String getPath() {
         return path;
     }
 }
