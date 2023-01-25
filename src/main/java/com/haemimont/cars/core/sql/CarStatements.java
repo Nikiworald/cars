@@ -46,7 +46,7 @@ public class CarStatements {//preset of queries
             }
             preparedStatement.close();
         } catch (SQLException e) {
-            CustomLogger.LogError("Could not insert car:"+car.getIdentification().getVin()+"fuel_information");
+            CustomLogger.LogError("Could not insert car:"+car.getIdentification().getVin()+"into fuel_information");
         }
         return 0;
     }
@@ -71,7 +71,7 @@ public class CarStatements {//preset of queries
             }
             preparedStatement.close();
         } catch (SQLException e) {
-            CustomLogger.LogError("Could not insert car:"+car.getIdentification().getVin()+"identification");
+            CustomLogger.LogError("Could not insert car:"+car.getIdentification().getVin()+"into identification");
         }
         return 0;
     }
@@ -89,7 +89,7 @@ public class CarStatements {//preset of queries
             }
             preparedStatement.close();
         } catch (SQLException e) {
-            CustomLogger.LogError("Could not insert car:"+car.getIdentification().getVin()+"engine_statistics");
+            CustomLogger.LogError("Could not insert car:"+car.getIdentification().getVin()+"into engine_statistics");
         }
         return 0;
     }
@@ -114,7 +114,7 @@ public class CarStatements {//preset of queries
             }
             preparedStatement.close();
         } catch (SQLException e) {
-            CustomLogger.LogError("Could not insert car:"+car.getIdentification().getVin()+"engine_information");
+            CustomLogger.LogError("Could not insert car:"+car.getIdentification().getVin()+"into engine_information");
         }
         return 0;
     }
@@ -135,7 +135,7 @@ public class CarStatements {//preset of queries
             preparedStatement.execute();
             preparedStatement.close();
         } catch (SQLException e) {
-            CustomLogger.LogError("Could not insert car:"+car.getIdentification().getVin()+"car");
+            CustomLogger.LogError("Could not insert car:"+car.getIdentification().getVin()+"into car");
         }
     }
 

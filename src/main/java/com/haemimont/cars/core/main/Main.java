@@ -14,8 +14,8 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        CustomLogger customLogger = new CustomLogger();
-        Car[] cars = FromLinesToObjects.linesToCars(Config.getCsvFilePath(), 50);//There is no data on the first line (n-1)
+        //CustomLogger customLogger = new CustomLogger();
+        Car[] cars = FromLinesToObjects.linesToCars(Config.getCsvFilePath(), 52);//There is no data on the first line (n-1)
         Storage<String, Car> storageForCars = new Storage<>();//creating a new storage for cars
         StorageTools.putCarsInStorage(storageForCars, cars);//importing cars in to the storage
         String[] keys = storageForCars.keySet().toArray(new String[0]);//getting all the keys for the storage
@@ -31,40 +31,38 @@ public class Main {
         }
 
         //for each key we get its object and put it in the db
-        for(String key:keys){
+        for (String key : keys) {
             Car currentCar = storageForCars.get(key);
             //check if there is a matching vin in the db if not inserts the information
-           try {
-               int idDimension, idFuel, idIdentification, idEngineStatistics, idEngineInformation;
+            try {
+                int idDimension, idFuel, idIdentification, idEngineStatistics, idEngineInformation;
 
-               idDimension = carStatements.insertCarInDimension(currentCar, connection);
+                idDimension = carStatements.insertCarInDimension(currentCar, connection);
 
+                idFuel = carStatements.insertCarInFuelInformation(currentCar, connection);
 
-               idFuel = carStatements.insertCarInFuelInformation(currentCar, connection);
+                idIdentification = carStatements.insertCarInIdentification(currentCar, connection);
 
-               idIdentification = carStatements.insertCarInIdentification(currentCar, connection);
+                idEngineStatistics = carStatements.insertCarInEngineStatistics(currentCar, connection);
 
-               idEngineStatistics = carStatements.insertCarInEngineStatistics(currentCar, connection);
+                idEngineInformation = carStatements.insertCarInEngineStatistics(currentCar, idEngineStatistics,
+                        connection);
 
-               idEngineInformation = carStatements.insertCarInEngineStatistics(currentCar, idEngineStatistics,
-                       connection);
-
-               carStatements.insertCarInCar(storageForCars.get(key), idDimension, idEngineInformation, idFuel, idIdentification,
-                       connectionManager.getConnection());
-               connectionManager.getConnection().commit();//if there is no errors we commit the changes
-               CustomLogger.LogInfo("car:"+currentCar.getIdentification().getVin()+"inserted in the db:"
-                       +connection.getCatalog());
-           }
-           catch (Exception e){
-               CustomLogger.LogError("car"+currentCar.getIdentification().getVin()+
-                       "is already in the db|Rolling back changes");
-               try {
-                   connectionManager.getConnection().rollback();
-                   CustomLogger.LogInfo("Rolled back changes");
-               } catch (SQLException ex) {
-                   CustomLogger.LogError("Failed to roll back");
-               }
-           }
+                carStatements.insertCarInCar(storageForCars.get(key), idDimension, idEngineInformation, idFuel, idIdentification,
+                        connectionManager.getConnection());
+                connectionManager.getConnection().commit();//if there is no errors we commit the changes
+                CustomLogger.LogInfo("car:" + currentCar.getIdentification().getVin() + " inserted in the db:"
+                        + connection.getCatalog());
+            } catch (Exception e) {
+                CustomLogger.LogError("car" + currentCar.getIdentification().getVin() +
+                        "is already in the db|Rolling back changes");
+                try {
+                    connectionManager.getConnection().rollback();
+                    CustomLogger.LogInfo("Rolled back changes");
+                } catch (SQLException ex) {
+                    CustomLogger.LogError("Failed to roll back");
+                }
+            }
         }
         try {//turning on autocommit
             connectionManager.getConnection().setAutoCommit(true);
@@ -74,7 +72,7 @@ public class Main {
         }
         //System.out.println("uploaded:"+uploaded);
         //System.out.println("not uploaded:"+notUploaded);
-        ArrayList<Car> testCars =  carStatements.getCarFromDbByMake("BMW",connectionManager.getConnection());//gets all the cars with make = ?
+        ArrayList<Car> testCars = carStatements.getCarFromDbByMake("BMW", connectionManager.getConnection());//gets all the cars with make = ?
         connectionManager.disconnect();
     }
 }
