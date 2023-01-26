@@ -1,13 +1,42 @@
 package com.haemimont.cars.core.config;
 
-public class Config {
-    final static String name = "root";
-    final static String password = "niki";
-    final static String url = "jdbc:mysql://localhost:3306/cars";
-    final static String csvFilePath = "src/main/java/csv/cars.csv";
-    final static String loggerFilePath = "C:\\Users\\user\\Desktop\\cars\\logger.log";
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
-    public static String getName() {
+public class Config {
+    static Properties pr = new Properties();
+    InputStream in;
+    static String name ;
+    static String password ;
+    static String dbUrl ;
+    static String csvFilePath ;
+    static String loggerFilePath ;
+
+    {
+        try {
+            in = new FileInputStream("src/main/java/com/haemimont/cars/core/config/Properties.properties");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Config()  {//get the info from the properties file
+        try {
+            pr.load(in);
+            name = pr.getProperty("name");
+            password = pr.getProperty("password");
+            dbUrl = pr.getProperty("dbUrl");
+            csvFilePath = pr.getProperty("csvFilePath");
+            loggerFilePath = pr.getProperty("loggerFilePath");
+        } catch (IOException e) {
+            throw new RuntimeException(e);//logger in not working at this point
+        }
+    }
+
+
+    public static String getUserName() {
         return name;
     }
 
@@ -15,8 +44,8 @@ public class Config {
         return password;
     }
 
-    public static String getUrl() {
-        return url;
+    public static String getDbUrl() {
+        return dbUrl;
     }
 
     public static String getCsvFilePath() {
