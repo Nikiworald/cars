@@ -16,7 +16,7 @@ public class Config {
 
     {
         try {
-            in = new FileInputStream("src/main/java/com/haemimont/cars/core/config/Properties.properties");
+            in = new FileInputStream("src/main/resources/Properties.properties");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef3bf76b-8d8b-4f5a-8b3f-3165c1ba23b5" name="Changes" comment="1.4.3">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/config/properties.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/InitDB.java" afterDir="false" />
+    <list default="true" id="ef3bf76b-8d8b-4f5a-8b3f-3165c1ba23b5" name="Changes" comment="1.4.4">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Properties.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/config/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/main/Main.java" afterDir="false" />
@@ -289,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674660322542</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="1.4.4">
+      <created>1674743985211</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1674743985211</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -369,7 +375,8 @@
     <MESSAGE value="1.4.2" />
     <MESSAGE value="1.4.2.1" />
     <MESSAGE value="1.4.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.4.3" />
+    <MESSAGE value="1.4.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.4.4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
