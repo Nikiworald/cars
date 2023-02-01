@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef3bf76b-8d8b-4f5a-8b3f-3165c1ba23b5" name="Changes" comment="1.4.4">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/service/CarService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/service/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/CarServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/student-record.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+    <list default="true" id="ef3bf76b-8d8b-4f5a-8b3f-3165c1ba23b5" name="Changes" comment="1.4.5">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/StudentServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/config/properties.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/service/CarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/service/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/CarServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/CarServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/CarStatements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/CarStatements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/InitDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/InitDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/student-record.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +54,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.3862069",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "configurable.group.tools"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -61,11 +62,11 @@
       <recent name="C:\Users\user\Desktop\cars\src\main\java\csv" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\cars\src\main\webapp\WEB-INF\jsp" />
       <recent name="C:\Users\user\Desktop\cars\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\user\Desktop\cars\src\main\java\com\haemimont\cars\core" />
       <recent name="C:\Users\user\Desktop\cars\src\main\webapp" />
       <recent name="C:\Users\user\Desktop\cars\src\main\resources" />
-      <recent name="C:\Users\user\Desktop\cars\src\main\java\com\haemimont\cars\core\main" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.haemimont.cars.core.model" />
@@ -315,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674821617484</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="1.4.5">
+      <created>1675178639969</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1675178639969</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -396,7 +404,8 @@
     <MESSAGE value="1.4.2.1" />
     <MESSAGE value="1.4.3" />
     <MESSAGE value="1.4.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.4.4" />
+    <MESSAGE value="1.4.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.4.5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -407,9 +416,9 @@
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/CarServlet.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="58" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/service/CarService.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="61" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

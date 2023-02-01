@@ -4,8 +4,17 @@
         <servlet-name>cars</servlet-name>
         <servlet-class>com.haemimont.cars.core.servlet.CarServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>student</servlet-name>
+        <servlet-class>com.haemimont.cars.core.servlet.StudentServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
+        <servlet-name>student</servlet-name>
         <servlet-name>cars</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/cars/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>student</servlet-name>
+        <url-pattern>/student/*</url-pattern>
     </servlet-mapping>
 </web-app>

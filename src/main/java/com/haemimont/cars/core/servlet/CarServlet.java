@@ -2,20 +2,22 @@ package com.haemimont.cars.core.servlet;
 
 import com.haemimont.cars.core.model.Car;
 import com.haemimont.cars.core.service.CarService;
-import jakarta.servlet.RequestDispatcher;
+import com.haemimont.cars.core.sql.ConnectionManager;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
 import java.io.OutputStream;
-import java.util.Arrays;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
+import java.sql.Connection;
+import java.util.Map;
+
 
 public class CarServlet extends HttpServlet {
-//    @Override
+   CarService carService = new CarService();
+
+   Connection connection = carService.connectToDbAndGetConnection();
+    //    @Override
 //    public void doGet(HttpServletRequest request, HttpServletResponse response) {
 //        String param = request.getParameter("id");
 //        Integer key = (param == null) ? null : Integer.valueOf((param.trim()));
@@ -46,16 +48,13 @@ public class CarServlet extends HttpServlet {
 //            }
 //        }
 //    }
-    private CarService carService = new CarService();
-
-
-    @Override
+  @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String param = req.getParameter("id");
         Integer key = (param == null) ? null : Integer.valueOf((param.trim()));
+      Car car = carService.getCar("id_car",key.toString(),connection);
         //super.doGet(req, resp);
-        //sendResponse(resp, key.toString());
-        processRequest(req, resp);
+        sendResponse(resp, car.toString());
     }
 
     @Override
@@ -88,20 +87,4 @@ public class CarServlet extends HttpServlet {
             throw new RuntimeException(Integer.toString(HttpServletResponse.SC_INTERNAL_SERVER_ERROR));
         }
     }
-    private void processRequest(
-            HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-        String studentID = request.getParameter("id");
-        if (studentID != null) {
-            int id = Integer.parseInt(studentID);
-            carService.getStudent(id)
-                    .ifPresent(s -> request.setAttribute("studentRecord", s));
-        }
-
-        RequestDispatcher dispatcher = request.getRequestDispatcher(
-                "/WEB-INF/student-record.jsp");
-        dispatcher.forward(request, response);
-    }
-
 }

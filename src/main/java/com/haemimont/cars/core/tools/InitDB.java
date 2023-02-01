@@ -71,7 +71,7 @@ public class InitDB {
         }
         //System.out.println("uploaded:"+uploaded);
         //System.out.println("not uploaded:"+notUploaded);
-        ArrayList<Car> testCars = carStatements.getCarFromDbByMake("BMW", connectionManager.getConnection());//gets all the cars with make = ?
+        ArrayList<Car> testCars = carStatements.getCarsFromDb("make","BMW", connectionManager.getConnection());//gets all the cars with make = ?
         connectionManager.disconnect();
     }
 }
