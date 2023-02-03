@@ -16,7 +16,7 @@ import java.util.Map;
 public class CarServlet extends HttpServlet {
    CarService carService = new CarService();
 
-   Connection connection = carService.connectToDbAndGetConnection();
+
     //    @Override
 //    public void doGet(HttpServletRequest request, HttpServletResponse response) {
 //        String param = request.getParameter("id");
@@ -52,9 +52,14 @@ public class CarServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String param = req.getParameter("id");
         Integer key = (param == null) ? null : Integer.valueOf((param.trim()));
-      Car car = carService.getCar("id_car",key.toString(),connection);
-        //super.doGet(req, resp);
-        sendResponse(resp, car.toString());
+        String response;
+
+      Car car = carService.getCar("id_car",key.toString());
+      if(car == null){response = "car not found";}
+      else{response = car.getDimension().getHeight()+"/"+car.getDimension().getLength()+"/"+
+              car.getDimension().getWidth()+"/"+car.getIdentification().getVin()+"/"+
+              car.getIdentification().getId();}
+        sendResponse(resp,response);
     }
 
     @Override

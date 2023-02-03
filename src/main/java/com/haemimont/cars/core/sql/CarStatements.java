@@ -195,6 +195,7 @@ public class CarStatements {//preset of queries
                 String make = resultSet.getString("make");
                 String model_year = resultSet.getString("model_year");
                 String color = resultSet.getString("color");
+                String vin = resultSet.getString("vin");
                 EngineInformation engineInformation = new EngineInformation();
                 engineInformation.setEngineStatistics(new EngineStatistics());
                 cars.add(CarBuilder.newInstance().setDimension(new Dimension()).setIdentification(new Identification())
@@ -205,6 +206,7 @@ public class CarStatements {//preset of queries
                         .setFuelType(fuel_type).setHighwayMpg(highway_mpg).setClassification(classification)
                         .setId(id).setMake(make).setModelYear(model_year).setYear(year)
                         .setHorsePower(hoursepower).setTorque(torque).setColor(color).setPrice(price).build());
+                cars.get(cars.size()-1).getIdentification().setVin(vin);
             }
             statement.close();
         } catch (SQLException e) {
@@ -249,6 +251,7 @@ public class CarStatements {//preset of queries
                 String make = resultSet.getString("make");
                 String model_year = resultSet.getString("model_year");
                 String color = resultSet.getString("color");
+                String vin = resultSet.getString("vin");
                 EngineInformation engineInformation = new EngineInformation();
                 engineInformation.setEngineStatistics(new EngineStatistics());
                 car = CarBuilder.newInstance().setDimension(new Dimension()).setIdentification(new Identification())
@@ -259,6 +262,7 @@ public class CarStatements {//preset of queries
                         .setFuelType(fuel_type).setHighwayMpg(highway_mpg).setClassification(classification)
                         .setId(id).setMake(make).setModelYear(model_year).setYear(year)
                         .setHorsePower(hoursepower).setTorque(torque).setColor(color).setPrice(price).build();
+                car.getIdentification().setVin(vin);
             }
             statement.close();
         } catch (SQLException e) {
