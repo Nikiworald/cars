@@ -31,4 +31,7 @@ public class CarService {
     public ArrayList<Car> getCars(String fitler, String param){
         return carStatements.getCarsFromDb(fitler,param,this.connection);
     }
+    public ArrayList<Car> getAllCars(){
+        return carStatements.getCarsFromDb(this.connection);
+    }
 }

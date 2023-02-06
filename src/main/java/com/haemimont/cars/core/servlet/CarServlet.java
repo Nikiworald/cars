@@ -50,18 +50,20 @@ public class CarServlet extends HttpServlet {
   @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String paramNotFinal = req.getParameter("param");
+      ArrayList<Car> cars;
         String filter = req.getParameter("filter");
-
         Integer param = (paramNotFinal == null) ? null : Integer.valueOf((paramNotFinal.trim()));
-     // Car car = carService.getCar(filter,param.toString());
-      ArrayList<Car> cars = carService.getCars(filter,param.toString());
+
+      if(filter==null&&param==null){
+          cars = carService.getAllCars();
+      }
+      else {cars = carService.getCars(filter,param.toString());}
       String json ;
       if(cars == null){json = "car/s not found";sendResponse(resp,json);}
       else{
           resp.setContentType("application/json");
           resp.setCharacterEncoding("UTF-8");
           JSONArray jsonArray = new JSONArray(cars.toArray());
-         // json = new Gson().toJson(cars);
           sendResponse(resp,jsonArray.toString());
       }
     }

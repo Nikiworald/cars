@@ -7,7 +7,8 @@ import java.util.Properties;
 
 public class Config {
     static Properties pr = new Properties();
-    InputStream in;
+    static InputStream in;
+    static InputStream inWeb;
     static String name ;
     static String password ;
     static String dbUrl ;
@@ -17,6 +18,7 @@ public class Config {
     {
         try {
             in = new FileInputStream("src/main/resources/Properties.properties");
+            inWeb = new FileInputStream("/WEB-INF/classes/Properties.properties");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -50,7 +52,8 @@ public class Config {
         return csvFilePath;
     }
     public static String getLoggerFilePath(){return loggerFilePath;}
-    public static String getProperty(String key){
+    public static String getProperty(String key) throws IOException {
+        pr.load(inWeb);
        String prop = pr.getProperty(key);
        return prop;
     }

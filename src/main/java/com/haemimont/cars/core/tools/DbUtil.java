@@ -1,7 +1,5 @@
 package com.haemimont.cars.core.tools;
 
-import com.haemimont.cars.core.config.Config;
-
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -11,7 +9,6 @@ import java.sql.SQLException;
 
 public class DbUtil {
     static Connection connection = null;
-    static Config config = new Config();
 
    static {
         try {
