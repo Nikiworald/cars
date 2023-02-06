@@ -13,7 +13,7 @@ public class StudentServlet extends HttpServlet {
         Integer key = (param == null) ? null : Integer.valueOf((param.trim()));
         String finalk = key.toString()+"AAAAAAAAA";
         //super.doGet(req, resp);
-        sendResponse(resp, "2");
+        sendResponse(resp, finalk);
     }
 
     @Override

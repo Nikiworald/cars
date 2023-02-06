@@ -58,13 +58,14 @@ public class CarServlet extends HttpServlet {
           cars = carService.getAllCars();
       }
       else {cars = carService.getCars(filter,param.toString());}
-      String json ;
-      if(cars == null){json = "car/s not found";sendResponse(resp,json);}
+      String response ;
+      if(cars == null){response = "car/s not found";sendResponse(resp,response);}
       else{
           resp.setContentType("application/json");
           resp.setCharacterEncoding("UTF-8");
           JSONArray jsonArray = new JSONArray(cars.toArray());
-          sendResponse(resp,jsonArray.toString());
+          response = jsonArray.toString();
+          sendResponse(resp,response);
       }
     }
 
