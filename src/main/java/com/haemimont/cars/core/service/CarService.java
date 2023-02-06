@@ -25,7 +25,10 @@ public class CarService {
     }
 
 
-    public Car getCar(String para1, String para2) {
-        return carStatements.getCarFromDb(para1,para2,this.connection);
+    public Car getCar(String filter, String param) {
+        return carStatements.getCarFromDb(filter,param,this.connection);
+    }
+    public ArrayList<Car> getCars(String fitler, String param){
+        return carStatements.getCarsFromDb(fitler,param,this.connection);
     }
 }

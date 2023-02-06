@@ -2,15 +2,14 @@ package com.haemimont.cars.core.servlet;
 
 import com.haemimont.cars.core.model.Car;
 import com.haemimont.cars.core.service.CarService;
-import com.haemimont.cars.core.sql.ConnectionManager;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.json.JSONArray;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.sql.Connection;
-import java.util.Map;
+import java.util.ArrayList;
 
 
 public class CarServlet extends HttpServlet {
@@ -50,16 +49,21 @@ public class CarServlet extends HttpServlet {
 //    }
   @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String param = req.getParameter("id");
-        Integer key = (param == null) ? null : Integer.valueOf((param.trim()));
-        String response;
+        String paramNotFinal = req.getParameter("param");
+        String filter = req.getParameter("filter");
 
-      Car car = carService.getCar("id_car",key.toString());
-      if(car == null){response = "car not found";}
-      else{response = car.getDimension().getHeight()+"/"+car.getDimension().getLength()+"/"+
-              car.getDimension().getWidth()+"/"+car.getIdentification().getVin()+"/"+
-              car.getIdentification().getId();}
-        sendResponse(resp,response);
+        Integer param = (paramNotFinal == null) ? null : Integer.valueOf((paramNotFinal.trim()));
+     // Car car = carService.getCar(filter,param.toString());
+      ArrayList<Car> cars = carService.getCars(filter,param.toString());
+      String json ;
+      if(cars == null){json = "car/s not found";sendResponse(resp,json);}
+      else{
+          resp.setContentType("application/json");
+          resp.setCharacterEncoding("UTF-8");
+          JSONArray jsonArray = new JSONArray(cars.toArray());
+         // json = new Gson().toJson(cars);
+          sendResponse(resp,jsonArray.toString());
+      }
     }
 
     @Override

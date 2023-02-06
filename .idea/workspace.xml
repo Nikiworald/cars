@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef3bf76b-8d8b-4f5a-8b3f-3165c1ba23b5" name="Changes" comment="1.4.5">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/DbUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" afterDir="false" />
+    <list default="true" id="ef3bf76b-8d8b-4f5a-8b3f-3165c1ba23b5" name="Changes" comment="1.5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/config/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/service/CarService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/CarServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/CarServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/CarStatements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/CarStatements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/DbUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/DbUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Properties.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Properties.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,19 +49,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Downloads/jakarta.servlet-api-5.0.0-M2.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.3862069&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/user/Downloads/gson-2.10.1.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.3862069",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\Desktop\cars\src\main\java\csv" />
@@ -105,9 +104,6 @@
       <predefined_log_file id="Tomcat Host Manager Log" />
       <option name="contextPath" value="/cars" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
-      <option name="envOptions">
-        <map />
-      </option>
       <option name="tomcatInfo">
         <TomcatInfo>
           <option name="name" value="Apache Tomcat/10.0.27" />
@@ -116,16 +112,6 @@
         </TomcatInfo>
       </option>
       <option name="vmOptions" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="com.poratu.idea.plugins.tomcat">
-      <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
-      <predefined_log_file enabled="true" id="Tomcat Access Log" />
-      <predefined_log_file id="Tomcat Catalina Log" />
-      <predefined_log_file id="Tomcat Manager Log" />
-      <predefined_log_file id="Tomcat Host Manager Log" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -368,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675255241733</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="1.5">
+      <created>1675425545572</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1675425545572</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -450,7 +443,8 @@
     <MESSAGE value="1.4.3" />
     <MESSAGE value="1.4.4" />
     <MESSAGE value="1.4.5" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.4.5" />
+    <MESSAGE value="1.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -462,7 +456,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/CarServlet.java</url>
-          <line>56</line>
+          <line>55</line>
           <option name="timeStamp" value="63" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -504,6 +498,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/service/CarService.java</url>
           <line>28</line>
           <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/CarServlet.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/DbUtil.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/ConnectionManager.java</url>

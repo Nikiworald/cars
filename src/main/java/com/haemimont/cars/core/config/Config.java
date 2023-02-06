@@ -30,12 +30,11 @@ public class Config {
             dbUrl = pr.getProperty("dbUrl");
             csvFilePath = pr.getProperty("csvFilePath");
             loggerFilePath = pr.getProperty("loggerFilePath");
+            loggerFilePath = pr.getProperty("loggerFilePath");
         } catch (IOException e) {
             throw new RuntimeException(e);//logger in not working at this point
         }
     }
-
-
     public static String getUserName() {
         return name;
     }
@@ -47,9 +46,12 @@ public class Config {
     public static String getDbUrl() {
         return dbUrl;
     }
-
     public static String getCsvFilePath() {
         return csvFilePath;
     }
     public static String getLoggerFilePath(){return loggerFilePath;}
+    public static String getProperty(String key){
+       String prop = pr.getProperty(key);
+       return prop;
+    }
 }
