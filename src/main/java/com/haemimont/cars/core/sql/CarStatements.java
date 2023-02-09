@@ -25,7 +25,7 @@ public class CarStatements {//preset of queries
             }
             preparedStatement.close();
         } catch (SQLException e) {
-            CustomLogger.LogError("Could not insert car:"+car.getIdentification().getVin()+"into dimension");
+            CustomLogger.logError("Could not insert car:"+car.getIdentification().getVin()+"into dimension");
         }
         return 0;
     }
@@ -46,7 +46,7 @@ public class CarStatements {//preset of queries
             }
             preparedStatement.close();
         } catch (SQLException e) {
-            CustomLogger.LogError("Could not insert car:"+car.getIdentification().getVin()+"into fuel_information");
+            CustomLogger.logError("Could not insert car:"+car.getIdentification().getVin()+"into fuel_information");
         }
         return 0;
     }
@@ -71,7 +71,7 @@ public class CarStatements {//preset of queries
             }
             preparedStatement.close();
         } catch (SQLException e) {
-            CustomLogger.LogError("Could not insert car:"+car.getIdentification().getVin()+"into identification");
+            CustomLogger.logError("Could not insert car:"+car.getIdentification().getVin()+"into identification");
         }
         return 0;
     }
@@ -89,7 +89,7 @@ public class CarStatements {//preset of queries
             }
             preparedStatement.close();
         } catch (SQLException e) {
-            CustomLogger.LogError("Could not insert car:"+car.getIdentification().getVin()+"into engine_statistics");
+            CustomLogger.logError("Could not insert car:"+car.getIdentification().getVin()+"into engine_statistics");
         }
         return 0;
     }
@@ -114,7 +114,7 @@ public class CarStatements {//preset of queries
             }
             preparedStatement.close();
         } catch (SQLException e) {
-            CustomLogger.LogError("Could not insert car:"+car.getIdentification().getVin()+"into engine_information");
+            CustomLogger.logError("Could not insert car:"+car.getIdentification().getVin()+"into engine_information");
         }
         return 0;
     }
@@ -135,7 +135,7 @@ public class CarStatements {//preset of queries
             preparedStatement.execute();
             preparedStatement.close();
         } catch (SQLException e) {
-            CustomLogger.LogError("Could not insert car:"+car.getIdentification().getVin()+"into car");
+            CustomLogger.logError("Could not insert car:"+car.getIdentification().getVin()+"into car");
         }
     }
 
@@ -152,7 +152,7 @@ public class CarStatements {//preset of queries
                 check = true;
             }
         } catch (SQLException e) {
-            CustomLogger.LogError("Could not check for vin:"+vin);
+            CustomLogger.logError("Could not check for vin:"+vin);
         }
         return check;
     }
@@ -210,7 +210,7 @@ public class CarStatements {//preset of queries
             }
             statement.close();
         } catch (SQLException e) {
-            CustomLogger.LogError("Could not get car/s from the DB");
+            CustomLogger.logError("Could not get car/s from the DB");
         }
         return cars;
     }
@@ -266,7 +266,7 @@ public class CarStatements {//preset of queries
             }
             statement.close();
         } catch (SQLException e) {
-            CustomLogger.LogError("Could not get car from the DB");
+            CustomLogger.logError("Could not get car from the DB");
         }
         return car;
     }
@@ -324,7 +324,7 @@ public class CarStatements {//preset of queries
             }
             statement.close();
         } catch (SQLException e) {
-            CustomLogger.LogError("Could not get car/s from the DB");
+            CustomLogger.logError("Could not get car/s from the DB");
         }
         return cars;
     }

@@ -3,8 +3,10 @@ package com.haemimont.cars.core.tools;
 import com.haemimont.cars.core.config.Config;
 import com.haemimont.cars.core.loger.CustomLogger;
 import com.haemimont.cars.core.model.Car;
+import com.haemimont.cars.core.model.User;
 import com.haemimont.cars.core.sql.CarStatements;
 import com.haemimont.cars.core.sql.ConnectionManager;
+import com.haemimont.cars.core.sql.UserStatements;
 import com.haemimont.cars.core.storage.Storage;
 
 import java.sql.Connection;
@@ -23,10 +25,10 @@ public class InitDB {
         Connection connection = connectionManager.getConnection();
         try {//turning off autocommit
             connectionManager.getConnection().setAutoCommit(false);
-            CustomLogger.LogInfo("Turned off autocommit");
+            CustomLogger.logInfo("Turned off autocommit");
         } catch (
                 SQLException e) {
-            CustomLogger.LogError("Failed to turn off autocommit");
+            CustomLogger.logError("Failed to turn off autocommit");
         }
 
         //for each key we get its object and put it in the db
@@ -50,28 +52,51 @@ public class InitDB {
                 carStatements.insertCarInCar(storageForCars.get(key), idDimension, idEngineInformation, idFuel, idIdentification,
                         connectionManager.getConnection());
                 connectionManager.getConnection().commit();//if there is no errors we commit the changes
-                CustomLogger.LogInfo("car:" + currentCar.getIdentification().getVin() + " inserted in the db:"
+                CustomLogger.logInfo("car:" + currentCar.getIdentification().getVin() + " inserted in the db:"
                         + connection.getCatalog());
             } catch (Exception e) {
-                CustomLogger.LogError("car" + currentCar.getIdentification().getVin() +
+                CustomLogger.logError("car" + currentCar.getIdentification().getVin() +
                         "is already in the db|Rolling back changes");
                 try {
                     connectionManager.getConnection().rollback();
-                    CustomLogger.LogInfo("Rolled back changes");
+                    CustomLogger.logInfo("Rolled back changes");
                 } catch (SQLException ex) {
-                    CustomLogger.LogError("Failed to roll back");
+                    CustomLogger.logError("Failed to roll back");
                 }
             }
         }
         try {//turning on autocommit
             connectionManager.getConnection().setAutoCommit(true);
-            CustomLogger.LogInfo("Turned on autocommit");
+            CustomLogger.logInfo("Turned on autocommit");
         } catch (SQLException e) {
-            CustomLogger.LogError("Failed to turn on autocommit");
+            CustomLogger.logError("Failed to turn on autocommit");
         }
         //System.out.println("uploaded:"+uploaded);
         //System.out.println("not uploaded:"+notUploaded);
         ArrayList<Car> testCars = carStatements.getCarsFromDb("make","BMW", connectionManager.getConnection());//gets all the cars with make = ?
+
+
+        //user test
+        UserStatements userStatements = new UserStatements();
+        try {//turning off autocommit
+            connectionManager.getConnection().setAutoCommit(false);
+            CustomLogger.logInfo("Turned off autocommit");
+        } catch (
+                SQLException e) {
+            CustomLogger.logError("Failed to turn off autocommit");
+        }
+        String name = "Admin";
+        String password = "1234";
+        User user = new User(name,password);
+        userStatements.insertUserToDb(user,connection);
+        try {
+            connection.commit();
+        } catch (SQLException e) {
+            CustomLogger.logError("Could not commit changes to user");
+        }
+        boolean check =  userStatements.checkForMatchingNameAndPassword("a","a",connection);
+
+
         connectionManager.disconnect();
     }
 }

@@ -1,5 +1,7 @@
 package com.haemimont.cars.core.config;
 
+import com.haemimont.cars.core.loger.CustomLogger;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,7 +22,7 @@ public class Config {
             in = new FileInputStream("src/main/resources/Properties.properties");
             inWeb = new FileInputStream("/WEB-INF/classes/Properties.properties");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            CustomLogger.logError("aa");
         }
     }
 

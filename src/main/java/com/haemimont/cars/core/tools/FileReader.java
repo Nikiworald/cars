@@ -19,7 +19,7 @@ public class FileReader {
             }
 
         } catch (FileNotFoundException e) {
-            CustomLogger.LogError("File not found:"+path);
+            CustomLogger.logError("File not found:"+path);
         }
         return outputOfLines;
     }

@@ -23,10 +23,10 @@ public class CustomLogger {
         fh.setFormatter(new SimpleFormatter());
         logger.addHandler(fh);
     }
-    public static void LogInfo(String msg){
+    public static void logInfo(String msg){
         logger.info(msg);
     }
-    public static void LogError(String msg){
+    public static void logError(String msg){
         logger.severe(msg);
     }
 

@@ -12,13 +12,14 @@
         <servlet-name>student</servlet-name>
         <servlet-class>com.haemimont.cars.core.servlet.StudentServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>loginServlet</servlet-name>
+        <servlet-class>com.haemimont.cars.core.servlet.LoginServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>student</servlet-name>
         <servlet-name>cars</servlet-name>
+        <servlet-name>loginServlet</servlet-name>
         <url-pattern>/cars/*</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>student</servlet-name>
-        <url-pattern>/student/*</url-pattern>
     </servlet-mapping>
 </web-app>

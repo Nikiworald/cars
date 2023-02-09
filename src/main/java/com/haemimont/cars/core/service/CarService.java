@@ -16,8 +16,6 @@ public class CarService {
     CarStatements carStatements;
 
     public CarService() {
-//        ConnectionManager connectionManager = new ConnectionManager();
-//        connectionManager.connect("jdbc:mysql://localhost:3306/cars","root","niki");//fuck you
         this.connection = DbUtil.getConnection();
         int a =0;
         CarStatements carStatements = new CarStatements();
