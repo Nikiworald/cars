@@ -14,7 +14,6 @@ public class UserService {
 
     public UserService() {
         this.connection = DbUtil.getConnection();
-        int a =0;
         UserStatements userStatements = new UserStatements();
         this.userStatements = userStatements;
     }

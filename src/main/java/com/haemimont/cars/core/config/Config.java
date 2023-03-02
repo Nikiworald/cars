@@ -20,11 +20,18 @@ public class Config {
     {
         try {
             in = new FileInputStream("src/main/resources/Properties.properties");
-            inWeb = new FileInputStream("/WEB-INF/classes/Properties.properties");
         } catch (IOException e) {
             CustomLogger.logError("aa");
+            {
+                try {
+                    in = new FileInputStream("/WEB-INF/classes/Properties.properties");
+                } catch (IOException a) {
+                    CustomLogger.logError("aa");
+                }
+            }
         }
     }
+
 
     public Config()  {//get the info from the properties file
         try {
@@ -54,9 +61,9 @@ public class Config {
         return csvFilePath;
     }
     public static String getLoggerFilePath(){return loggerFilePath;}
-    public static String getProperty(String key) throws IOException {
-        pr.load(inWeb);
-       String prop = pr.getProperty(key);
-       return prop;
-    }
+//    public static String getProperty(String key) throws IOException {
+//        pr.load(inWeb);
+//       String prop = pr.getProperty(key);
+//       return prop;
+//    }
 }

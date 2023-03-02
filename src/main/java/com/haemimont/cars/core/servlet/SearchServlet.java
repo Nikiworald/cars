@@ -1,19 +1,35 @@
 package com.haemimont.cars.core.servlet;
+
+import com.haemimont.cars.core.service.CarService;
+import com.haemimont.cars.core.service.CrudService;
+import com.haemimont.cars.core.view.CarsView;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.OutputStream;
 
-public class StudentServlet extends HttpServlet {
+import java.io.IOException;
+
+@WebServlet("/SearchServlet")
+public class SearchServlet extends HttpServlet {
+    CrudService crudService = new CarService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String param = req.getParameter("id");
-        Integer key = (param == null) ? null : Integer.valueOf((param.trim()));
-        String finalk = key.toString()+"AAAAAAAAA";
-        //super.doGet(req, resp);
-        sendResponse(resp, finalk);
+String criteria = req.getParameter("criteria");
+String value = req.getParameter("value");
+String maxValue = req.getParameter("maxValue");
+if(criteria.equals("")&&criteria!=null){
+    CarsView.viewCars(req,resp,crudService.get("all",""));
+
+}
+if(criteria.equals("price")){
+    String combined = value+"--"+maxValue;
+    CarsView.viewCars(req,resp,crudService.get(criteria,combined));
+}
+else{
+    CarsView.viewCars(req,resp,crudService.get(criteria,value));}
+
     }
 
     @Override
@@ -30,21 +46,4 @@ public class StudentServlet extends HttpServlet {
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doDelete(req, resp);
     }
-
-    @Override
-    public void init() throws ServletException {
-        super.init();
-    }
-
-    private void sendResponse(HttpServletResponse response, String payload) {
-        try {
-            OutputStream out = response.getOutputStream();
-            out.write(payload.getBytes());
-            out.flush();
-        }
-        catch(Exception e) {
-            throw new RuntimeException(Integer.toString(HttpServletResponse.SC_INTERNAL_SERVER_ERROR));
-        }
-    }
-
 }

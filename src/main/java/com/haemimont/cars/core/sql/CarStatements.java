@@ -2,6 +2,8 @@ package com.haemimont.cars.core.sql;
 
 import com.haemimont.cars.core.loger.CustomLogger;
 import com.haemimont.cars.core.model.*;
+import org.jetbrains.annotations.NotNull;
+import com.haemimont.cars.core.model.Car;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -78,7 +80,7 @@ public class CarStatements {//preset of queries
     public int insertCarInEngineStatistics(Car car, Connection connection) {
         PreparedStatement preparedStatement = null;
         try {
-            String query = "INSERT into cars.engine_statistics(hoursepower,torque) values(?,?)";
+            String query = "INSERT into cars.engine_statistics(horsepower,torque) values(?,?)";
             preparedStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setInt(1, car.getEngineInformation().getEngineStatistics().getHorsePower());
             preparedStatement.setInt(2, car.getEngineInformation().getEngineStatistics().getTorque());
@@ -119,10 +121,9 @@ public class CarStatements {//preset of queries
         return 0;
     }
 
-    public void insertCarInCar(Car car, int dimensionId, int engineInformationId,
-                               int fuelId, int identificationId, Connection connection) {
+    public void insertCarFromStorageInCar(Car car, int dimensionId, int engineInformationId,
+                                          int fuelId, int identificationId, Connection connection) throws SQLException {
         PreparedStatement preparedStatement = null;
-        try {
             preparedStatement = connection.prepareStatement("INSERT into cars.car" +
                     "(vin,id_dimension,id_engine_information," +
                     "id_fuel_information,id_identification) values(?,?,?,?,?)");
@@ -134,9 +135,7 @@ public class CarStatements {//preset of queries
             preparedStatement.setInt(5, identificationId);
             preparedStatement.execute();
             preparedStatement.close();
-        } catch (SQLException e) {
-            CustomLogger.logError("Could not insert car:"+car.getIdentification().getVin()+"into car");
-        }
+
     }
 
     public Boolean checkForMatchingVin(String vin, Connection connection) {
@@ -158,28 +157,34 @@ public class CarStatements {//preset of queries
     }
 
     //get data with a matching identification.make and makes an object
-    public ArrayList<Car> getCarsFromDb(String para1, String para2, Connection connection) {
+    public ArrayList<Car> getCarsFromDb(String where, String value, @NotNull Connection connection) {
         ArrayList<Car> cars = new ArrayList<>();
-        Statement statement = null;
+        PreparedStatement preparedStatement = null;
+        String whereStatement = null;
+        if(where.equals("make")){whereStatement = " where make";}
+        if(where.equals("year")){whereStatement = " where year";}
+        if(where.equals("id")){whereStatement = " where id_car";}
+//        if(where.equals("make")){whereStatement = "where make";}
+//        if(where.equals("make")){whereStatement = "where make";}
         try {
-            statement = connection.createStatement();
-            String query = "SELECT  car.id_car,car.vin,dimension.height,dimension.width,dimension.length,engine_information.driveline,engine_information.engine_type,\n" +
-                    "engine_information.hybrid,engine_information.number_of_forward_gears,engine_information.transmission,\n" +
-                    "engine_statistics.hoursepower,engine_statistics.torque,fuel_information.city_mpg,fuel_information.fuel_type,fuel_information.highway_mpg,\n" +
-                    "identification.classification,identification.id,identification.make,identification.model_year,identification.year,identification.color,identification.price FROM cars.car\n" +
-                    " join identification on identification.id_identification = car.id_identification \n" +
-                    " join fuel_information on fuel_information.id_fuel_information = car.id_fuel_information\n" +
-                    " join dimension on dimension.id_dimension = car.id_dimension\n" +
-                    " join engine_information on engine_information.id_engine_information = car.id_engine_information\n" +
-                    " join engine_statistics on  engine_statistics.id_engine_statistics = engine_information.id_engine_statistics" +
-                    " where " + para1 + "=" + "'"+ para2 + "'";
-            ResultSet resultSet = statement.executeQuery(query);
+            preparedStatement = connection.prepareStatement("SELECT  car.id_car,car.vin,dimension.height,dimension.width,dimension.length,engine_information.driveline,engine_information.engine_type," +
+                    "engine_information.hybrid,engine_information.number_of_forward_gears,engine_information.transmission," +
+                    "engine_statistics.horsepower,engine_statistics.torque,fuel_information.city_mpg,fuel_information.fuel_type,fuel_information.highway_mpg," +
+                    "identification.classification,identification.id,identification.make,identification.model_year,identification.year,identification.color,identification.price FROM cars.car" +
+                    " join identification on identification.id_identification = car.id_identification " +
+                    " join fuel_information on fuel_information.id_fuel_information = car.id_fuel_information" +
+                    " join dimension on dimension.id_dimension = car.id_dimension" +
+                    " join engine_information on engine_information.id_engine_information = car.id_engine_information" +
+                    " join engine_statistics on  engine_statistics.id_engine_statistics = engine_information.id_engine_statistics " +
+                    whereStatement+" = ?");
+            preparedStatement.setString(1,value);
+            ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int height = resultSet.getInt("height");
                 int width = resultSet.getInt("width");
                 int length = resultSet.getInt("length");
                 int number_of_forward_gears = resultSet.getInt("number_of_forward_gears");
-                int hoursepower = resultSet.getInt("hoursepower");
+                int horsepower = resultSet.getInt("horsepower");
                 int torque = resultSet.getInt("torque");
                 int city_mpg = resultSet.getInt("city_mpg");
                 int highway_mpg = resultSet.getInt("highway_mpg");
@@ -205,37 +210,42 @@ public class CarStatements {//preset of queries
                         .setNumberOfForwardGears(number_of_forward_gears).setTransmission(transmission).setCityMpg(city_mpg)
                         .setFuelType(fuel_type).setHighwayMpg(highway_mpg).setClassification(classification)
                         .setId(id).setMake(make).setModelYear(model_year).setYear(year)
-                        .setHorsePower(hoursepower).setTorque(torque).setColor(color).setPrice(price).build());
+                        .setHorsePower(horsepower).setTorque(torque).setColor(color).setPrice(price).build());
                 cars.get(cars.size()-1).getIdentification().setVin(vin);
             }
-            statement.close();
+            preparedStatement.close();
         } catch (SQLException e) {
             CustomLogger.logError("Could not get car/s from the DB");
         }
         return cars;
     }
-    public Car getCarFromDb(String para1, String para2, Connection connection) {
-        Car car = null;
-        Statement statement = null;
+    public ArrayList<Car> getCarsFromDbByPrice(String minValue,String maxValue,@NotNull Connection connection) {
+        ArrayList<Car> cars = new ArrayList<>();
+        PreparedStatement preparedStatement = null;
+        String whereStatement = null;
         try {
-            statement = connection.createStatement();
-            String query = "SELECT  car.id_car,car.vin,dimension.height,dimension.width,dimension.length,engine_information.driveline,engine_information.engine_type,\n" +
-                    "engine_information.hybrid,engine_information.number_of_forward_gears,engine_information.transmission,\n" +
-                    "engine_statistics.hoursepower,engine_statistics.torque,fuel_information.city_mpg,fuel_information.fuel_type,fuel_information.highway_mpg,\n" +
-                    "identification.classification,identification.id,identification.make,identification.model_year,identification.year,identification.color,identification.price FROM cars.car\n" +
-                    " join identification on identification.id_identification = car.id_identification \n" +
-                    " join fuel_information on fuel_information.id_fuel_information = car.id_fuel_information\n" +
-                    " join dimension on dimension.id_dimension = car.id_dimension\n" +
-                    " join engine_information on engine_information.id_engine_information = car.id_engine_information\n" +
-                    " join engine_statistics on  engine_statistics.id_engine_statistics = engine_information.id_engine_statistics" +
-                    " where " + para1 + "=" + "'"+ para2 + "'";
-            ResultSet resultSet = statement.executeQuery(query);
-            if (resultSet.next()) {
+            preparedStatement = connection.prepareStatement("SELECT  car.id_car,car.vin,dimension.height," +
+                    "dimension.width,dimension.length,engine_information.driveline,engine_information.engine_type," +
+                    "engine_information.hybrid,engine_information.number_of_forward_gears," +
+                    "engine_information.transmission,engine_statistics.horsepower,engine_statistics.torque," +
+                    "fuel_information.city_mpg,fuel_information.fuel_type,fuel_information.highway_mpg," +
+                    "identification.classification,identification.id,identification.make,identification.model_year," +
+                    "identification.year,identification.color,identification.price FROM cars.car" +
+                    " join identification on identification.id_identification = car.id_identification  " +
+                    "join fuel_information on fuel_information.id_fuel_information = car.id_fuel_information " +
+                    "join dimension on dimension.id_dimension = car.id_dimension " +
+                    "join engine_information on engine_information.id_engine_information = car.id_engine_information " +
+                    "join engine_statistics on  engine_statistics.id_engine_statistics = engine_information.id_engine_statistics " +
+                    "where price > ? AND price < ?");
+            preparedStatement.setString(1,minValue);
+            preparedStatement.setString(2,maxValue);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
                 int height = resultSet.getInt("height");
                 int width = resultSet.getInt("width");
                 int length = resultSet.getInt("length");
                 int number_of_forward_gears = resultSet.getInt("number_of_forward_gears");
-                int hoursepower = resultSet.getInt("hoursepower");
+                int horsepower = resultSet.getInt("horsepower");
                 int torque = resultSet.getInt("torque");
                 int city_mpg = resultSet.getInt("city_mpg");
                 int highway_mpg = resultSet.getInt("highway_mpg");
@@ -254,23 +264,85 @@ public class CarStatements {//preset of queries
                 String vin = resultSet.getString("vin");
                 EngineInformation engineInformation = new EngineInformation();
                 engineInformation.setEngineStatistics(new EngineStatistics());
-                car = CarBuilder.newInstance().setDimension(new Dimension()).setIdentification(new Identification())
+                cars.add(CarBuilder.newInstance().setDimension(new Dimension()).setIdentification(new Identification())
                         .setEngineInformation(engineInformation).setFuelInformation(new FuelInformation())
                         .setHeight(height).setLength(length)
                         .setWidth(width).setDriveLine(driveline).setEngineType(engine_type).setHybrid(hybrid)
                         .setNumberOfForwardGears(number_of_forward_gears).setTransmission(transmission).setCityMpg(city_mpg)
                         .setFuelType(fuel_type).setHighwayMpg(highway_mpg).setClassification(classification)
                         .setId(id).setMake(make).setModelYear(model_year).setYear(year)
-                        .setHorsePower(hoursepower).setTorque(torque).setColor(color).setPrice(price).build();
+                        .setHorsePower(horsepower).setTorque(torque).setColor(color).setPrice(price).build());
+                cars.get(cars.size()-1).getIdentification().setVin(vin);
+            }
+            preparedStatement.close();
+        } catch (SQLException e) {
+            CustomLogger.logError("Could not get car/s from the DB");
+        }
+        return cars;
+    }
+    public Car getCarFromDb(String where, String value, @NotNull Connection connection) {
+       Car car = null;
+        PreparedStatement preparedStatement = null;
+        String whereStatement = null;
+        if(where.equals("make")){whereStatement = " where make";}
+        if(where.equals("year")){whereStatement = " where year";}
+        if(where.equals("id")){whereStatement = " where id_car";}
+//        if(where.equals("make")){whereStatement = "where make";}
+//        if(where.equals("make")){whereStatement = "where make";}
+        try {
+            preparedStatement = connection.prepareStatement("SELECT  car.id_car,car.vin,dimension.height,dimension.width,dimension.length,engine_information.driveline,engine_information.engine_type," +
+                    "engine_information.hybrid,engine_information.number_of_forward_gears,engine_information.transmission," +
+                    "engine_statistics.horsepower,engine_statistics.torque,fuel_information.city_mpg,fuel_information.fuel_type,fuel_information.highway_mpg," +
+                    "identification.classification,identification.id,identification.make,identification.model_year,identification.year,identification.color,identification.price FROM cars.car" +
+                    " join identification on identification.id_identification = car.id_identification " +
+                    " join fuel_information on fuel_information.id_fuel_information = car.id_fuel_information" +
+                    " join dimension on dimension.id_dimension = car.id_dimension" +
+                    " join engine_information on engine_information.id_engine_information = car.id_engine_information" +
+                    " join engine_statistics on  engine_statistics.id_engine_statistics = engine_information.id_engine_statistics " +
+                    whereStatement+" = ?");
+            preparedStatement.setString(1,value);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                int height = resultSet.getInt("height");
+                int width = resultSet.getInt("width");
+                int length = resultSet.getInt("length");
+                int number_of_forward_gears = resultSet.getInt("number_of_forward_gears");
+                int horsepower = resultSet.getInt("horsepower");
+                int torque = resultSet.getInt("torque");
+                int city_mpg = resultSet.getInt("city_mpg");
+                int highway_mpg = resultSet.getInt("highway_mpg");
+                int year = resultSet.getInt("year");
+                double price = resultSet.getDouble("price");
+                String driveline = resultSet.getString("driveline");
+                String engine_type = resultSet.getString("engine_type");
+                String hybrid = resultSet.getString("hybrid");
+                String transmission = resultSet.getString("transmission");
+                String fuel_type = resultSet.getString("fuel_type");
+                String classification = resultSet.getString("classification");
+                String id = resultSet.getString("id");
+                String make = resultSet.getString("make");
+                String model_year = resultSet.getString("model_year");
+                String color = resultSet.getString("color");
+                String vin = resultSet.getString("vin");
+                EngineInformation engineInformation = new EngineInformation();
+                engineInformation.setEngineStatistics(new EngineStatistics());
+                car = (CarBuilder.newInstance().setDimension(new Dimension()).setIdentification(new Identification())
+                        .setEngineInformation(engineInformation).setFuelInformation(new FuelInformation())
+                        .setHeight(height).setLength(length)
+                        .setWidth(width).setDriveLine(driveline).setEngineType(engine_type).setHybrid(hybrid)
+                        .setNumberOfForwardGears(number_of_forward_gears).setTransmission(transmission).setCityMpg(city_mpg)
+                        .setFuelType(fuel_type).setHighwayMpg(highway_mpg).setClassification(classification)
+                        .setId(id).setMake(make).setModelYear(model_year).setYear(year)
+                        .setHorsePower(horsepower).setTorque(torque).setColor(color).setPrice(price).build());
                 car.getIdentification().setVin(vin);
             }
-            statement.close();
+            preparedStatement.close();
         } catch (SQLException e) {
-            CustomLogger.logError("Could not get car from the DB");
+            CustomLogger.logError("Could not get car/s from the DB");
         }
         return car;
     }
-    public ArrayList<Car> getCarsFromDb(Connection connection) {
+    public ArrayList<Car> getAllCarsFromDb(Connection connection) {
         ArrayList<Car> cars = new ArrayList<>();
         Statement statement = null;
         try {
@@ -278,7 +350,7 @@ public class CarStatements {//preset of queries
             String query = "SELECT  car.id_car,car.vin,dimension.height,dimension.width,dimension.length," +
                     "engine_information.driveline,engine_information.engine_type,\n" +
                     "engine_information.hybrid,engine_information.number_of_forward_gears,engine_information.transmission,\n" +
-                    "engine_statistics.hoursepower,engine_statistics.torque," +
+                    "engine_statistics.horsepower,engine_statistics.torque," +
                     "fuel_information.city_mpg,fuel_information.fuel_type,fuel_information.highway_mpg,\n" +
                     "identification.classification,identification.id,identification.make,identification.model_year," +
                     "identification.year,identification.color,identification.price FROM cars.car\n" +
@@ -293,7 +365,7 @@ public class CarStatements {//preset of queries
                 int width = resultSet.getInt("width");
                 int length = resultSet.getInt("length");
                 int number_of_forward_gears = resultSet.getInt("number_of_forward_gears");
-                int hoursepower = resultSet.getInt("hoursepower");
+                int horsepower = resultSet.getInt("horsepower");
                 int torque = resultSet.getInt("torque");
                 int city_mpg = resultSet.getInt("city_mpg");
                 int highway_mpg = resultSet.getInt("highway_mpg");
@@ -319,7 +391,7 @@ public class CarStatements {//preset of queries
                         .setNumberOfForwardGears(number_of_forward_gears).setTransmission(transmission).setCityMpg(city_mpg)
                         .setFuelType(fuel_type).setHighwayMpg(highway_mpg).setClassification(classification)
                         .setId(id).setMake(make).setModelYear(model_year).setYear(year)
-                        .setHorsePower(hoursepower).setTorque(torque).setColor(color).setPrice(price).build());
+                        .setHorsePower(horsepower).setTorque(torque).setColor(color).setPrice(price).build());
                 cars.get(cars.size()-1).getIdentification().setVin(vin);
             }
             statement.close();
@@ -328,6 +400,121 @@ public class CarStatements {//preset of queries
         }
         return cars;
     }
+    public Boolean insertCarFromUserInputInCar(Car car, int dimensionId, int engineInformationId,
+                                            int fuelId, int identificationId, Connection connection){
+        int i = (int) 'A';
+        PreparedStatement preparedStatement = null;
+        while(i<=(int) 'Z')
+        {
+            try {
+                char[] vinToChars= car.getIdentification().getVin().toCharArray();
+                vinToChars[vinToChars.length-1] = (char) i;
+                String vin ="";
+                for(int curChar =0;curChar<vinToChars.length;curChar++)
+                {
+                    vin = vin+vinToChars[curChar];
+                }
+                car.getIdentification().setVin(vin);
+
+                preparedStatement = connection.prepareStatement("INSERT into cars.car" +
+                        "(vin,id_dimension,id_engine_information," +
+                        "id_fuel_information,id_identification) values(?,?,?,?,?)");
+                //preparedStatement.setInt(1, numberOfCars);
+                preparedStatement.setString(1, car.getIdentification().getVin());
+                preparedStatement.setInt(2, dimensionId);
+                preparedStatement.setInt(3, engineInformationId);
+                preparedStatement.setInt(4, fuelId);
+                preparedStatement.setInt(5, identificationId);
+                preparedStatement.execute();
+                preparedStatement.close();
+                return true;
+            } catch (SQLException e) {
+                CustomLogger.logError("Could not insert car:" + car.getIdentification().getVin() + "into car");
+                i++;
+            }
+        }
+        return false;
+    }
+    public int getIdByVin(String vin,Connection connection){
+        int id =0;
+PreparedStatement preparedStatement = null;
+try{
+    preparedStatement = connection.prepareStatement("SELECT  car.id_car,car.vin,dimension.height,dimension.width,dimension.length,engine_information.driveline,engine_information.engine_type,"+
+           " engine_information.hybrid,engine_information.number_of_forward_gears,engine_information.transmission,"+
+            "engine_statistics.horsepower,engine_statistics.torque,fuel_information.city_mpg,fuel_information.fuel_type,fuel_information.highway_mpg,"+
+            "identification.classification,identification.id,identification.make,identification.model_year,identification.year,identification.color,identification.price FROM cars.car "+
+            "join identification on identification.id_identification = car.id_identification "+
+            "join fuel_information on fuel_information.id_fuel_information = car.id_fuel_information "+
+            "join dimension on dimension.id_dimension = car.id_dimension "+
+            "join engine_information on engine_information.id_engine_information = car.id_engine_information "+
+            "join engine_statistics on  engine_statistics.id_engine_statistics = engine_information.id_engine_statistics "+
+            "where vin = ?");
+    preparedStatement.setString(1,vin);
+    ResultSet resultSet = preparedStatement.executeQuery();
+    if(resultSet.next()){
+id = resultSet.getInt("id_car");
+    }
+} catch (SQLException e) {
+    throw new RuntimeException(e);
+}
+return id;
+    }
+    public Car getCarById(int carId,Connection connection){
+        Car car =null;
+        PreparedStatement preparedStatement = null;
+        try{
+            preparedStatement = connection.prepareStatement("SELECT  car.id_car,car.vin,dimension.height,dimension.width,dimension.length,engine_information.driveline,engine_information.engine_type,"+
+                    " engine_information.hybrid,engine_information.number_of_forward_gears,engine_information.transmission,"+
+                    "engine_statistics.horsepower,engine_statistics.torque,fuel_information.city_mpg,fuel_information.fuel_type,fuel_information.highway_mpg,"+
+                    "identification.classification,identification.id,identification.make,identification.model_year,identification.year,identification.color,identification.price FROM cars.car "+
+                    "join identification on identification.id_identification = car.id_identification "+
+                    "join fuel_information on fuel_information.id_fuel_information = car.id_fuel_information "+
+                    "join dimension on dimension.id_dimension = car.id_dimension "+
+                    "join engine_information on engine_information.id_engine_information = car.id_engine_information "+
+                    "join engine_statistics on  engine_statistics.id_engine_statistics = engine_information.id_engine_statistics "+
+                    "where id_car = ?");
+            preparedStatement.setInt(1,carId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                int height = resultSet.getInt("height");
+                int width = resultSet.getInt("width");
+                int length = resultSet.getInt("length");
+                int number_of_forward_gears = resultSet.getInt("number_of_forward_gears");
+                int horsepower = resultSet.getInt("horsepower");
+                int torque = resultSet.getInt("torque");
+                int city_mpg = resultSet.getInt("city_mpg");
+                int highway_mpg = resultSet.getInt("highway_mpg");
+                int year = resultSet.getInt("year");
+                double price = resultSet.getDouble("price");
+                String driveline = resultSet.getString("driveline");
+                String engine_type = resultSet.getString("engine_type");
+                String hybrid = resultSet.getString("hybrid");
+                String transmission = resultSet.getString("transmission");
+                String fuel_type = resultSet.getString("fuel_type");
+                String classification = resultSet.getString("classification");
+                String id = resultSet.getString("id");
+                String make = resultSet.getString("make");
+                String model_year = resultSet.getString("model_year");
+                String color = resultSet.getString("color");
+                String vin = resultSet.getString("vin");
+                EngineInformation engineInformation = new EngineInformation();
+                engineInformation.setEngineStatistics(new EngineStatistics());
+                car = (CarBuilder.newInstance().setDimension(new Dimension()).setIdentification(new Identification())
+                        .setEngineInformation(engineInformation).setFuelInformation(new FuelInformation())
+                        .setHeight(height).setLength(length)
+                        .setWidth(width).setDriveLine(driveline).setEngineType(engine_type).setHybrid(hybrid)
+                        .setNumberOfForwardGears(number_of_forward_gears).setTransmission(transmission).setCityMpg(city_mpg)
+                        .setFuelType(fuel_type).setHighwayMpg(highway_mpg).setClassification(classification)
+                        .setId(id).setMake(make).setModelYear(model_year).setYear(year)
+                        .setHorsePower(horsepower).setTorque(torque).setColor(color).setPrice(price).build());
+                car.getIdentification().setVin(vin);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return car;
+    }
+
 }
 
 

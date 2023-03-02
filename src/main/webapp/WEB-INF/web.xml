@@ -5,21 +5,24 @@
         <resource-env-ref-type>javax.sql.DataSource</resource-env-ref-type>
     </resource-env-ref>
     <servlet>
-        <servlet-name>cars</servlet-name>
+        <servlet-name>car</servlet-name>
         <servlet-class>com.haemimont.cars.core.servlet.CarServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>student</servlet-name>
-        <servlet-class>com.haemimont.cars.core.servlet.StudentServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>loginServlet</servlet-name>
         <servlet-class>com.haemimont.cars.core.servlet.LoginServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>student</servlet-name>
+    <servlet>
         <servlet-name>cars</servlet-name>
+        <servlet-class>com.haemimont.cars.core.servlet.CarsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>car</servlet-name>
+        <servlet-name>cars</servlet-name>>
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/cars/*</url-pattern>
     </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>home.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>
