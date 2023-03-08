@@ -14,5 +14,4 @@ out.print(login_msg);
 <form action="CarsServlet" method="get">
 <input type="hidden" name="criteria" value="all"/>
 <input type="submit" value="view all"/>
-
 </form>

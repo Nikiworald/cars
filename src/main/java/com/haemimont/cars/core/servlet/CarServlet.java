@@ -26,7 +26,7 @@ public class CarServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("id");
-       ArrayList<Object>arrayList =  crudService.get("id",id);
+       ArrayList arrayList =  crudService.get("id",id);
        CarsView.viewCar(req,resp,(Car) arrayList.get(0));
 
 //        String filter = req.getParameter("filter");
@@ -62,6 +62,7 @@ public class CarServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Car car = null;
+        try {
         String height = req.getParameter("height");
         String width = req.getParameter("width");
         String length = req.getParameter("length");
@@ -88,7 +89,7 @@ public class CarServlet extends HttpServlet {
         FuelInformation fuelInformation = new FuelInformation();
         engineInformation.setEngineStatistics(new EngineStatistics());
         if(hybrid.equals("on")){hybrid = "true";}else {hybrid = "false";}
-        try {car = CarBuilder.newInstance().setFuelInformation(fuelInformation)
+        car = CarBuilder.newInstance().setFuelInformation(fuelInformation)
                 .setEngineInformation(engineInformation).setDimension(dimension).setIdentification(identification)
                 .setHeight(height).setWidth(width).setLength(length)
                 .setDriveLine(driveLine).setEngineType(engineType).setEngineType(engineType).setHybrid(hybrid)
@@ -97,7 +98,10 @@ public class CarServlet extends HttpServlet {
                 .setClassification(classification).setId(id).setMake(make).setModelYear(modelYear).setYear(year)
                 .setColor(color).setPrice(Double.valueOf(price))
                 .build();
-        }catch (Exception e ){sendResponse(resp,"something went wrong");}
+        }catch (NullPointerException nullPointerException){sendResponse(resp,"Null values");}
+        catch (NumberFormatException numberFormatException){sendResponse(resp,"Numbers were not entered correctly");}
+        catch (Exception e ){sendResponse(resp,"something went wrong");}
+
         String response = crudService.put(car);
         sendResponse(resp,response);
     }

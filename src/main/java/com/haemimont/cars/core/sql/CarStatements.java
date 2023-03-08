@@ -404,7 +404,8 @@ public class CarStatements {//preset of queries
                                             int fuelId, int identificationId, Connection connection){
         int i = (int) 'A';
         PreparedStatement preparedStatement = null;
-        while(i<=(int) 'Z')
+//        while(i<=(int) 'Z')
+        while(true)
         {
             try {
                 char[] vinToChars= car.getIdentification().getVin().toCharArray();
@@ -430,10 +431,16 @@ public class CarStatements {//preset of queries
                 return true;
             } catch (SQLException e) {
                 CustomLogger.logError("Could not insert car:" + car.getIdentification().getVin() + "into car");
-                i++;
+                if(i==(int) 'Z'){
+                    String vin = car.getIdentification().getVin();
+                    vin+="A";
+                    car.getIdentification().setVin(vin);
+                     i = (int) 'A';
+                }else {
+                    i++;
+                }
             }
         }
-        return false;
     }
     public int getIdByVin(String vin,Connection connection){
         int id =0;
@@ -513,6 +520,43 @@ return id;
             throw new RuntimeException(e);
         }
         return car;
+    }
+    public int updateCar(Car car, Connection connection) {
+        PreparedStatement preparedStatement = null;
+        try {
+            String query = "update car\n" +
+                    "join identification i on i.id_identification = car.id_identification \n" +
+                    "join fuel_information f on f.id_fuel_information = car.id_fuel_information\n" +
+                    "join dimension d on d.id_dimension = car.id_dimension\n" +
+                    "join engine_information ei on  car.id_engine_information =  ei.id_engine_information\n" +
+                    "join engine_statistics es on  es.id_engine_statistics = ei.id_engine_statistics \n" +
+                    "set height=? ,width=?,length=?,driveline=?,engine_type=?,hybrid=?,number_of_forward_gears=?," +
+                    "transmission=?,horsepower=?,torque=?,city_mpg=?,fuel_type=?,highway_mpg=?" +
+                    ",classification=?,id=?,make=?\n" +
+                    ",model_year=?,year=?,color=?,price=?\n" +
+                    "where car.id_car=1190;\n" +
+                    "SELECT  car.id_car,car.vin,dimension.height,dimension.width,dimension.length,engine_information.driveline,engine_information.engine_type,\n" +
+                    "engine_information.hybrid,engine_information.number_of_forward_gears,engine_information.transmission,\n" +
+                    "engine_statistics.horsepower,engine_statistics.torque,fuel_information.city_mpg,fuel_information.fuel_type,fuel_information.highway_mpg,\n" +
+                    "identification.classification,identification.id,identification.make,identification.model_year,identification.year,identification.color,identification.price FROM cars.car\n" +
+                    "join identification on identification.id_identification = car.id_identification \n" +
+                    "join fuel_information on fuel_information.id_fuel_information = car.id_fuel_information\n" +
+                    "join dimension on dimension.id_dimension = car.id_dimension\n" +
+                    "join engine_information on engine_information.id_engine_information = car.id_engine_information\n" +
+                    "join engine_statistics on  engine_statistics.id_engine_statistics = engine_information.id_engine_statistics ";
+            se
+
+
+            preparedStatement.executeUpdate();
+            ResultSet resultSet = preparedStatement.getGeneratedKeys();
+            if (resultSet.next()) {
+                return resultSet.getInt(1);
+            }
+            preparedStatement.close();
+        } catch (SQLException e) {
+            CustomLogger.logError("Could not insert car:"+car.getIdentification().getVin()+"into engine_statistics");
+        }
+        return 0;
     }
 
 }

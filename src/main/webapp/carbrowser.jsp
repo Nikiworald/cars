@@ -1,10 +1,12 @@
 <%@ page import ="java.util.ArrayList"%>
 <%@ page import ="java.util.List"%>
 <%@ page import="com.haemimont.cars.core.model.Car"%>
+  <div style="position: absolute; top: 0; right: 0; width: 100px; text-align:right;">
+    <form name="search" action=search.jsp method=get><input name="searchButton" type=submit value=search></form>
+</div>
 <center>
-Cars
-<form action=search.jsp method=get><input type=submit value=search>
-</form>
+Cars<br />
+<form name="add" action=addcar.jsp method=get><input name="addButton" type=submit value=add></form>
 
 <table border ="1"  >
   <thead>
@@ -42,6 +44,12 @@ try {
                 "<input type="+"submit"+" value=view>"+
                 "</form>");
         out.println("</td>");
+         out.println("<td>");
+         out.println( "<form action="+"UpdateServlet"+" method="+"get"+">"+
+                        "<input type="+"hidden"+" name="+"vin"+" value="+car.getIdentification().getVin()+" />"+
+                        "<input type="+"submit"+" value=edit>"+
+                        "</form>");
+          out.println("</td>");
         out.println("</tr>");
     }
 }catch (Exception e){

@@ -15,12 +15,7 @@ public class CarsServlet extends HttpServlet {
     CrudService crudService = new CarService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       String make = req.getParameter("make");
-        String classification = req.getParameter("classification");
-        String minYear = req.getParameter("year");
-        String maxYear = req.getParameter("year");
-        String minPrice = req.getParameter("minPrice");
-        String maxPrice = req.getParameter("maxPrice");
+        CarsView.viewCars(req,resp,crudService.get("all",""));
     }
 
     @Override

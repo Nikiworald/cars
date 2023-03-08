@@ -22,33 +22,27 @@ public class CarService<Car> extends CrudService<Car> {
     @Override
     public ArrayList<Car> get(String critaria,String value) {
         ArrayList<Car> arrayList = new ArrayList<>();
-        String[] values = value.split("--");
-        if(values == null || values.length <= 1) {//check if we have combined values if not then we are not searching by price
-            if(critaria.equals("all")){//if we want all the cars
-                arrayList = (ArrayList<Car>)carStatements.getAllCarsFromDb(connection);
-            } else {
-            arrayList = (ArrayList<Car>) carStatements.getCarsFromDb(critaria, value, connection);
-            return arrayList;
-            }
-        }
-        else { arrayList = (ArrayList<Car>) carStatements.getCarsFromDbByPrice(values[0],values[1],connection);}
+       if(critaria!=null&&!critaria.equals("")) {//check if we have criteria
+           if(critaria.equals("all")){arrayList = (ArrayList<Car>)carStatements.getAllCarsFromDb(connection);}
+           if(critaria.equals("id")){arrayList = (ArrayList<Car>) carStatements.getCarsFromDb(critaria, value, connection);
+           }
+       }
         return  arrayList;
     }
 
     @Override
     public String put(Car obj) {
-        com.haemimont.cars.core.model.Car car = (com.haemimont.cars.core.model.Car) obj;
-        car.getIdentification().setVin(Generator.vinGenerator(car,new Storage()));
-       boolean successful = false;
-        try {//turning off autocommit
-            connection.setAutoCommit(false);
-            CustomLogger.logInfo("Turned off autocommit");
-        } catch (
-                SQLException e) {
-            CustomLogger.logError("Failed to turn off autocommit");
-        }
-
-        //for each key we get its object and put it in the db
+        boolean successful = false;
+        try {
+            com.haemimont.cars.core.model.Car car = (com.haemimont.cars.core.model.Car) obj;
+            car.getIdentification().setVin(Generator.vinGenerator(car,new Storage()));
+            try {//turning off autocommit
+                connection.setAutoCommit(false);
+                CustomLogger.logInfo("Turned off autocommit");
+            } catch (
+                    SQLException e) {
+                CustomLogger.logError("Failed to turn off autocommit");
+            }
             try {
                 int idDimension, idFuel, idIdentification, idEngineStatistics, idEngineInformation;
 
@@ -63,7 +57,7 @@ public class CarService<Car> extends CrudService<Car> {
                 idEngineInformation = carStatements.insertCarInEngineStatistics(car, idEngineStatistics,
                         connection);
 
-               successful =  carStatements.insertCarFromUserInputInCar(car, idDimension, idEngineInformation, idFuel, idIdentification,
+                successful =  carStatements.insertCarFromUserInputInCar(car, idDimension, idEngineInformation, idFuel, idIdentification,
                         connection);
                 connection.commit();//if there is no errors we commit the changes
                 CustomLogger.logInfo("car:" + car.getIdentification().getVin() + " inserted in the db:"
@@ -78,16 +72,17 @@ public class CarService<Car> extends CrudService<Car> {
                     CustomLogger.logError("Failed to roll back");
                 }
             }
-        try {//turning on autocommit
-            connection.setAutoCommit(true);
-            CustomLogger.logInfo("Turned on autocommit");
-        } catch (SQLException e) {
-            CustomLogger.logError("Failed to turn on autocommit");
-        }
+            try {//turning on autocommit
+                connection.setAutoCommit(true);
+                CustomLogger.logInfo("Turned on autocommit");
+            } catch (SQLException e) {
+                CustomLogger.logError("Failed to turn on autocommit");
+            }
+        }catch (Exception e){CustomLogger.logError("Could not turn obj to car");}
         if(successful){
             return "Successfully added the car";
         }
-        else{return "An error occurred when trying to add the car";}
+        else{return " An error occurred when trying to add the car";}
     }
 
     @Override

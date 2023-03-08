@@ -14,11 +14,11 @@ public abstract class CrudService<T> {
 
     }
 
-    T update(T obj) {
+    public T update(T obj) {
         return null;
     }
 
-    boolean delete(int id) {
+    public boolean delete(int id) {
         return false;
     }
 

@@ -23,8 +23,10 @@ public class VinServlet extends HttpServlet {
             CarStatements carStatements = new CarStatements();
            int id = carStatements.getIdByVin(vin, DbUtil.getConnection());
           Car car = carStatements.getCarById(id,DbUtil.getConnection());
-            CarsView.viewCar(req,resp,car);
-
+          if(car==null){sendResponse(resp,"no car with matching vin");}
+          else {
+              CarsView.viewCar(req,resp,car);
+          }
         }
         else {sendResponse(resp,"no vin");}
     }
