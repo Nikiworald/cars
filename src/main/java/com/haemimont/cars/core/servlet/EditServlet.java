@@ -3,7 +3,6 @@ package com.haemimont.cars.core.servlet;
 import com.haemimont.cars.core.model.*;
 import com.haemimont.cars.core.service.CarService;
 import com.haemimont.cars.core.service.CrudService;
-import com.haemimont.cars.core.sql.CarSearchStatements;
 import com.haemimont.cars.core.sql.CarStatements;
 import com.haemimont.cars.core.tools.DbUtil;
 import com.haemimont.cars.core.view.CarsView;
@@ -15,23 +14,24 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.OutputStream;
-import java.util.HashMap;
 
-@WebServlet("/UpdateServlet")
-public class UpdateServlet extends HttpServlet {
-//    CrudService crudService = new CarService();
-CrudService crudService = new CarService();
+@WebServlet("/editServlet")
+public class EditServlet extends HttpServlet {
+    //    CrudService crudService = new CarService();
+    CrudService crudService = new CarService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String vin = req.getParameter("vin");
-        if(vin.equals("")&&vin!=null){sendResponse(resp,"no vin");}
-        else {
+        if ( vin != null&&vin.equals("")) {
+            sendResponse(resp, "no vin");
+        } else {
             CarStatements carStatements = new CarStatements();
             int carId = carStatements.getIdByVin(vin, DbUtil.getConnection());
-            Car car = carStatements.getCarById(carId,DbUtil.getConnection());
-            if(car==null){sendResponse(resp,"no car with matching vin");}
-            else {
+            Car car = carStatements.getCarById(carId, DbUtil.getConnection());
+            if (car == null) {
+                sendResponse(resp, "no car with matching vin");
+            } else {
                 req.setAttribute("vin", car.getIdentification().getVin());
                 req.setAttribute("height", car.getDimension().getHeight());
                 req.setAttribute("width", car.getDimension().getWidth());
@@ -39,6 +39,9 @@ CrudService crudService = new CarService();
                 req.setAttribute("driveLine", car.getEngineInformation().getDriveLine());
                 req.setAttribute("engineType", car.getEngineInformation().getEngineType());
                 req.setAttribute("hybrid", car.getEngineInformation().isHybrid());
+//                req.setAttribute("hybrid", true);
+                if(car.getEngineInformation().isHybrid()){req.setAttribute("hybridCheckBox","checked");}
+                else {req.setAttribute("hybridCheckBox","unchecked");}
                 req.setAttribute("numberOfForwardGears", car.getEngineInformation().getNumberOfForwardGears());
                 req.setAttribute("transmission", car.getEngineInformation().getTransmission());
                 req.setAttribute("horsepower", car.getEngineInformation().getEngineStatistics().getHorsePower());
@@ -57,38 +60,21 @@ CrudService crudService = new CarService();
 
             }
         }
-
-//        String make = req.getParameter("make");
-//        String classification = req.getParameter("classification");
-//        String minYear = req.getParameter("minYear");
-//        String maxYear = req.getParameter("maxYear");
-//        String minPrice = req.getParameter("minPrice");
-//        String maxPrice = req.getParameter("maxPrice");
-//        HashMap<String,String> criteriaMap = new HashMap<>();
-//        criteriaMap.put("make",make);
-//        criteriaMap.put("classification",classification);
-//        criteriaMap.put("minYear",minYear);
-//        criteriaMap.put("maxYear",maxYear);
-//        criteriaMap.put("minPrice",minPrice);
-//        criteriaMap.put("maxPrice",maxPrice);
-//        CarSearchStatements statements =new CarSearchStatements();
-//        statements.searchCarsByMap(criteriaMap, DbUtil.getConnection());
-//        CarsView.viewCars(req,resp,statements.searchCarsByMap(criteriaMap, DbUtil.getConnection()));
     }
 
 
-
-
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
         Car car = null;
-        try {
+        try {       //get all the parameters and try to build car
             String height = req.getParameter("height");
             String width = req.getParameter("width");
             String length = req.getParameter("length");
             String driveLine = req.getParameter("driveLine");
             String engineType = req.getParameter("engineType");
-            String hybrid = req.getParameter("hybrid");
+            String stringHybrid = req.getParameter("hybrid");
+            boolean hybrid = false;
+            if(stringHybrid!=null&&stringHybrid.equals("on")){hybrid = true;}
             String numberOfForwardGears = req.getParameter("numberOfForwardGears");
             String transmission = req.getParameter("transmission");
             String horsepower = req.getParameter("horsepower");
@@ -103,12 +89,15 @@ CrudService crudService = new CarService();
             String year = req.getParameter("year");
             String color = req.getParameter("color");
             String price = req.getParameter("price");
+            String vin = req.getParameter("vin");       //not sure what to choose
+            if (vin == null||vin.equals("")) {
+                req.getAttribute("vin");
+            }
             EngineInformation engineInformation = new EngineInformation();
             Dimension dimension = new Dimension();
             Identification identification = new Identification();
             FuelInformation fuelInformation = new FuelInformation();
             engineInformation.setEngineStatistics(new EngineStatistics());
-            if(hybrid.equals("on")){hybrid = "true";}else {hybrid = "false";}
             car = CarBuilder.newInstance().setFuelInformation(fuelInformation)
                     .setEngineInformation(engineInformation).setDimension(dimension).setIdentification(identification)
                     .setHeight(height).setWidth(width).setLength(length)
@@ -116,14 +105,20 @@ CrudService crudService = new CarService();
                     .setNumberOfForwardGears(numberOfForwardGears).setTransmission(transmission).setHorsePower(horsepower)
                     .setTorque(torque).setCityMpg(cityMpg).setFuelType(fuelType).setHighwayMpg(highwayMpg)
                     .setClassification(classification).setId(id).setMake(make).setModelYear(modelYear).setYear(year)
-                    .setColor(color).setPrice(Double.valueOf(price))
+                    .setColor(color).setPrice(Double.parseDouble(price))
                     .build();
-        }catch (NullPointerException nullPointerException){sendResponse(resp,"Null values");}
-        catch (NumberFormatException numberFormatException){sendResponse(resp,"Numbers were not entered correctly");}
-        catch (Exception e ){sendResponse(resp,"something went wrong");}
+            car.getIdentification().setVin(vin);
+        } catch (NullPointerException nullPointerException) {
+            sendResponse(resp, "Null values");
+        } catch (NumberFormatException numberFormatException) {
+            sendResponse(resp, "Numbers were not entered correctly");
+        } catch (Exception e) {
+            sendResponse(resp, "something went wrong");
+        }
 
-        crudService.update(car)
-        sendResponse(resp,response);
+
+        Car updateCar = (com.haemimont.cars.core.model.Car) crudService.update(car);        //we update the car and get back the updated car
+        CarsView.viewCar(req, resp, updateCar);
     }
 
     @Override
@@ -135,6 +130,7 @@ CrudService crudService = new CarService();
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doDelete(req, resp);
     }
+
     private void sendResponse(HttpServletResponse response, String payload) {
         try {
             OutputStream out = response.getOutputStream();

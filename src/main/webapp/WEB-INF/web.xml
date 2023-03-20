@@ -16,9 +16,20 @@
         <servlet-name>cars</servlet-name>
         <servlet-class>com.haemimont.cars.core.servlet.CarsServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>search</servlet-name>
+        <servlet-class>com.haemimont.cars.core.servlet.SearchServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>edit</servlet-name>
+        <servlet-class>com.haemimont.cars.core.servlet.EditServlet</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>car</servlet-name>
         <servlet-name>cars</servlet-name>>
+        <servlet-name>search</servlet-name>>
+        <servlet-name>edit</servlet-name>>
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/cars/*</url-pattern>
     </servlet-mapping>

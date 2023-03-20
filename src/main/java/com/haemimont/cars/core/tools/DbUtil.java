@@ -2,6 +2,8 @@ package com.haemimont.cars.core.tools;
 
 import com.haemimont.cars.core.loger.CustomLogger;
 import com.haemimont.cars.core.model.Car;
+import com.haemimont.cars.core.sql.CarStatements;
+import com.haemimont.cars.core.storage.Storage;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -14,7 +16,7 @@ import java.sql.SQLException;
 public class DbUtil {
     static Connection connection = null;
 
-   static {
+    static {
         try {
             Context context = new InitialContext();
             DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/cars");
@@ -22,46 +24,42 @@ public class DbUtil {
         } catch (NamingException b) {
             throw new RuntimeException(b);
         } catch (SQLException a) {
-            throw new RuntimeException(a);}
-   }
-    public static Connection getConnection(){
+            throw new RuntimeException(a);
+        }
+    }
+
+    public static Connection getConnection() {
         return connection;
     }
-    public static String getFreeVin(Car car){
-        int i = (int) 'A';
-        PreparedStatement preparedStatement = null;
-//        while(i<=(int) 'Z')
-        while(true)
-        {
-            try {
-                char[] vinToChars= car.getIdentification().getVin().toCharArray();
-                vinToChars[vinToChars.length-1] = (char) i;
-                String vin ="";
-                for(int curChar =0;curChar<vinToChars.length;curChar++)
-                {
-                    vin = vin+vinToChars[curChar];
-                }
-                car.getIdentification().setVin(vin);
+    public static String getAvailableVin(Car car) {
+        car.getIdentification().getVin();
+        int i = 'A';
+        String vin = "";
+        CarStatements carStatements = new CarStatements();
+        if (car.getIdentification().getVin() == null || car.getIdentification().getVin().equals("") ) {
+            car.getIdentification().setVin(Generator.vinGenerator(car, new Storage()));
+        }
+        while (true) {
+            vin = "";
+            char[] vinToChars = car.getIdentification().getVin().toCharArray();
+            vinToChars[vinToChars.length - 1] = (char) i;
+            for (int curChar = 0; curChar < vinToChars.length; curChar++) {
 
-                preparedStatement = connection.prepareStatement("INSERT into cars.car" +
-                        "(vin,id_dimension,id_engine_information," +
-                        "id_fuel_information,id_identification) values(?,?,?,?,?)");
-                //preparedStatement.setInt(1, numberOfCars);
-                preparedStatement.setString(1, car.getIdentification().getVin());
-                preparedStatement.execute();
-                preparedStatement.close();
-                return  car.getIdentification().getVin();
-            } catch (SQLException e) {
-                CustomLogger.logError("Could not insert car:" + car.getIdentification().getVin() + "into car");
-                if(i==(int) 'Z'){
-                    String vin = car.getIdentification().getVin();
-                    vin+="A";
+                vin += vinToChars[curChar];
+            }
+//            car.getIdentification().setVin(vin);
+            if (!carStatements.checkForMatchingVin(vin, connection)) {
+                return vin;
+            } else {
+                if (i == (int) 'Z') {
+//                    String vin = car.getIdentification().getVin();
+                    vin += "A";
                     car.getIdentification().setVin(vin);
-                    i = (int) 'A';
-                }else {
+                    i = 'A';
+                } else {
                     i++;
                 }
             }
+        }
     }
-
 }

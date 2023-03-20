@@ -16,17 +16,43 @@ out.print(login_msg);
 }
  %>
  <br/>
+ <table border ="1" >
+<tbody>
 <form action="CarServlet" method="post">
-Height:<input type="text" name="height"/> CityMpg:<input type="text" name="cityMpg"/><br/><br/>
-Width:<input type="text" name="width"/> FuelType:<input type="text" name="fuelType"/><br/><br/>
-Length:<input type="text" name="length"/> HighwayMpg:<input type="text" name="highwayMpg"/><br/><br/>
-DriveLine:<input type="text" name="driveLine"/> Classification:<input type="text" name="classification"/><br/><br/>
-EngineType:<input type="text" name="engineType"/> Id:<input type="text" name="id"/><br/><br/>
-Hybrid:<input type="checkbox" name="hybrid"/> Make:<input type="text" name="make"/><br/><br/>
-Number of forward gears:<input type="text" name="numberOfForwardGears"/> ModelYear:<input type="text" name="modelYear"/><br/><br/>
-Transmission:<input type="text" name="transmission"/> Year:<input type="text" name="year"/><br/><br/>
-Horsepower:<input type="text" name="horsepower"/> Color:<input type="text" name="color"/><br/><br/>
-Torque:<input type="text" name="torque"/> Price:<input type="text" name="price"/><br/><br/>
-<input type="submit" value="add"/>
+<tr>
+<td>Height:<input type="text" name="height" maxlength="3"/> </td><td>CityMpg:<input type="text" name="cityMpg" maxlength="3"/><br/><br/></td>
+</tr>
+<tr>
+<td>Width:<input type="text" name="width" maxlength="3"/> </td><td>FuelType:<input type="text" name="fuelType" maxlength="50"/><br/><br/></td>
+</tr>
+<tr>
+<td>Length:<input type="text" name="length" maxlength="3"/> </td><td>HighwayMpg:<input type="text" name="highwayMpg" maxlength="3"/><br/><br/></td>
+</tr>
+<tr>
+<td>DriveLine:<input type="text" name="driveLine" maxlength="50"/> </td><td>Classification:<input type="text" name="classification" maxlength="50"/><br/><br/></td>
+</tr>
+<tr>
+<td>EngineType:<input type="text" name="engineType" maxlength="50"/> </td><td>Id:<input type="text" name="id" maxlength="50"/><br/><br/></td>
+</tr>
+<tr>
+<td>Hybrid:<input type="checkbox" name="hybrid"/> </td><td>Make:<input type="text" name="make" maxlength="50"/><br/><br/></td>
+</tr>
+<tr>
+<td>Number of forward gears:<input type="text" name="numberOfForwardGears" maxlength="2"/> </td><td>ModelYear:<input type="text" name="modelYear" maxlength="50"/><br/><br/></td>
+</tr>
+<tr>
+<td>Transmission:<input type="text" name="transmission" maxlength="50"/> </td><td>Year:<input type="text" name="year" maxlength="4"/><br/><br/></td>
+</tr>
+<tr>
+<td>Horsepower:<input type="text" name="horsepower" maxlength="4"/> </td><td>Color:<input type="text" name="color" maxlength="50"/><br/><br/></td>
+</tr>
+<tr>
+<td>Torque:<input type="text" name="torque" maxlength="4"/> </td><td>Price:<input type="text" name="price" maxlength="10"/><br/><br/></td>
+</tr>
+<tr>
+<td><input type="submit" value="add"/></td>
+</tr>
 </form>
+</tbody>
+</table>
 </center>

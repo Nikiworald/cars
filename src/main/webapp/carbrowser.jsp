@@ -1,14 +1,13 @@
 <%@ page import ="java.util.ArrayList"%>
 <%@ page import ="java.util.List"%>
 <%@ page import="com.haemimont.cars.core.model.Car"%>
-  <div style="position: absolute; top: 0; right: 0; width: 100px; text-align:right;">
-    <form name="search" action=search.jsp method=get><input name="searchButton" type=submit value=search></form>
+ <div style="position: absolute; top: 0; right: 0; width: 100px; text-align:right;">
+  <form name="search" action=search.jsp method=get><input name="searchButton" type=submit value=search></form>
 </div>
 <center>
 Cars<br />
 <form name="add" action=addcar.jsp method=get><input name="addButton" type=submit value=add></form>
-
-<table border ="1"  >
+<table border="1">
   <thead>
     <tr>
       <th>Vin</th>
@@ -23,7 +22,21 @@ Cars<br />
     </tr>
   </thead>
   <tbody>
+  <html>
 <%
+
+%>
+  <body>
+  <p>Click the button to display an alert box:</p>
+  <button onclick="myFunction()">Try it</button>
+  <script>
+  function myFunction() {
+  alert("I am an alert box!");
+  }
+  </script>
+  </body>
+<%
+
         ArrayList<Object> cars = (ArrayList<Object>) request.getAttribute("cars");
 try {
     for (Object object : cars) {
@@ -45,11 +58,17 @@ try {
                 "</form>");
         out.println("</td>");
          out.println("<td>");
-         out.println( "<form action="+"UpdateServlet"+" method="+"get"+">"+
+         out.println( "<form action="+"editServlet"+" method="+"get"+">"+
                         "<input type="+"hidden"+" name="+"vin"+" value="+car.getIdentification().getVin()+" />"+
                         "<input type="+"submit"+" value=edit>"+
                         "</form>");
           out.println("</td>");
+          out.println("<td>");
+                   out.println( "<form action="+"DeleteServlet"+" method="+"get"+">"+
+                                  "<input type="+"hidden"+" name="+"vin"+" value="+car.getIdentification().getVin()+" />"+
+                                  "<input type="+"submit"+" value=delete>"+
+                                  "</form>");
+                    out.println("</td>");
         out.println("</tr>");
     }
 }catch (Exception e){
