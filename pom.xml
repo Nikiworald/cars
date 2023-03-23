@@ -47,6 +47,11 @@
             <version>13.0</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>31.0.1-jre</version>
+        </dependency>
     </dependencies>
     <repositories>
         <repository>
@@ -55,6 +60,7 @@
             <url>http://download.java.net/maven/2</url>
         </repository>
     </repositories>
+
 
     <build>
         <plugins>

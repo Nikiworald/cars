@@ -1,6 +1,7 @@
 package com.haemimont.cars.core.service;
 
 import com.haemimont.cars.core.model.Car;
+import com.haemimont.cars.core.model.User;
 import com.haemimont.cars.core.sql.CarStatements;
 import com.haemimont.cars.core.sql.UserStatements;
 import com.haemimont.cars.core.tools.DbUtil;
@@ -18,9 +19,21 @@ public class UserService {
         this.userStatements = userStatements;
     }
 
-    public Boolean matchingNameAndPasswordInDb(String name,String password){
-        boolean check = userStatements.checkForMatchingNameAndPassword(name,password,this.connection);
-        return check;
+
+    public String put(String name,String password,String email)
+    { String response = "";
+        if(userStatements.checkForMatchingName(name,connection)){
+            response +="Name is already taken.\n";
+        }
+        if(userStatements.checkForMatchingEmail(email,connection)){
+            response +="Email is already taken.\n";
+        }
+        User user = new User(name,password,email);
+        userStatements.insertUserToDb(user,connection);
+
+
+
+        return response;
     }
 
 }

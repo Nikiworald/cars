@@ -39,9 +39,8 @@ public class EditServlet extends HttpServlet {
                 req.setAttribute("driveLine", car.getEngineInformation().getDriveLine());
                 req.setAttribute("engineType", car.getEngineInformation().getEngineType());
                 req.setAttribute("hybrid", car.getEngineInformation().isHybrid());
-//                req.setAttribute("hybrid", true);
                 if(car.getEngineInformation().isHybrid()){req.setAttribute("hybridCheckBox","checked");}
-                else {req.setAttribute("hybridCheckBox","unchecked");}
+                req.setAttribute("hybridCheckBox1","checked");
                 req.setAttribute("numberOfForwardGears", car.getEngineInformation().getNumberOfForwardGears());
                 req.setAttribute("transmission", car.getEngineInformation().getTransmission());
                 req.setAttribute("horsepower", car.getEngineInformation().getEngineStatistics().getHorsePower());
@@ -57,6 +56,7 @@ public class EditServlet extends HttpServlet {
                 req.setAttribute("color", car.getIdentification().getColor());
                 req.setAttribute("price", car.getIdentification().getPrice());
                 req.getRequestDispatcher("updatecar.jsp").forward(req, resp);
+
 
             }
         }
