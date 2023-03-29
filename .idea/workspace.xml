@@ -5,16 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef3bf76b-8d8b-4f5a-8b3f-3165c1ba23b5" name="Changes" comment="1.5.7">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/RegisterServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/PasswordManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/Token.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/EditServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/EditServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/CarsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/CarsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/RegisterServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/UserStatements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/UserStatements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/InitDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/InitDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/updatecar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/updatecar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,25 +62,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/user/Desktop/cars/src/main/webapp",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.3862069",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/cars/src/main/webapp&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.3862069&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "JSP"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JSP&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\Desktop\cars\src\main\webapp" />
@@ -102,6 +105,7 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean package" />
+      <command value="        String salt = new byte[16].toString(); System.out.println(salt);" />
     </option>
   </component>
   <component name="RunManager" selected="Smart Tomcat.Unnamed">
@@ -432,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679323338569</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="1.5.7">
+      <created>1679579760013</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1679579760013</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -661,11 +672,6 @@
           <option name="timeStamp" value="247" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/CarsServlet.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="248" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/EditServlet.java</url>
           <line>25</line>
           <option name="timeStamp" value="249" />
@@ -679,6 +685,21 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/EditServlet.java</url>
           <line>34</line>
           <option name="timeStamp" value="252" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/RegisterServlet.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="253" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/UserStatements.java</url>
+          <line>133</line>
+          <option name="timeStamp" value="254" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/UserStatements.java</url>
+          <line>153</line>
+          <option name="timeStamp" value="255" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

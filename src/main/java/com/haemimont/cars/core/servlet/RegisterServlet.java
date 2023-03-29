@@ -24,8 +24,13 @@ public class RegisterServlet extends HttpServlet {
         String name = req.getParameter("name");
         String password = req.getParameter("password");
         String email = req.getParameter("email");
-        if(name!=null&&password!=null&&email!=email){
+        String phoneNumber = req.getParameter("phoneNumber");
+        if (name != null && password != null && email != null && phoneNumber != null) {
+            String response = userService.put(name, password, email, phoneNumber);
+            sendResponse(resp, response);
 
+        } else {
+            sendResponse(resp, "Empty field");
         }
 
 
