@@ -11,6 +11,7 @@ public class ConnectionManager {
     private String lastConnectionUrl;
     private String lastConnectionName;
     private String lastConnectionPassword;
+
     public void connect(String url, String name, String password) {
         try {
             connection = DriverManager.getConnection(url, name, password);
@@ -22,12 +23,15 @@ public class ConnectionManager {
             CustomLogger.logError("Failed to Connect to the DB");
         }
     }
-    public void connectToLastDb(){
-        if(lastConnectionPassword==null||lastConnectionUrl==null||lastConnectionName==null){
+
+    public void connectToLastDb() {
+        if (lastConnectionPassword == null || lastConnectionUrl == null || lastConnectionName == null) {
             CustomLogger.logError("No previous connection");
+        } else {
+            connect(lastConnectionUrl, lastConnectionName, lastConnectionPassword);
         }
-        else {connect(lastConnectionUrl,lastConnectionName,lastConnectionPassword);}
     }
+
     public void disconnect() {
         try {
             this.connection.close();

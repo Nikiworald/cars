@@ -6,7 +6,7 @@ public class Token {
     public static boolean checkIfTokenIsValid(String token) {
         boolean check = false;
         if (token != null) {
-            String tokenValues[] = token.split("--");
+            String[] tokenValues = token.split("--");
             try {
                 int tokenTime = Integer.parseInt(tokenValues[2]);
                 int currentTimeInHours = LocalDateTime.now().getHour();

@@ -1,6 +1,5 @@
 package com.haemimont.cars.core.tools;
 
-import com.haemimont.cars.core.loger.CustomLogger;
 import com.haemimont.cars.core.model.Car;
 import com.haemimont.cars.core.sql.CarStatements;
 import com.haemimont.cars.core.storage.Storage;
@@ -10,7 +9,6 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class DbUtil {
@@ -31,12 +29,13 @@ public class DbUtil {
     public static Connection getConnection() {
         return connection;
     }
+
     public static String getAvailableVin(Car car) {
         car.getIdentification().getVin();
         int i = 'A';
         String vin = "";
         CarStatements carStatements = new CarStatements();
-        if (car.getIdentification().getVin() == null || car.getIdentification().getVin().equals("") ) {
+        if (car.getIdentification().getVin() == null || car.getIdentification().getVin().equals("")) {
             car.getIdentification().setVin(Generator.vinGenerator(car, new Storage()));
         }
         while (true) {

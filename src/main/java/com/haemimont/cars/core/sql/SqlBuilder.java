@@ -8,11 +8,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SqlBuilder {
+    private final Connection connection;
     boolean whereClause = false;
     Map<Integer, String> map = new HashMap<>();
     PreparedStatement preparedStatement;
     private String sql;
-    private final Connection connection;
     private int parameterCount = 1;
 
     //    Map<Integer,String> mapForPreparedStatement = new HashMap<>();
@@ -32,7 +32,7 @@ public class SqlBuilder {
     }
 
     public void equation(String dbFieldName, String value) throws SQLException {
-        if (value != null&& !value.equals("")) {
+        if (value != null && !value.equals("")) {
             sql = whereOrAnd(sql);
             sql += dbFieldName + "=?";
 //            preparedStatement.setString(parameterCount,value);
@@ -70,7 +70,7 @@ public class SqlBuilder {
     }
 
     public void biggerThan(String dbFieldName, String value) throws SQLException {
-        if (value != null&& !value.equals("")) {
+        if (value != null && !value.equals("")) {
             sql = whereOrAnd(sql);
             sql += dbFieldName + ">?";
 //            preparedStatement.setString(parameterCount,value);
@@ -80,7 +80,7 @@ public class SqlBuilder {
     }
 
     public void smallerThan(String dbFieldName, String value) throws SQLException {
-        if (value != null&& !value.equals("")) {
+        if (value != null && !value.equals("")) {
             sql = whereOrAnd(sql);
             sql += dbFieldName + "<?";
 //            preparedStatement.setString(parameterCount,value);
@@ -94,7 +94,7 @@ public class SqlBuilder {
             sql = whereOrAnd(sql);
             sql += dbFieldName + ">" + minValue;
         }
-        if (maxValue != null ) {
+        if (maxValue != null) {
             sql = whereOrAnd(sql);
             sql += dbFieldName + "<" + maxValue;
         }
@@ -102,13 +102,12 @@ public class SqlBuilder {
 
     public ResultSet execute() throws SQLException {
         this.preparedStatement = connection.prepareStatement(sql);
-        for(Integer key:map.keySet()){
-            preparedStatement.setString(key,map.get(key));
+        for (Integer key : map.keySet()) {
+            preparedStatement.setString(key, map.get(key));
         }
         ResultSet resultSet = preparedStatement.executeQuery();
         return resultSet;
     }
-
 
 
 }

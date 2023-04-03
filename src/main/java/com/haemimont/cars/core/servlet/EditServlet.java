@@ -23,7 +23,7 @@ public class EditServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String vin = req.getParameter("vin");
-        if ( vin != null&&vin.equals("")) {
+        if (vin != null && vin.equals("")) {
             sendResponse(resp, "no vin");
         } else {
             CarStatements carStatements = new CarStatements();
@@ -39,8 +39,10 @@ public class EditServlet extends HttpServlet {
                 req.setAttribute("driveLine", car.getEngineInformation().getDriveLine());
                 req.setAttribute("engineType", car.getEngineInformation().getEngineType());
                 req.setAttribute("hybrid", car.getEngineInformation().isHybrid());
-                if(car.getEngineInformation().isHybrid()){req.setAttribute("hybridCheckBox","checked");}
-                req.setAttribute("hybridCheckBox1","checked");
+                if (car.getEngineInformation().isHybrid()) {
+                    req.setAttribute("hybridCheckBox", "checked");
+                }
+                req.setAttribute("hybridCheckBox1", "checked");
                 req.setAttribute("numberOfForwardGears", car.getEngineInformation().getNumberOfForwardGears());
                 req.setAttribute("transmission", car.getEngineInformation().getTransmission());
                 req.setAttribute("horsepower", car.getEngineInformation().getEngineStatistics().getHorsePower());
@@ -73,8 +75,7 @@ public class EditServlet extends HttpServlet {
             String driveLine = req.getParameter("driveLine");
             String engineType = req.getParameter("engineType");
             String stringHybrid = req.getParameter("hybrid");
-            boolean hybrid = false;
-            if(stringHybrid!=null&&stringHybrid.equals("on")){hybrid = true;}
+            boolean hybrid = stringHybrid != null && stringHybrid.equals("on");
             String numberOfForwardGears = req.getParameter("numberOfForwardGears");
             String transmission = req.getParameter("transmission");
             String horsepower = req.getParameter("horsepower");
@@ -90,7 +91,7 @@ public class EditServlet extends HttpServlet {
             String color = req.getParameter("color");
             String price = req.getParameter("price");
             String vin = req.getParameter("vin");       //not sure what to choose
-            if (vin == null||vin.equals("")) {
+            if (vin == null || vin.equals("")) {
                 req.getAttribute("vin");
             }
             EngineInformation engineInformation = new EngineInformation();

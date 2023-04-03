@@ -7,7 +7,7 @@
 <center>
 Cars<br />
 <form name="add" action=addcar.jsp method=get><input name="addButton" type=submit value=add></form>
-<table border="1">
+<table border="2" style="border-collapse: collapse;">
   <thead>
     <tr>
       <th>Vin</th>
@@ -23,9 +23,20 @@ Cars<br />
   </thead>
   <tbody>
   <html>
-<%
-
-%>
+ <%
+ String userName = null;
+ //allow access only if session exists
+ if(session.getAttribute("user") == null){
+ 	response.sendRedirect("login.jsp");
+ }else userName = (String) session.getAttribute("user");
+ String sessionID = null;
+ Cookie[] cookies = request.getCookies();
+ if(cookies !=null){
+ for(Cookie cookie : cookies){
+ 	if(cookie.getName().equals("user")) userName = cookie.getValue();
+ }
+ }
+ %>
   <body>
   <p>Click the button to display an alert box:</p>
   <button onclick="myFunction()">Try it</button>

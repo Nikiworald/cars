@@ -16,14 +16,14 @@ public class CarSearchStatements {
         String extra = "";
         SqlBuilder sqlBuilder;
         try {
-             sqlBuilder = new SqlBuilder("SELECT  car.id_car,car.vin,dimension.height,dimension.width," +
-                     "dimension.length,engine_information.driveline,engine_information.engine_type,\n" +
-                     "engine_information.hybrid,engine_information.number_of_forward_gears,engine_information.transmission,\n" +
-                     "engine_statistics.horsepower,engine_statistics.torque,fuel_information.city_mpg,fuel_information.fuel_type,fuel_information.highway_mpg,\n" +
-                     "identification.classification,identification.id,identification.make,identification.model_year,identification.year,identification.color,identification.price FROM cars.car\n" +
-                     "join identification on identification.id_identification = car.id_identification \n" + "join fuel_information on fuel_information.id_fuel_information = car.id_fuel_information\n" +
-                     "join dimension on dimension.id_dimension = car.id_dimension\n" + "join engine_information on engine_information.id_engine_information = car.id_engine_information\n" +
-                     "join engine_statistics on  engine_statistics.id_engine_statistics = engine_information.id_engine_statistics \n", connection);
+            sqlBuilder = new SqlBuilder("SELECT  car.id_car,car.vin,dimension.height,dimension.width," +
+                    "dimension.length,engine_information.driveline,engine_information.engine_type,\n" +
+                    "engine_information.hybrid,engine_information.number_of_forward_gears,engine_information.transmission,\n" +
+                    "engine_statistics.horsepower,engine_statistics.torque,fuel_information.city_mpg,fuel_information.fuel_type,fuel_information.highway_mpg,\n" +
+                    "identification.classification,identification.id,identification.make,identification.model_year,identification.year,identification.color,identification.price FROM cars.car\n" +
+                    "join identification on identification.id_identification = car.id_identification \n" + "join fuel_information on fuel_information.id_fuel_information = car.id_fuel_information\n" +
+                    "join dimension on dimension.id_dimension = car.id_dimension\n" + "join engine_information on engine_information.id_engine_information = car.id_engine_information\n" +
+                    "join engine_statistics on  engine_statistics.id_engine_statistics = engine_information.id_engine_statistics \n", connection);
 
             for (String key : keys) {
                 if (key.equals("make")) {

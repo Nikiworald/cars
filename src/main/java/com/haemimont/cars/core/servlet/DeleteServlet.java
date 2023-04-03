@@ -21,13 +21,16 @@ public class DeleteServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         CarStatements carStatements = new CarStatements();
         String vin = req.getParameter("vin");
-        if (vin != null&&vin.equals("")) {
+        if (vin != null && vin.equals("")) {
             sendResponse(resp, "no vin");
         }
         int id = carStatements.getIdByVin(vin, DbUtil.getConnection());
-       boolean check =crudService.delete(id);
-       if(check){sendResponse(resp, "successfully deleted the car");}
-       else {sendResponse(resp, "could not delete the car");}
+        boolean check = crudService.delete(id);
+        if (check) {
+            sendResponse(resp, "successfully deleted the car");
+        } else {
+            sendResponse(resp, "could not delete the car");
+        }
     }
 
 

@@ -3,13 +3,10 @@ package com.haemimont.cars.core.servlet;
 import com.haemimont.cars.core.service.UserService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.*;
 
 import java.io.IOException;
 import java.io.OutputStream;
-import java.time.LocalDateTime;
 
 @WebServlet("/loginServlet")
 public class LoginServlet extends HttpServlet {
@@ -17,7 +14,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req,resp);
+        super.doGet(req, resp);
 
     }
 
@@ -27,15 +24,15 @@ public class LoginServlet extends HttpServlet {
         String password = req.getParameter("password");
         boolean loggedIn = userService.get(name, password);
         if (loggedIn) {
-            int currentTimeInHours = LocalDateTime.now().getHour();
-            int currentTimeInMinutes = LocalDateTime.now().getMinute();
-            int timeSum=currentTimeInHours+currentTimeInMinutes;
-            int timeForExpire = timeSum+1;
-
-            String token = name + "--"+"user"+"--"+timeForExpire;
-            req.setAttribute("token",token);
-            System.out.println(token);
-            req.getRequestDispatcher("home.jsp").forward(req, resp);
+            HttpSession session = req.getSession();
+            session.setAttribute("user", name);
+            //setting session to expiry in 30 mins
+            session.setMaxInactiveInterval(30 * 60);
+            Cookie userName = new Cookie("user", name);
+            resp.addCookie(userName);
+            //Get the encoded URL string
+            String encodedURL = resp.encodeRedirectURL("home.jsp");
+            resp.sendRedirect(encodedURL);
         } else {
             sendResponse(resp, "wrong user name or password");
         }

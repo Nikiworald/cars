@@ -1,8 +1,5 @@
 package com.haemimont.cars.core.servlet;
 
-import com.haemimont.cars.core.sql.CarSearchStatements;
-import com.haemimont.cars.core.tools.DbUtil;
-import com.haemimont.cars.core.view.CarsView;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -10,13 +7,12 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.util.HashMap;
 
 @WebServlet("/SearchServlet")
 public class SearchServlet extends HttpServlet {
     //    CrudService crudService = new CarService();
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {//search is done by carsServlet
 //        String make = req.getParameter("make").trim();
 //        String classification = req.getParameter("classification").trim();
 //        String minYear = req.getParameter("minYear").trim();
