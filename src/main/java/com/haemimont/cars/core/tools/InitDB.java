@@ -3,10 +3,8 @@ package com.haemimont.cars.core.tools;
 import com.haemimont.cars.core.config.Config;
 import com.haemimont.cars.core.loger.CustomLogger;
 import com.haemimont.cars.core.model.Car;
-import com.haemimont.cars.core.model.User;
 import com.haemimont.cars.core.sql.CarStatements;
 import com.haemimont.cars.core.sql.ConnectionManager;
-import com.haemimont.cars.core.sql.UserStatements;
 import com.haemimont.cars.core.storage.Storage;
 
 import java.sql.Connection;
@@ -16,7 +14,6 @@ import java.util.ArrayList;
 public class InitDB {
     public static void initializeDb() {
 //        Config config = new Config();
-        String s = Config.getCsvFilePath();
         Car[] cars = FromLinesToObjects.linesToCars(Config.getCsvFilePath(), 500);//There is no data on the first line (n-1)
         Storage<String, Car> storageForCars = new Storage<>();//creating a new storage for cars
         StorageTools.putCarsInStorage(storageForCars, cars);//importing cars in to the storage

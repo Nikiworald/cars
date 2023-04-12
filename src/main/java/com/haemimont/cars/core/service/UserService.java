@@ -12,8 +12,7 @@ public class UserService {
 
     public UserService() {
         this.connection = DbUtil.getConnection();
-        UserStatements userStatements = new UserStatements();
-        this.userStatements = userStatements;
+        this.userStatements = new UserStatements();
     }
 
     public boolean get(String name, String password) {

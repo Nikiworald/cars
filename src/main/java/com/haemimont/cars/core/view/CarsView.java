@@ -36,8 +36,6 @@ public class CarsView {
             request.setAttribute("color", car.getIdentification().getColor());
             request.setAttribute("price", car.getIdentification().getPrice());
             request.getRequestDispatcher("car.jsp").forward(request, response);
-        } catch (ServletException e) {
-            out.println("no car found(" + e + ")");
         } catch (IOException e) {
             out.println("no cars found(" + e + ")");
         } catch (Exception e) {
@@ -49,9 +47,7 @@ public class CarsView {
         try {
             request.setAttribute("cars", cars);
             request.getRequestDispatcher("carbrowser.jsp").forward(request, response);
-        } catch (ServletException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
+        } catch (ServletException | IOException e) {
             throw new RuntimeException(e);
         }
     }

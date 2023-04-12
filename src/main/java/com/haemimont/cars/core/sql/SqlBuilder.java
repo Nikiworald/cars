@@ -40,35 +40,6 @@ public class SqlBuilder {
             parameterCount++;
         }
     }
-
-    public void equation(String dbFieldName, Integer value) throws SQLException {
-        if (value != null) {
-            sql = whereOrAnd(sql);
-            sql += dbFieldName + "=?";
-//            preparedStatement.setInt(parameterCount,value);
-            parameterCount++;
-        }
-    }
-
-
-    public void biggerThan(String dbFieldName, Integer value) throws SQLException {
-        if (value != null) {
-            sql = whereOrAnd(sql);
-            sql += dbFieldName + ">?";
-//            preparedStatement.setInt(parameterCount,value);
-            parameterCount++;
-        }
-    }
-
-    public void smallerThan(String dbFieldName, Integer value) throws SQLException {
-        if (value != null) {
-            sql = whereOrAnd(sql);
-            sql += dbFieldName + "<?";
-//            preparedStatement.setInt(parameterCount,value);
-            parameterCount++;
-        }
-    }
-
     public void biggerThan(String dbFieldName, String value) throws SQLException {
         if (value != null && !value.equals("")) {
             sql = whereOrAnd(sql);
@@ -89,24 +60,23 @@ public class SqlBuilder {
         }
     }
 
-    public void between(String dbFieldName, Integer minValue, Integer maxValue) {//fixme
-        if (minValue != null) {
-            sql = whereOrAnd(sql);
-            sql += dbFieldName + ">" + minValue;
-        }
-        if (maxValue != null) {
-            sql = whereOrAnd(sql);
-            sql += dbFieldName + "<" + maxValue;
-        }
-    }
+//    public void between(String dbFieldName, Integer minValue, Integer maxValue) {
+//        if (minValue != null) {
+//            sql = whereOrAnd(sql);
+//            sql += dbFieldName + ">" + minValue;
+//        }
+//        if (maxValue != null) {
+//            sql = whereOrAnd(sql);
+//            sql += dbFieldName + "<" + maxValue;
+//        }
+//    }
 
     public ResultSet execute() throws SQLException {
         this.preparedStatement = connection.prepareStatement(sql);
         for (Integer key : map.keySet()) {
             preparedStatement.setString(key, map.get(key));
         }
-        ResultSet resultSet = preparedStatement.executeQuery();
-        return resultSet;
+        return preparedStatement.executeQuery();
     }
 
 

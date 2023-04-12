@@ -1,5 +1,4 @@
 package com.haemimont.cars.core.servlet;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
@@ -11,13 +10,11 @@ import java.io.IOException;
 public class  LogoutServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws  IOException {
         response.setContentType("text/html");
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             for (Cookie cookie : cookies) {
-                if (cookie.getName().equals("JSESSIONID")) {
-                }
                 cookie.setMaxAge(0);
                 response.addCookie(cookie);
             }

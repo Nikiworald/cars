@@ -38,7 +38,7 @@ public class CarService<Car> extends CrudService<Car> {
         boolean successful = false;
         try {
             com.haemimont.cars.core.model.Car car = (com.haemimont.cars.core.model.Car) obj;
-            car.getIdentification().setVin(Generator.vinGenerator(car, new Storage()));
+            car.getIdentification().setVin(Generator.vinGenerator(car, new Storage<>()));
             try {       //turning off autocommit
                 connection.setAutoCommit(false);
                 CustomLogger.logInfo("Turned off autocommit");
@@ -88,7 +88,7 @@ public class CarService<Car> extends CrudService<Car> {
     public Car update(Car obj) {
         com.haemimont.cars.core.model.Car car = (com.haemimont.cars.core.model.Car) obj;
         if (car.getIdentification().getVin() == null || car.getIdentification().getVin().equals("")) {      //if there is not vin we make one
-            Generator.vinGenerator(car, new Storage());
+            Generator.vinGenerator(car, new Storage<>());
         }
         int id = carStatements.updateCar(car, connection);
         return (Car) carStatements.getCarById(id, connection);

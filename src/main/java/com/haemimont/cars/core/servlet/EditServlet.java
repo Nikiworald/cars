@@ -18,7 +18,7 @@ import java.io.OutputStream;
 @WebServlet("/editServlet")
 public class EditServlet extends HttpServlet {
     //    CrudService crudService = new CarService();
-    CrudService crudService = new CarService();
+    CrudService<Car> crudService = new CarService<>();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -27,8 +27,9 @@ public class EditServlet extends HttpServlet {
             sendResponse(resp, "no vin");
         } else {
             CarStatements carStatements = new CarStatements();
-            int carId = carStatements.getIdByVin(vin, DbUtil.getConnection());
-            Car car = carStatements.getCarById(carId, DbUtil.getConnection());
+//            int carId = carStatements.getIdByVin(vin, DbUtil.getConnection());
+//            Car car = carStatements.getCarById(carId, DbUtil.getConnection());
+            Car car = carStatements.getCarByVin(vin,DbUtil.getConnection());
             if (car == null) {
                 sendResponse(resp, "no car with matching vin");
             } else {
@@ -58,8 +59,6 @@ public class EditServlet extends HttpServlet {
                 req.setAttribute("color", car.getIdentification().getColor());
                 req.setAttribute("price", car.getIdentification().getPrice());
                 req.getRequestDispatcher("updatecar.jsp").forward(req, resp);
-
-
             }
         }
     }
@@ -118,7 +117,7 @@ public class EditServlet extends HttpServlet {
         }
 
 
-        Car updateCar = (com.haemimont.cars.core.model.Car) crudService.update(car);        //we update the car and get back the updated car
+        Car updateCar = crudService.update(car);        //we update the car and get back the updated car
         CarsView.viewCar(req, resp, updateCar);
     }
 

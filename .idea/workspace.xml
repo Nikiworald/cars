@@ -5,29 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef3bf76b-8d8b-4f5a-8b3f-3165c1ba23b5" name="Changes" comment="1.5.8">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/autocomplete/DummyDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/LogoutServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/SftpServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/sftpdownload.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/loger/CustomLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/loger/CustomLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/service/CarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/service/CrudService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/service/CrudService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/CarServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/CarServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/CarsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/CarsServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/DeleteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/DeleteServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/EditServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/EditServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/LogoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/RegisterServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/SearchServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/SearchServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/CarSearchStatements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/CarSearchStatements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/ConnectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/CarStatements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/CarStatements.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/SqlBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/SqlBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/UserStatements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/UserStatements.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/DbUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/DbUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/FileReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/FromLinesToObjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/FromLinesToObjects.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/StorageTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/StorageTools.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/Trimmer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/Trimmer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/addcar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addcar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/car.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/car.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/InitDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/InitDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/PasswordManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/PasswordManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/Token.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/view/CarsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/view/CarsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Properties.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Properties.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/carbrowser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/carbrowser.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/search.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/updatecar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/updatecar.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -460,7 +472,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680094862121</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="1.5.8">
+      <created>1680523950347</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1680523950347</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -560,58 +579,43 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/CarServlet.java</url>
-          <line>83</line>
+          <line>82</line>
           <option name="timeStamp" value="161" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/FileReader.java</url>
-          <line>13</line>
+          <line>12</line>
           <option name="timeStamp" value="167" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/tools/InitDB.java</url>
-          <line>18</line>
+          <line>16</line>
           <option name="timeStamp" value="168" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/config/Config.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="169" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/config/Config.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="171" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/view/CarsView.java</url>
-          <line>48</line>
+          <line>46</line>
           <option name="timeStamp" value="185" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/view/CarsView.java</url>
-          <line>51</line>
+          <line>49</line>
           <option name="timeStamp" value="186" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/view/CarsView.java</url>
-          <line>52</line>
+          <line>50</line>
           <option name="timeStamp" value="187" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/view/CarsView.java</url>
-          <line>50</line>
+          <line>48</line>
           <option name="timeStamp" value="188" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/view/CarsView.java</url>
-          <line>53</line>
+          <line>51</line>
           <option name="timeStamp" value="189" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/view/CarsView.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="190" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/CarSearchStatements.java</url>
@@ -630,12 +634,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/CarServlet.java</url>
-          <line>37</line>
+          <line>36</line>
           <option name="timeStamp" value="203" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/CarServlet.java</url>
-          <line>52</line>
+          <line>51</line>
           <option name="timeStamp" value="206" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -665,17 +669,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/CarSearchStatements.java</url>
-          <line>28</line>
+          <line>26</line>
           <option name="timeStamp" value="238" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/CarSearchStatements.java</url>
-          <line>18</line>
+          <line>16</line>
           <option name="timeStamp" value="239" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/CarSearchStatements.java</url>
-          <line>55</line>
+          <line>53</line>
           <option name="timeStamp" value="245" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -685,7 +689,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/CarSearchStatements.java</url>
-          <line>48</line>
+          <line>46</line>
           <option name="timeStamp" value="247" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -695,12 +699,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/EditServlet.java</url>
-          <line>77</line>
+          <line>76</line>
           <option name="timeStamp" value="251" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/EditServlet.java</url>
-          <line>34</line>
+          <line>35</line>
           <option name="timeStamp" value="252" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -710,12 +714,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/UserStatements.java</url>
-          <line>133</line>
+          <line>134</line>
           <option name="timeStamp" value="254" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/sql/UserStatements.java</url>
-          <line>153</line>
+          <line>154</line>
           <option name="timeStamp" value="255" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -730,8 +734,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/LogoutServlet.java</url>
-          <line>11</line>
-          <properties field="serialVersionUID" class="LogoutServlet" />
+          <line>10</line>
+          <properties field="serialVersionUID" class="com.haemimont.cars.core.servlet.LogoutServlet" />
           <option name="timeStamp" value="261" />
         </line-breakpoint>
       </breakpoints>

@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class CustomLogger {
-    private static final Logger logger = Logger.getLogger(CustomLogger.class
+    public static final Logger logger = Logger.getLogger(CustomLogger.class
             .getName());
     private FileHandler fh;
 
@@ -29,6 +29,7 @@ public class CustomLogger {
     public static void logError(String msg){
         logger.severe(msg);
     }
+
 
 
 

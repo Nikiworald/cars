@@ -7,7 +7,11 @@
 <center>
 Cars<br />
 <form name="add" action=addcar.jsp method=get><input name="addButton" type=submit value=add></form>
-<table border="2" style="border-collapse: collapse;">
+<table border="2" style=
+"border-collapse: collapse;"
+"overflow: hidden;"
+"box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);"
+>
   <thead>
     <tr>
       <th>Vin</th>

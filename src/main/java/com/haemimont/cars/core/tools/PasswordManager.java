@@ -7,8 +7,7 @@ import java.nio.charset.StandardCharsets;
 
 public class PasswordManager {
     public static String generateEncryptedPassword(String password) {
-        String hashed = Hashing.sha256().hashString(password, StandardCharsets.UTF_8).toString();
-        return hashed;
+        return Hashing.sha256().hashString(password, StandardCharsets.UTF_8).toString();
     }
 
 }

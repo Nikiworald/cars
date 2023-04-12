@@ -2,7 +2,6 @@ package com.haemimont.cars.core.servlet;
 
 import com.haemimont.cars.core.model.*;
 import com.haemimont.cars.core.service.CarService;
-import com.haemimont.cars.core.service.CrudService;
 import com.haemimont.cars.core.view.CarsView;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -16,7 +15,7 @@ import java.util.ArrayList;
 
 @WebServlet("/CarServlet")
 public class CarServlet extends HttpServlet {
-    CrudService crudService = new CarService();
+    CarService<Car> crudService = new <Car>CarService<Car>();
 //    @Override
 //    public void init(ServletConfig config) throws ServletException {
 //        super.init(config);
@@ -26,8 +25,8 @@ public class CarServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         String id = req.getParameter("id");
-        ArrayList arrayList = crudService.get("id", id);
-        CarsView.viewCar(req, resp, (Car) arrayList.get(0));
+        ArrayList<Car> arrayList = crudService.get("id", id);
+        CarsView.viewCar(req, resp, arrayList.get(0));
     }
 
     @Override

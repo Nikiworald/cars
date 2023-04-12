@@ -6,7 +6,7 @@ import com.haemimont.cars.core.storage.Storage;
 public class Generator {
     //generates a vin using parameters of a car
     public static String vinGenerator(Car car, Storage storage) {
-        String temp = "";
+        String temp;
         String vin = "";
         String[] value = new String[5];
         temp = car.getMake();

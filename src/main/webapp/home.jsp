@@ -29,3 +29,6 @@ out.print(login_msg);
 <form action="LogoutServlet" method="post">
 <input type="submit" value="log out"/>
 </form>
+<form action="sftpdownload.jsp" method="post">
+<input type="submit" value="sftp download"/>
+</form>

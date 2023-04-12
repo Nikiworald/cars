@@ -12,17 +12,15 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class DbUtil {
-    static Connection connection = null;
+    static Connection connection;
 
     static {
         try {
             Context context = new InitialContext();
             DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/cars");
             connection = ds.getConnection();
-        } catch (NamingException b) {
+        } catch (NamingException | SQLException b) {
             throw new RuntimeException(b);
-        } catch (SQLException a) {
-            throw new RuntimeException(a);
         }
     }
 
@@ -33,7 +31,7 @@ public class DbUtil {
     public static String getAvailableVin(Car car) {
         car.getIdentification().getVin();
         int i = 'A';
-        String vin = "";
+        String vin;
         CarStatements carStatements = new CarStatements();
         if (car.getIdentification().getVin() == null || car.getIdentification().getVin().equals("")) {
             car.getIdentification().setVin(Generator.vinGenerator(car, new Storage()));
@@ -42,9 +40,9 @@ public class DbUtil {
             vin = "";
             char[] vinToChars = car.getIdentification().getVin().toCharArray();
             vinToChars[vinToChars.length - 1] = (char) i;
-            for (int curChar = 0; curChar < vinToChars.length; curChar++) {
+            for (char vinToChar : vinToChars) {
 
-                vin += vinToChars[curChar];
+                vin += vinToChar;
             }
 //            car.getIdentification().setVin(vin);
             if (!carStatements.checkForMatchingVin(vin, connection)) {

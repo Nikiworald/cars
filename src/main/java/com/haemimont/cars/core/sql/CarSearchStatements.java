@@ -12,8 +12,6 @@ public class CarSearchStatements {
     public ArrayList<Object> searchCarsByMap(HashMap<String, String> criteriaMap, Connection connection) {
         ArrayList<Object> cars = new ArrayList<>();
         String[] keys = criteriaMap.keySet().toArray(new String[0]);
-        String sql = "";
-        String extra = "";
         SqlBuilder sqlBuilder;
         try {
             sqlBuilder = new SqlBuilder("SELECT  car.id_car,car.vin,dimension.height,dimension.width," +

@@ -1,5 +1,6 @@
 package com.haemimont.cars.core.servlet;
 
+import com.haemimont.cars.core.model.Car;
 import com.haemimont.cars.core.service.CarService;
 import com.haemimont.cars.core.service.CrudService;
 import com.haemimont.cars.core.sql.CarStatements;
@@ -15,7 +16,7 @@ import java.io.OutputStream;
 
 @WebServlet("/DeleteServlet")
 public class DeleteServlet extends HttpServlet {
-    CrudService crudService = new CarService();
+    CrudService<Car> crudService = new <Car>CarService<Car>();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {

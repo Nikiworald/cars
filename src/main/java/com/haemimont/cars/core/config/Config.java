@@ -2,50 +2,46 @@ package com.haemimont.cars.core.config;
 
 import com.haemimont.cars.core.loger.CustomLogger;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
+public class Config {//fixme
+    static String name;
+    static String password;
+    static String dbUrl;
+    static String csvFilePath;
+    static String loggerFilePath;
+    private static final java.util.Properties prop = new java.util.Properties();
 
-public class Config {
-    static Properties pr = new Properties();
-    static InputStream in;
-    static InputStream inWeb;
-    static String name ;
-    static String password ;
-    static String dbUrl ;
-    static String csvFilePath ;
-    static String loggerFilePath ;
+    static {
+        Config.loadProperties();
+    }
 
-    {
+    public Config() {//get the info from the properties file
+
+
+        name = prop.getProperty("name");
+        password = prop.getProperty("password");
+        dbUrl = prop.getProperty("dbUrl");
+        csvFilePath = prop.getProperty("csvFilePath");
+        loggerFilePath = prop.getProperty("loggerFilePath");
+        loggerFilePath = prop.getProperty("loggerFilePath");
+
+    }
+
+    private static void loadProperties() {
+        // get class loader
+        ClassLoader loader = Config.class.getClassLoader();
+        if (loader == null)
+            loader = ClassLoader.getSystemClassLoader();
+
+        // assuming you want to load application.properties located in WEB-INF/classes/conf/
+        String propFile = "Properties.properties";
+        java.net.URL url = loader.getResource(propFile);
         try {
-            in = new FileInputStream("src/main/resources/Properties.properties");
-        } catch (IOException e) {
-            CustomLogger.logError("aa");
-            {
-                try {
-                    in = new FileInputStream("/WEB-INF/classes/Properties.properties");
-                } catch (IOException a) {
-                    CustomLogger.logError("aa");
-                }
-            }
+            prop.load(url.openStream());
+        } catch (Exception e) {
+            System.err.println("Could not load configuration file: " + propFile);
         }
     }
 
-
-    public Config()  {//get the info from the properties file
-        try {
-            pr.load(in);
-            name = pr.getProperty("name");
-            password = pr.getProperty("password");
-            dbUrl = pr.getProperty("dbUrl");
-            csvFilePath = pr.getProperty("csvFilePath");
-            loggerFilePath = pr.getProperty("loggerFilePath");
-            loggerFilePath = pr.getProperty("loggerFilePath");
-        } catch (IOException e) {
-            throw new RuntimeException(e);//logger in not working at this point
-        }
-    }
     public static String getUserName() {
         return name;
     }
@@ -57,13 +53,23 @@ public class Config {
     public static String getDbUrl() {
         return dbUrl;
     }
+
     public static String getCsvFilePath() {
         return csvFilePath;
     }
-    public static String getLoggerFilePath(){return loggerFilePath;}
-//    public static String getProperty(String key) throws IOException {
-//        pr.load(inWeb);
-//       String prop = pr.getProperty(key);
-//       return prop;
-//    }
+
+    public static String getLoggerFilePath() {
+        return loggerFilePath;
+    }
+
+    public static String getPropertyByName(String name) {
+        String input = null;
+        try {
+            input = prop.getProperty(name);
+        } catch (Exception e) {
+            CustomLogger.logError("no property found/" + e);
+        }
+        return input;
+
+    }
 }

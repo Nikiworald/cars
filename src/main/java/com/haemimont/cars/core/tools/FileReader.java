@@ -10,7 +10,6 @@ import java.util.Scanner;
 public class FileReader {
     //reads from a file and returns all the lines
     public static String[] Reader(String path, int row) {
-        String line = "";
         File file = new File(path);
         String[] outputOfLines = new String[row];
         int i = 0;

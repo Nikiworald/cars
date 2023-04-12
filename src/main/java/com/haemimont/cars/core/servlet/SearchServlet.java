@@ -12,7 +12,7 @@ import java.io.IOException;
 public class SearchServlet extends HttpServlet {
     //    CrudService crudService = new CarService();
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {//search is done by carsServlet
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {//search is done by carsServlet
 //        String make = req.getParameter("make").trim();
 //        String classification = req.getParameter("classification").trim();
 //        String minYear = req.getParameter("minYear").trim();

@@ -12,16 +12,14 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.io.OutputStream;
 import java.util.HashMap;
 
 @WebServlet("/CarsServlet")
 public class CarsServlet extends HttpServlet {
-    CrudService crudService = new CarService();
+    CrudService<Object> crudService = new CarService<>();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        String token = (String) req.getAttribute("token");
         HashMap<String, String> criteriaMap = new HashMap<>();
         String make = req.getParameter("make");
         String classification = req.getParameter("classification");
@@ -61,13 +59,4 @@ public class CarsServlet extends HttpServlet {
         super.doDelete(req, resp);
     }
 
-    private void sendResponse(HttpServletResponse response, String payload) {
-        try {
-            OutputStream out = response.getOutputStream();
-            out.write(payload.getBytes());
-            out.flush();
-        } catch (Exception e) {
-            throw new RuntimeException(Integer.toString(HttpServletResponse.SC_INTERNAL_SERVER_ERROR));
-        }
-    }
 }

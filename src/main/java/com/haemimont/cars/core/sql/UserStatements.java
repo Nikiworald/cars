@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class UserStatements {
@@ -35,7 +36,7 @@ public class UserStatements {
         return check;
     }
 
-    public HashMap checkForMatchingNameAndReturnHashMap(String name, Connection connection) {
+    public HashMap<String,String> checkForMatchingNameAndReturnHashMap(String name, Connection connection) {
         PreparedStatement preparedStatement;
         HashMap<String, String> hashMap = new HashMap<>();
 
@@ -147,16 +148,16 @@ public class UserStatements {
             preparedStatement.execute();
             preparedStatement.close();
         } catch (SQLException e) {
-            CustomLogger.logError("Could not insert USER:" + user.getName() + " into USER" + e);//fixme
+            CustomLogger.logError("Could not insert USER:" + user.getName() + " into USER" + e);
         }
     }
 
     public boolean checkIfValidNameAndPassword(String name, String password, Connection connection) {
         boolean check = false;
-        HashMap hashMap = checkForMatchingNameAndReturnHashMap(name, connection);
+        Map<String,String> hashMap = checkForMatchingNameAndReturnHashMap(name, connection);
         if (hashMap.size() > 0) {
-            String salt = hashMap.get("salt").toString();
-            String hashedDbPassword = hashMap.get("hashedDbPassword").toString();
+            String salt = hashMap.get("salt");
+            String hashedDbPassword = hashMap.get("hashedDbPassword");
             String saltPassword = salt + password;
             String hashedPassword = PasswordManager.generateEncryptedPassword(saltPassword);
             if (hashedPassword.equals(hashedDbPassword)) {

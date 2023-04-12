@@ -2,7 +2,7 @@ package com.haemimont.cars.core.service;
 
 import java.util.ArrayList;
 
-public abstract class CrudService<T> {
+public class CrudService<T> {
 
     public ArrayList<T> get(String critaria,String value) {
         return null;
