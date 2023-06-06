@@ -7,13 +7,11 @@ import com.haemimont.cars.core.jokesapi.JokesApi;
 import com.haemimont.cars.core.loger.CustomLogger;
 import com.haemimont.cars.core.model.Joke;
 import com.haemimont.cars.core.model.JokeBuilder;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
@@ -21,7 +19,7 @@ import java.util.ArrayList;
 public class JokeServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         ArrayList<Joke> jokes = new ArrayList<>();
         JsonParser jsonParser = new JsonParser();
         String jsonArrString = JokesApi.getTenJokes();

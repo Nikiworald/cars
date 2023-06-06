@@ -69,29 +69,7 @@ public class InitDB {
             CustomLogger.logError("Failed to turn on autocommit");
         }
 //        ArrayList<Car> testCars = carStatements.getCarsFromDb("make","BMW", connectionManager.getConnection());//gets all the cars with
-
-
         //user test
-//        UserStatements userStatements = new UserStatements();
-//        try {//turning off autocommit
-//            connectionManager.getConnection().setAutoCommit(false);
-//            CustomLogger.logInfo("Turned off autocommit");
-//        } catch (
-//                SQLException e) {
-//            CustomLogger.logError("Failed to turn off autocommit");
-//        }
-//        String name = "Admin";
-//        String password = "1234";
-//        User user = new User(name,password);
-//        userStatements.insertUserToDb(user,connection);
-//        try {
-//            connection.commit();
-//        } catch (SQLException e) {
-//            CustomLogger.logError("Could not commit changes to user");
-//        }
-//        boolean check =  userStatements.checkForMatchingNameAndPassword("a","a",connection);
-
-
         connectionManager.disconnect();
     }
 }

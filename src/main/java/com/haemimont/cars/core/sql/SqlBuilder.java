@@ -10,13 +10,13 @@ import java.util.Map;
 public class SqlBuilder {
     private final Connection connection;
     boolean whereClause = false;
-    Map<Integer, String> map = new HashMap<>();
+    final Map<Integer, String> map = new HashMap<>();
     PreparedStatement preparedStatement;
     private String sql;
     private int parameterCount = 1;
 
     //    Map<Integer,String> mapForPreparedStatement = new HashMap<>();
-    public SqlBuilder(String sql, Connection connection) throws SQLException {
+    public SqlBuilder(String sql, Connection connection) {
         this.sql = sql;
         this.connection = connection;
     }
@@ -31,7 +31,7 @@ public class SqlBuilder {
         return sql;
     }
 
-    public void equation(String dbFieldName, String value) throws SQLException {
+    public void equation(String dbFieldName, String value) {
         if (value != null && !value.equals("")) {
             sql = whereOrAnd(sql);
             sql += dbFieldName + "=?";
@@ -40,7 +40,7 @@ public class SqlBuilder {
             parameterCount++;
         }
     }
-    public void biggerThan(String dbFieldName, String value) throws SQLException {
+    public void biggerThan(String dbFieldName, String value) {
         if (value != null && !value.equals("")) {
             sql = whereOrAnd(sql);
             sql += dbFieldName + ">?";
@@ -50,7 +50,7 @@ public class SqlBuilder {
         }
     }
 
-    public void smallerThan(String dbFieldName, String value) throws SQLException {
+    public void smallerThan(String dbFieldName, String value) {
         if (value != null && !value.equals("")) {
             sql = whereOrAnd(sql);
             sql += dbFieldName + "<?";
@@ -59,17 +59,6 @@ public class SqlBuilder {
             parameterCount++;
         }
     }
-
-//    public void between(String dbFieldName, Integer minValue, Integer maxValue) {
-//        if (minValue != null) {
-//            sql = whereOrAnd(sql);
-//            sql += dbFieldName + ">" + minValue;
-//        }
-//        if (maxValue != null) {
-//            sql = whereOrAnd(sql);
-//            sql += dbFieldName + "<" + maxValue;
-//        }
-//    }
 
     public ResultSet execute() throws SQLException {
         this.preparedStatement = connection.prepareStatement(sql);

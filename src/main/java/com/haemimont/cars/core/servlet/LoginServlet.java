@@ -10,7 +10,7 @@ import java.io.OutputStream;
 
 @WebServlet("/loginServlet")
 public class LoginServlet extends HttpServlet {
-    UserService userService = new UserService();
+    final UserService userService = new UserService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -26,7 +26,7 @@ public class LoginServlet extends HttpServlet {
         if (loggedIn) {
             HttpSession session = req.getSession();
             session.setAttribute("user", name);
-            //setting session to expiry in 30 mins
+            //setting session to expiry in 30 min s
             session.setMaxInactiveInterval(30 * 60);
             Cookie userName = new Cookie("user", name);
             resp.addCookie(userName);

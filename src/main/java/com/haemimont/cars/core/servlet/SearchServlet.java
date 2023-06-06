@@ -13,22 +13,6 @@ public class SearchServlet extends HttpServlet {
     //    CrudService crudService = new CarService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {//search is done by carsServlet
-//        String make = req.getParameter("make").trim();
-//        String classification = req.getParameter("classification").trim();
-//        String minYear = req.getParameter("minYear").trim();
-//        String maxYear = req.getParameter("maxYear").trim();
-//        String minPrice = req.getParameter("minPrice").trim();
-//        String maxPrice = req.getParameter("maxPrice").trim();
-//        HashMap<String, String> criteriaMap = new HashMap<>();
-//        criteriaMap.put("make", make);
-//        criteriaMap.put("classification", classification);
-//        criteriaMap.put("minYear", minYear);
-//        criteriaMap.put("maxYear", maxYear);
-//        criteriaMap.put("minPrice", minPrice);
-//        criteriaMap.put("maxPrice", maxPrice);
-//        CarSearchStatements statements = new CarSearchStatements();
-//        statements.searchCarsByMap(criteriaMap, DbUtil.getConnection());
-//        CarsView.viewCars(req, resp, statements.searchCarsByMap(criteriaMap, DbUtil.getConnection()));
     }
 
     @Override

@@ -18,7 +18,7 @@ import java.io.OutputStream;
 @WebServlet("/editServlet")
 public class EditServlet extends HttpServlet {
     //    CrudService crudService = new CarService();
-    CrudService<Car> crudService = new CarService<>();
+    final CrudService<Car> crudService = new CarService<>();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -27,8 +27,6 @@ public class EditServlet extends HttpServlet {
             sendResponse(resp, "no vin");
         } else {
             CarStatements carStatements = new CarStatements();
-//            int carId = carStatements.getIdByVin(vin, DbUtil.getConnection());
-//            Car car = carStatements.getCarById(carId, DbUtil.getConnection());
             Car car = carStatements.getCarByVin(vin,DbUtil.getConnection());
             if (car == null) {
                 sendResponse(resp, "no car with matching vin");

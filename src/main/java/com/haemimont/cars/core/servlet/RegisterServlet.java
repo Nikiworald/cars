@@ -12,7 +12,7 @@ import java.io.OutputStream;
 
 @WebServlet("/registerServlet")
 public class RegisterServlet extends HttpServlet {
-    UserService userService = new UserService();
+    final UserService userService = new UserService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

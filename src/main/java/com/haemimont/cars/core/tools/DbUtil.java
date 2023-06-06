@@ -12,7 +12,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class DbUtil {
-    static Connection connection;
+    static final Connection connection;
 
     static {
         try {
@@ -29,21 +29,22 @@ public class DbUtil {
     }
 
     public static String getAvailableVin(Car car) {
-        car.getIdentification().getVin();
         int i = 'A';
         String vin;
         CarStatements carStatements = new CarStatements();
         if (car.getIdentification().getVin() == null || car.getIdentification().getVin().equals("")) {
-            car.getIdentification().setVin(Generator.vinGenerator(car, new Storage()));
+            car.getIdentification().setVin(Generator.vinGenerator(car, new Storage<>()));
         }
         while (true) {
             vin = "";
             char[] vinToChars = car.getIdentification().getVin().toCharArray();
             vinToChars[vinToChars.length - 1] = (char) i;
+            StringBuilder vinBuilder = new StringBuilder(vin);
             for (char vinToChar : vinToChars) {
 
-                vin += vinToChar;
+                vinBuilder.append(vinToChar);
             }
+            vin = vinBuilder.toString();
 //            car.getIdentification().setVin(vin);
             if (!carStatements.checkForMatchingVin(vin, connection)) {
                 return vin;

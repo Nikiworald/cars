@@ -46,14 +46,14 @@ public class CarsView {
     public static void viewCars(HttpServletRequest request, HttpServletResponse response, ArrayList<Object> cars) {
         try {
             request.setAttribute("cars", cars);
-            request.getRequestDispatcher("carbrowser.jsp").forward(request, response);
+            request.getRequestDispatcher("car-browser.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
             throw new RuntimeException(e);
         }
     }
 
     @Deprecated
-    private void test(HttpServletRequest request, HttpServletResponse response, ArrayList<Object> cars) {     //testing javacode for jsp
+    private void test(HttpServletRequest request, HttpServletResponse response, ArrayList<Object> cars) {     //testing java code for jsp
         try {
             for (Object object : cars) {
                 Car car = (Car) object;

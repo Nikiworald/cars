@@ -11,8 +11,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class CarService<Car> extends CrudService<Car> {
-    Connection connection;
-    CarStatements carStatements;
+    final Connection connection;
+    final CarStatements carStatements;
 
     public CarService() {
         this.connection = DbUtil.getConnection();
@@ -20,14 +20,14 @@ public class CarService<Car> extends CrudService<Car> {
     }
 
     @Override
-    public ArrayList<Car> get(String critaria, String value) {
+    public ArrayList<Car> get(String criteria, String value) {
         ArrayList<Car> arrayList = new ArrayList<>();
-        if (critaria != null && !critaria.equals("")) {//check if we have criteria
-            if (critaria.equals("all")) {
+        if (criteria != null && !criteria.equals("")) {//check if we have criteria
+            if (criteria.equals("all")) {
                 arrayList = (ArrayList<Car>) carStatements.getAllCarsFromDb(connection);
             }
-            if (critaria.equals("id")) {
-                arrayList = (ArrayList<Car>) carStatements.getCarsFromDb(critaria, value, connection);
+            if (criteria.equals("id")) {
+                arrayList = (ArrayList<Car>) carStatements.getCarsFromDb(criteria, value, connection);
             }
         }
         return arrayList;

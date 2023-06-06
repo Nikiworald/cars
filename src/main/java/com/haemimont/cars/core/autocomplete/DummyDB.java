@@ -2,13 +2,13 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
-
+@Deprecated//currently not implemented
 public class DummyDB {
-    private int totalCountries;
-    private String data = "Afghanistan,	Albania, Zimbabwe";
-    private List<String> countries;
+    private final int totalCountries;
+    private final List<String> countries;
     public DummyDB() {
-        countries = new ArrayList<String>();
+        countries = new ArrayList<>();
+        String data = "Afghanistan,	Albania, Zimbabwe";
         StringTokenizer st = new StringTokenizer(data, ",");
 
         while(st.hasMoreTokens()) {
@@ -18,11 +18,10 @@ public class DummyDB {
     }
 
     public List<String> getData(String query) {
-        String country = null;
+        String country;
 //        query = query.toLowerCase();
-        query = "q";
 
-        List<String> matched = new ArrayList<String>();
+        List<String> matched = new ArrayList<>();
         for(int i=0; i<totalCountries; i++) {
             country = countries.get(i).toLowerCase();
             if(country.startsWith(query)) {

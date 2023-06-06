@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class CrudService<T> {
 
-    public ArrayList<T> get(String critaria,String value) {
+    public ArrayList<T> get(String criteria,String value) {
         return null;
     }
 

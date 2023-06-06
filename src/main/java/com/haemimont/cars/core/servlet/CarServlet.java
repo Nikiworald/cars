@@ -15,11 +15,7 @@ import java.util.ArrayList;
 
 @WebServlet("/CarServlet")
 public class CarServlet extends HttpServlet {
-    CarService<Car> crudService = new <Car>CarService<Car>();
-//    @Override
-//    public void init(ServletConfig config) throws ServletException {
-//        super.init(config);
-//    }
+    final CarService<Car> crudService = new <Car>CarService<Car>();
 
 
     @Override

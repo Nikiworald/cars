@@ -16,7 +16,7 @@ import java.io.OutputStream;
 
 @WebServlet("/DeleteServlet")
 public class DeleteServlet extends HttpServlet {
-    CrudService<Car> crudService = new <Car>CarService<Car>();
+    final CrudService<Car> crudService = new <Car>CarService<Car>();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {

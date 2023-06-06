@@ -32,6 +32,6 @@ out.print(login_msg);
 <form action="sftpdownload.jsp" method="post">
 <input type="submit" value="sftp download"/>
 </form>
-<form action="jokes.jsp" method="get">
+<form action="jokeServlet" method="get">
 <input type="submit" value="jokes"/>
 </form>

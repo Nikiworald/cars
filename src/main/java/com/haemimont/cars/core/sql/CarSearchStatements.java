@@ -13,42 +13,38 @@ public class CarSearchStatements {
         ArrayList<Object> cars = new ArrayList<>();
         String[] keys = criteriaMap.keySet().toArray(new String[0]);
         SqlBuilder sqlBuilder;
-        try {
-            sqlBuilder = new SqlBuilder("SELECT  car.id_car,car.vin,dimension.height,dimension.width," +
-                    "dimension.length,engine_information.driveline,engine_information.engine_type,\n" +
-                    "engine_information.hybrid,engine_information.number_of_forward_gears,engine_information.transmission,\n" +
-                    "engine_statistics.horsepower,engine_statistics.torque,fuel_information.city_mpg,fuel_information.fuel_type,fuel_information.highway_mpg,\n" +
-                    "identification.classification,identification.id,identification.make,identification.model_year,identification.year,identification.color,identification.price FROM cars.car\n" +
-                    "join identification on identification.id_identification = car.id_identification \n" + "join fuel_information on fuel_information.id_fuel_information = car.id_fuel_information\n" +
-                    "join dimension on dimension.id_dimension = car.id_dimension\n" + "join engine_information on engine_information.id_engine_information = car.id_engine_information\n" +
-                    "join engine_statistics on  engine_statistics.id_engine_statistics = engine_information.id_engine_statistics \n", connection);
+        sqlBuilder = new SqlBuilder("SELECT  car.id_car,car.vin,dimension.height,dimension.width," +
+                "dimension.length,engine_information.driveline,engine_information.engine_type,\n" +
+                "engine_information.hybrid,engine_information.number_of_forward_gears,engine_information.transmission,\n" +
+                "engine_statistics.horsepower,engine_statistics.torque,fuel_information.city_mpg,fuel_information.fuel_type,fuel_information.highway_mpg,\n" +
+                "identification.classification,identification.id,identification.make,identification.model_year,identification.year,identification.color,identification.price FROM cars.car\n" +
+                "join identification on identification.id_identification = car.id_identification \n" + "join fuel_information on fuel_information.id_fuel_information = car.id_fuel_information\n" +
+                "join dimension on dimension.id_dimension = car.id_dimension\n" + "join engine_information on engine_information.id_engine_information = car.id_engine_information\n" +
+                "join engine_statistics on  engine_statistics.id_engine_statistics = engine_information.id_engine_statistics \n", connection);
 
-            for (String key : keys) {
-                if (key.equals("make")) {
-                    sqlBuilder.equation("make", criteriaMap.get(key).trim());
+        for (String key : keys) {
+            if (key.equals("make")) {
+                sqlBuilder.equation("make", criteriaMap.get(key).trim());
 
-                }
-                if (key.equals("minPrice")) {
-                    sqlBuilder.biggerThan("price", criteriaMap.get(key).trim());
-
-                }
-                if (key.equals("maxPrice")) {
-                    sqlBuilder.smallerThan("price", criteriaMap.get(key).trim());
-                }
-                if (key.equals("minYear")) {
-                    sqlBuilder.biggerThan("year", criteriaMap.get(key).trim());
-
-                }
-                if (key.equals("maxYear")) {
-                    sqlBuilder.smallerThan("year", criteriaMap.get(key).trim());
-
-                }
-                if (key.equals("classification")) {
-                    sqlBuilder.equation("classification", criteriaMap.get(key).trim());
-                }
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+            if (key.equals("minPrice")) {
+                sqlBuilder.biggerThan("price", criteriaMap.get(key).trim());
+
+            }
+            if (key.equals("maxPrice")) {
+                sqlBuilder.smallerThan("price", criteriaMap.get(key).trim());
+            }
+            if (key.equals("minYear")) {
+                sqlBuilder.biggerThan("year", criteriaMap.get(key).trim());
+
+            }
+            if (key.equals("maxYear")) {
+                sqlBuilder.smallerThan("year", criteriaMap.get(key).trim());
+
+            }
+            if (key.equals("classification")) {
+                sqlBuilder.equation("classification", criteriaMap.get(key).trim());
+            }
         }
         try {
             ResultSet resultSet = sqlBuilder.execute();

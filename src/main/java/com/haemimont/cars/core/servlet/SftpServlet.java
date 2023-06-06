@@ -17,7 +17,7 @@ import java.io.OutputStream;
 @WebServlet("/sftpServlet")
 public class SftpServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         try{
 //            NewCachedThreadPool
 
@@ -43,15 +43,15 @@ public class SftpServlet extends HttpServlet {
 
         FileObject sftpFiles = manager.resolveFile(sftpUri);
         FileObject[] files = sftpFiles.getChildren();
-        for (FileObject remotefile:files
+        for (FileObject remoteFile:files
         ) {
-            String fileName = remotefile.getName().getBaseName();
+            String fileName = remoteFile.getName().getBaseName();
 
             File file = new File(downloadPath);
             FileObject localFile = manager.resolveFile(file.getAbsolutePath());
             FileObject localDownload = localFile.resolveFile(fileName);
 
-            localDownload.copyFrom(remotefile,Selectors.SELECT_SELF);
+            localDownload.copyFrom(remoteFile,Selectors.SELECT_SELF);
             CustomLogger.logInfo("File downloaded "+fileName);
         }
         sendResponse(resp,"files downloaded successfully");}catch (Exception e ){sendResponse(resp,"something went wrong:"+e);}

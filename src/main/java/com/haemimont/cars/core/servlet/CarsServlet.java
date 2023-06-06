@@ -16,7 +16,7 @@ import java.util.HashMap;
 
 @WebServlet("/CarsServlet")
 public class CarsServlet extends HttpServlet {
-    CrudService<Object> crudService = new CarService<>();
+    final CrudService<Object> crudService = new CarService<>();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {

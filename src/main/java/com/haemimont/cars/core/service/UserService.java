@@ -7,8 +7,8 @@ import com.haemimont.cars.core.tools.DbUtil;
 import java.sql.Connection;
 
 public class UserService {
-    Connection connection;
-    UserStatements userStatements;
+    final Connection connection;
+    final UserStatements userStatements;
 
     public UserService() {
         this.connection = DbUtil.getConnection();
