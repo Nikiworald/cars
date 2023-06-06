@@ -2,21 +2,8 @@
 <%@ page import ="java.util.List"%>
 <%@ page import = "com.haemimont.cars.core.model.Joke"%>
 <%@ page import = "com.haemimont.cars.core.loger.CustomLogger"%>
-<%@ page import="java.io.IOException"%>
 <center>
 <h3>Jokes</h3>
-<%!private void requestJokesFromServlet(HttpServletRequest request,HttpServletResponse response)   {
-   RequestDispatcher dispatcher =
-      getServletContext().getRequestDispatcher("/jokeServlet");
- try {
-     dispatcher.forward(request, response);
-   } catch (ServletException e) {
-     CustomLogger.logError("something went wrong:"+e);
-   }catch (IOException e){
-     CustomLogger.logError("something went wrong:"+e);
-   }
- }
-%>
 <%//user validation
 String userName = null;
  if(session.getAttribute("user") == null){
@@ -30,10 +17,8 @@ String userName = null;
  }
  }
  ArrayList<Joke> jokes = (ArrayList<Joke>) request.getAttribute("jokes");
- String error = (String) request.getAttribute("error");
- if(error==null){
         if(jokes==null){
-            requestJokesFromServlet(request,response);
+            out.println("something went wrong");
             }else{
             int i =1;
             for(Joke joke:jokes){
@@ -45,10 +30,9 @@ String userName = null;
             out.println(joke.getPunchLine());
             out.println("<br>");
            }
-        }
- }
-else{out.println("something went wrong:"+error);}
+          }
+
  %>
- <form action="jokes.jsp" method="get">
+ <form action="jokeServlet" method="get">
   <input type="submit" value="get 10 random jokes"/>
  </center>

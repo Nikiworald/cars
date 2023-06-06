@@ -22,25 +22,28 @@ public class JokeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ArrayList<Joke> jokes = new ArrayList<Joke>();
+        ArrayList<Joke> jokes = new ArrayList<>();
         JsonParser jsonParser = new JsonParser();
         String jsonArrString = JokesApi.getTenJokes();
 //        JsonObject jsonObject =(JsonObject) new JsonParser().parse(jsonJokes);
-        JsonArray jsonArray = (JsonArray) jsonParser.parse(jsonArrString);
-        for (Object json : jsonArray) {
-            JsonObject jsonJoke = (JsonObject) json;
-            Joke joke = JokeBuilder.newInstance().setType(String.valueOf(jsonJoke.get("type")))
-                    .setSetUp(String.valueOf(jsonJoke.get("setup"))).setPunchline(String
-                            .valueOf(jsonJoke.get("punchline"))).setId(Integer.parseInt(String.valueOf(jsonJoke.get("id")))).build();
-            jokes.add(joke);
-        }
-        if(jokes.isEmpty()){
-            req.setAttribute("error",jsonArrString);
+        try {
+            JsonArray jsonArray = (JsonArray) jsonParser.parse(jsonArrString);
+            for (Object json : jsonArray) {
+                JsonObject jsonJoke = (JsonObject) json;
+                Joke joke = JokeBuilder.newInstance().setType(String.valueOf(jsonJoke.get("type")))
+                        .setSetUp(String.valueOf(jsonJoke.get("setup"))).setPunchline(String
+                                .valueOf(jsonJoke.get("punchline"))).setId(Integer.parseInt(String.valueOf(jsonJoke.get("id")))).build();
+                jokes.add(joke);
+            }
+            req.setAttribute("jokes", jokes);
+            req.getRequestDispatcher("jokes.jsp").forward(req, resp);
+        } catch (Exception e) {
+            sendResponse(resp, "something went wrong");
             CustomLogger.logError(jsonArrString);
         }
-        req.setAttribute("jokes",jokes);
-        req.getRequestDispatcher("jokes.jsp").forward(req,resp);
     }
+
+
 
 
     private void sendResponse(HttpServletResponse response, String payload) {

@@ -11,10 +11,10 @@ import java.util.logging.SimpleFormatter;
 public class CustomLogger {
     public static final Logger logger = Logger.getLogger(CustomLogger.class
             .getName());
-    private FileHandler fh;
 
     {
         SimpleDateFormat format = new SimpleDateFormat("M-d_HHmmss");
+        FileHandler fh;
         try {
             fh = new FileHandler(Config.getLoggerFilePath());
         } catch (IOException e) {
