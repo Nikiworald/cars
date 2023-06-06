@@ -36,6 +36,7 @@ public class Config {//fixme
         String propFile = "Properties.properties";
         java.net.URL url = loader.getResource(propFile);
         try {
+            assert url != null;
             prop.load(url.openStream());
         } catch (Exception e) {
             System.err.println("Could not load configuration file: " + propFile);

@@ -19,9 +19,12 @@ public class SftpServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try{
-        // CustomLogger customLogger = new CustomLogger();
-//        Config config = new Config();
-        // InitDB.initializeDb();
+//            NewCachedThreadPool
+
+            Runnable idk = () -> System.out.println("running");//todo:multiThreading
+            Thread toDispatch = new Thread(idk); // actually get it from pool, but for simplicity
+            toDispatch.start();
+
         FileSystemManager manager = VFS.getManager();
         String serverAddress = Config.getPropertyByName("serverAddress").trim();
         String userId = Config.getPropertyByName("userId").trim();

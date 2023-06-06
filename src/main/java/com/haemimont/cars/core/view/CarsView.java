@@ -52,6 +52,7 @@ public class CarsView {
         }
     }
 
+    @Deprecated
     private void test(HttpServletRequest request, HttpServletResponse response, ArrayList<Object> cars) {     //testing javacode for jsp
         try {
             for (Object object : cars) {
@@ -75,5 +76,6 @@ public class CarsView {
         } catch (Exception e) {
             out.println("no cars found(" + e + ")");
         }
+
     }
 }

@@ -9,7 +9,6 @@ import com.haemimont.cars.core.storage.Storage;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 public class InitDB {
     public static void initializeDb() {
@@ -69,7 +68,7 @@ public class InitDB {
         } catch (SQLException e) {
             CustomLogger.logError("Failed to turn on autocommit");
         }
-        ArrayList<Car> testCars = carStatements.getCarsFromDb("make","BMW", connectionManager.getConnection());//gets all the cars with
+//        ArrayList<Car> testCars = carStatements.getCarsFromDb("make","BMW", connectionManager.getConnection());//gets all the cars with
 
 
         //user test

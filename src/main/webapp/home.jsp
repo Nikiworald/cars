@@ -1,4 +1,4 @@
-<hr/>
+
 <h3>Home form </h3>
 <%
 String profile_msg=(String)request.getAttribute("profile_msg");
@@ -31,4 +31,7 @@ out.print(login_msg);
 </form>
 <form action="sftpdownload.jsp" method="post">
 <input type="submit" value="sftp download"/>
+</form>
+<form action="jokes.jsp" method="get">
+<input type="submit" value="jokes"/>
 </form>

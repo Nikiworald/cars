@@ -87,10 +87,7 @@ public class CarBuilder{
         this.engineInformation.getEngineStatistics().setTorque(torque);
         return this;
     }
-    public Car build()
-    {
-        return new Car(this);
-    }
+
     public CarBuilder setHeight(final String height){
         this.dimension.setHeight(Integer.parseInt(height));
         return this;
@@ -171,5 +168,9 @@ public class CarBuilder{
     public CarBuilder setPrice(final double price){
         this.identification.setPrice(price);
         return this;
+    }
+    public Car build()
+    {
+        return new Car(this);
     }
 }
