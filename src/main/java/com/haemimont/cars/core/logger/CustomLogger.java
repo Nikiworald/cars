@@ -1,4 +1,4 @@
-package com.haemimont.cars.core.loger;
+package com.haemimont.cars.core.logger;
 
 import com.haemimont.cars.core.config.Config;
 

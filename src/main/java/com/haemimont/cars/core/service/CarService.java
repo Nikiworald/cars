@@ -1,6 +1,6 @@
 package com.haemimont.cars.core.service;
 
-import com.haemimont.cars.core.loger.CustomLogger;
+import com.haemimont.cars.core.logger.CustomLogger;
 import com.haemimont.cars.core.sql.CarStatements;
 import com.haemimont.cars.core.storage.Storage;
 import com.haemimont.cars.core.tools.DbUtil;

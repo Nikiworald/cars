@@ -1,7 +1,10 @@
 <%@ page import ="java.util.ArrayList"%>
 <%@ page import ="java.util.List"%>
 <%@ page import = "com.haemimont.cars.core.model.Joke"%>
-<%@ page import = "com.haemimont.cars.core.loger.CustomLogger"%>
+<%@ page import = "com.haemimont.cars.core.logger.CustomLogger"%>
+<%@ page import = "com.haemimont.cars.core.tools.FromJsonToJokes"%>
+<%@ page import = "com.haemimont.cars.core.jokesapi.JokesApi"%>
+
 <center>
 <h3>Jokes</h3>
 <%//user validation
@@ -12,27 +15,15 @@ String userName = null;
  String sessionID = null;
  Cookie[] cookies = request.getCookies();
  if(cookies !=null){
- for(Cookie cookie : cookies){
+    for(Cookie cookie : cookies){
  	if(cookie.getName().equals("user")) userName = cookie.getValue();
+    }
  }
- }
- ArrayList<Joke> jokes = (ArrayList<Joke>) request.getAttribute("jokes");
-        if(jokes==null){
-            out.println("something went wrong");
-            }else{
-            int i =1;
-            for(Joke joke:jokes){
-            out.println(i);
-            i++;
-            out.println("<br>");
-            out.println(joke.getSetUp());
-            out.println("<br>");
-            out.println(joke.getPunchLine());
-            out.println("<br>");
-           }
-          }
-
+ String jsonJoke = JokesApi.getOneJoke();
+String stringJoke = FromJsonToJokes.convert(jsonJoke);
+request.setAttribute("joke", stringJoke);
  %>
- <form action="jokeServlet" method="get">
-  <input type="submit" value="get 10 random jokes"/>
+ <div id ="mainDiv" >hello</div>
+ <script type="text/javascript" src="test.js"></script>
+  <input type="submit" value="get 10 random jokes" onclick="op('mainDiv','${joke}');" />
  </center>

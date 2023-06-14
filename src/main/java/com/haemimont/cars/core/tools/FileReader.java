@@ -1,6 +1,6 @@
 package com.haemimont.cars.core.tools;
 
-import com.haemimont.cars.core.loger.CustomLogger;
+import com.haemimont.cars.core.logger.CustomLogger;
 
 import java.io.File;
 import java.io.FileNotFoundException;

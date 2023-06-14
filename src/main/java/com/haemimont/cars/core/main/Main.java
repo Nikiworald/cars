@@ -41,7 +41,6 @@ public class Main {
 
             localDownload.copyFrom(remoteFile,Selectors.SELECT_SELF);
             System.out.println("File downloaded successful");
-
         }
 
 

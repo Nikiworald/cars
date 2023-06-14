@@ -1,7 +1,7 @@
 package com.haemimont.cars.core.servlet;
 
 import com.haemimont.cars.core.config.Config;
-import com.haemimont.cars.core.loger.CustomLogger;
+import com.haemimont.cars.core.logger.CustomLogger;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

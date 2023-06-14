@@ -1,8 +1,8 @@
 package com.haemimont.cars.core.config;
 
-import com.haemimont.cars.core.loger.CustomLogger;
+import com.haemimont.cars.core.logger.CustomLogger;
 
-public class Config {//fixme
+public class Config {
     static String name;
     static String password;
     static String dbUrl;

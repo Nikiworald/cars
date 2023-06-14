@@ -1,6 +1,6 @@
 package com.haemimont.cars.core.sql;
 
-import com.haemimont.cars.core.loger.CustomLogger;
+import com.haemimont.cars.core.logger.CustomLogger;
 import com.haemimont.cars.core.model.User;
 import com.haemimont.cars.core.tools.PasswordManager;
 

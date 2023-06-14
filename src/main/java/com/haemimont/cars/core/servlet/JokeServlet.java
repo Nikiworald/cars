@@ -4,7 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.haemimont.cars.core.jokesapi.JokesApi;
-import com.haemimont.cars.core.loger.CustomLogger;
+import com.haemimont.cars.core.logger.CustomLogger;
 import com.haemimont.cars.core.model.Joke;
 import com.haemimont.cars.core.model.JokeBuilder;
 import jakarta.servlet.annotation.WebServlet;
@@ -39,6 +39,7 @@ public class JokeServlet extends HttpServlet {
             sendResponse(resp, "something went wrong");
             CustomLogger.logError(jsonArrString);
         }
+        System.out.println(jokes);
     }
 
 
