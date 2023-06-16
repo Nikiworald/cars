@@ -24,7 +24,6 @@
         <servlet-name>edit</servlet-name>
         <servlet-class>com.haemimont.cars.core.servlet.EditServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>car</servlet-name>
         <servlet-name>cars</servlet-name>>

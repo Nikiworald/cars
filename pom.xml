@@ -64,8 +64,11 @@
             <artifactId>jsch</artifactId>
             <version>0.1.55</version>
         </dependency>
-
-
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.14</version>
+        </dependency>
     </dependencies>
     <repositories>
         <repository>
@@ -82,14 +85,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.2</version>
-<!--                <configuration>-->
-<!--                    <webResources>-->
-<!--                        <resource>-->
-<!--                            &lt;!&ndash; this is relative to the pom.xml directory &ndash;&gt;-->
-<!--                            <directory>resource2</directory>-->
-<!--                        </resource>-->
-<!--                    </webResources>-->
-<!--                </configuration>-->
             </plugin>
         </plugins>
     </build>
