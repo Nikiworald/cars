@@ -6,20 +6,18 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
+import org.apache.http.StatusLine;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.checkerframework.common.reflection.qual.GetMethod;
+import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 @WebServlet("/ApiTest")
 public class ApiTestServlet extends HttpServlet {
@@ -48,25 +46,22 @@ public class ApiTestServlet extends HttpServlet {
         }
     }
 
-    public String postRequest(URL url, JSONObject jsonObject) {
-        String response = null;
+    public String postRequest(URL url, JSONObject jsonObject) throws IOException {
+        HttpPost httpPost = new HttpPost(url.toString());
         HttpClient httpClient = HttpClientBuilder.create().build();
-        try {
-            System.out.println(jsonObject.toString());
-            StringEntity requestEntity = new StringEntity(
-                    jsonObject.toString(),
-                    ContentType.APPLICATION_JSON);
-            System.out.println(requestEntity);
-            HttpPost postRequest = new HttpPost(url.toString());
-            postRequest.setEntity(requestEntity);
-            postRequest.setHeader("Content-type", "application/json");
-            System.out.println(postRequest);
-            HttpResponse rawResponse = httpClient.execute(postRequest);
-            System.out.println(rawResponse);
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        StringEntity a = new StringEntity(jsonObject.toString());
+        a.setContentType("application/json");
+//        httpRequest.addHeader("content-type", "application/json");
+        httpPost.addHeader("content-type", "application/json");
+        httpPost.addHeader("Accept", "application/json");
+        httpPost.setEntity(a);
+        try (CloseableHttpResponse response = (CloseableHttpResponse) httpClient.execute(httpPost)) {
+            StatusLine statusLine = response.getStatusLine();
+//            System.out.println(statusLine.getStatusCode() + " " + statusLine.getReasonPhrase());
+            //            System.out.println("Response body: " + responseBody);
+            return EntityUtils.toString(response.getEntity(), StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            return "error" + e;
         }
-        return response;
     }
 }
