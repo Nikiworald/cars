@@ -5,15 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef3bf76b-8d8b-4f5a-8b3f-3165c1ba23b5" name="Changes" comment="1.7">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttapi/ConnectToApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttapi/RegisterToApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttresult/ApiConnectionResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttresult/ApiRegisterResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttresult/ApiResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/haemimont/cars/core/jwttapi/ConnectToApiTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/apitest/integrationtests/ApiIntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/apitest/unittests/ApiUnitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/apitest/unittests/ConnectToApiUnitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/apitest/unittests/RegisterToApiUnitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttapi/ApiOperations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttapi/LoginToApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttapiresult/ApiIntegrationTestResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttapiresult/ApiLogInResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttapi/ConnectToApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttapi/ConnectToApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttapi/RegisterToApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttapi/RegisterToApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttresult/ApiConnectionResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttapiresult/ApiConnectionResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttresult/ApiRegisterResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttapiresult/ApiRegisterResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttresult/ApiResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttapiresult/ApiResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/ApiTestServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/ApiTestServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/haemimont/cars/core/jwttapi/ConnectToApiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/haemimont/cars/core/jwttapi/ConnectToApiTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +33,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit3 Test Class" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="JUnit3 Test Class" />
       </list>
     </option>
   </component>
@@ -113,7 +120,7 @@
       <command value="        String salt = new byte[16].toString(); System.out.println(salt);" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ConnectToApiTest.testConnectionToApi">
+  <component name="RunManager" selected="Smart Tomcat.Tomcat 10">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.haemimont.cars.core.main.Main" />
       <module name="cars" />
@@ -143,7 +150,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Unnamed" type="com.poratu.idea.plugins.tomcat" nameIsGenerated="true">
+    <configuration name="Tomcat 10" type="com.poratu.idea.plugins.tomcat">
       <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
       <predefined_log_file enabled="true" id="Tomcat Access Log" />
       <predefined_log_file id="Tomcat Catalina Log" />
@@ -151,6 +158,9 @@
       <predefined_log_file id="Tomcat Host Manager Log" />
       <option name="contextPath" value="/cars" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+      <option name="envOptions">
+        <map />
+      </option>
       <option name="tomcatInfo">
         <TomcatInfo>
           <option name="name" value="Apache Tomcat/10.0.27" />
@@ -166,7 +176,7 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.ConnectToApiTest.testConnectionToApi" />
-      <item itemvalue="Smart Tomcat.Unnamed" />
+      <item itemvalue="Smart Tomcat.Tomcat 10" />
     </list>
     <recent_temporary>
       <list>
@@ -182,13 +192,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670509806645</updated>
-    </task>
-    <task id="LOCAL-00001" summary="1">
-      <created>1670513201748</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1670513201748</updated>
     </task>
     <task id="LOCAL-00002" summary="1">
       <created>1670515031112</created>
@@ -526,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686921573320</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="1.7">
+      <created>1687267497445</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1687267497446</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -771,7 +781,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/ApiTestServlet.java</url>
-          <line>56</line>
+          <line>57</line>
           <option name="timeStamp" value="266" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">

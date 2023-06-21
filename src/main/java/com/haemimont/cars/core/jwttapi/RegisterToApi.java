@@ -1,6 +1,6 @@
 package com.haemimont.cars.core.jwttapi;
 
-import com.haemimont.cars.core.jwttresult.ApiRegisterResult;
+import com.haemimont.cars.core.jwttapiresult.ApiRegisterResult;
 
 import org.apache.http.StatusLine;
 import org.apache.http.client.HttpClient;
@@ -15,14 +15,20 @@ import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-
+@Deprecated//new class ApiOperations
 public class RegisterToApi {
-    public static ApiRegisterResult register(JSONObject jsonObject, URL url) throws UnsupportedEncodingException {
+    public static ApiRegisterResult register(URL url, JSONObject jsonObject) {
         ApiRegisterResult apiRegisterResult = new ApiRegisterResult();
         HttpPost httpPost = new HttpPost(url.toString());
         HttpClient httpClient = HttpClientBuilder.create().build();
-        StringEntity stringEntity = new StringEntity(jsonObject.toString());
-        stringEntity.setContentType("application/json");
+        StringEntity stringEntity = null;
+        try {
+            stringEntity = new StringEntity(jsonObject.toString());
+            stringEntity.setContentType("application/json");
+        } catch (UnsupportedEncodingException e) {
+            apiRegisterResult.setSuccessful(false);
+            apiRegisterResult.appendMessage(e +"--\n");
+        }
         httpPost.addHeader("content-type", "application/json");
         httpPost.addHeader("Accept", "application/json");
         httpPost.setEntity(stringEntity);
@@ -30,11 +36,11 @@ public class RegisterToApi {
             StatusLine statusLine = response.getStatusLine();
             apiRegisterResult.setSuccessful(statusLine.getStatusCode() == HttpURLConnection.HTTP_OK);
             apiRegisterResult.setResponseCode(statusLine.getStatusCode());
-            apiRegisterResult.setMessage(EntityUtils.toString(response.getEntity(), StandardCharsets.UTF_8));//response Body
+            apiRegisterResult.appendMessage(EntityUtils.toString(response.getEntity(), StandardCharsets.UTF_8));//response Body
 
         } catch (Exception e) {
             apiRegisterResult.setSuccessful(false);
-            apiRegisterResult.setMessage(e.toString());
+            apiRegisterResult.appendMessage(e.toString());
         }
         return apiRegisterResult;
     }

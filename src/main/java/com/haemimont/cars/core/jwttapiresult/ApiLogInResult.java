@@ -1,9 +1,6 @@
-package com.haemimont.cars.core.jwttresult;
+package com.haemimont.cars.core.jwttapiresult;
 
-import org.apache.http.client.methods.CloseableHttpResponse;
-
-public class ApiRegisterResult extends ApiResult{
-    private CloseableHttpResponse closeableHttpResponse;
+public class ApiLogInResult extends ApiResult{
     @Override
     public boolean isSuccessful() {
         return super.isSuccessful();
@@ -12,14 +9,6 @@ public class ApiRegisterResult extends ApiResult{
     @Override
     public void setSuccessful(boolean successful) {
         super.setSuccessful(successful);
-    }
-
-    public CloseableHttpResponse getCloseableHttpResponse() {
-        return closeableHttpResponse;
-    }
-
-    public void setCloseableHttpResponse(CloseableHttpResponse closeableHttpResponse) {
-        this.closeableHttpResponse = closeableHttpResponse;
     }
 
     @Override
@@ -33,6 +22,11 @@ public class ApiRegisterResult extends ApiResult{
     }
 
     @Override
+    public void appendMessage(String message) {
+        super.appendMessage(message);
+    }
+
+    @Override
     public int getResponseCode() {
         return super.getResponseCode();
     }
@@ -41,5 +35,4 @@ public class ApiRegisterResult extends ApiResult{
     public void setResponseCode(int responseCode) {
         super.setResponseCode(responseCode);
     }
-
 }

@@ -1,4 +1,4 @@
-package com.haemimont.cars.core.jwttresult;
+package com.haemimont.cars.core.jwttapiresult;
 
 public class ApiConnectionResult extends ApiResult{
     @Override
@@ -27,7 +27,7 @@ public class ApiConnectionResult extends ApiResult{
     }
 
     @Override
-    public void setMessage(String message) {
-        super.setMessage(message);
+    public void appendMessage(String message) {
+        super.appendMessage(message);
     }
 }

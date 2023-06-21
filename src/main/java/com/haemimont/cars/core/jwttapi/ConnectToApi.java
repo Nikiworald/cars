@@ -1,11 +1,10 @@
 package com.haemimont.cars.core.jwttapi;
 
-import com.haemimont.cars.core.jwttresult.ApiConnectionResult;
+import com.haemimont.cars.core.jwttapiresult.ApiConnectionResult;
 
-import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
-
+@Deprecated//new class ApiOperations
 public class ConnectToApi {
     public static ApiConnectionResult connect(URL url){
         ApiConnectionResult apiConnectionResult = new ApiConnectionResult();
@@ -15,7 +14,7 @@ public class ConnectToApi {
             apiConnectionResult.setSuccessful(true);
 //            apiConnectionResult.setResponseCode(connection.getResponseCode);
         } catch (Exception e) {
-            apiConnectionResult.setMessage(e.toString());
+            apiConnectionResult.appendMessage(e.toString());
         }
         return apiConnectionResult;
     }

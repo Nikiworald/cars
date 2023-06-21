@@ -1,5 +1,7 @@
 package com.haemimont.cars.core.servlet;
 
+import com.haemimont.cars.core.apitest.unittests.ConnectToApiUnitTest;
+import com.haemimont.cars.core.apitest.unittests.RegisterToApiUnitTest;
 import com.haemimont.cars.core.tools.ApiRequest;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -16,6 +18,7 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.io.OutputStream;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
@@ -38,11 +41,9 @@ public class ApiTestServlet extends HttpServlet {
             jsonObject.put("email", email.trim());
             jsonObject.put("password", password.trim());
             jsonObject.put("role", userTypesSplit);
-            URL url = new URL("http://192.168.250.206:8080/api/auth/signup");
-            System.out.println(postRequest(url, jsonObject));
-
+            URL url = new URL("http://192.168.250.206:8080/");
         } else {
-            System.out.println("error");
+            System.out.println("incorrect inputs");
         }
     }
 
@@ -62,6 +63,15 @@ public class ApiTestServlet extends HttpServlet {
             return EntityUtils.toString(response.getEntity(), StandardCharsets.UTF_8);
         } catch (Exception e) {
             return "error" + e;
+        }
+    }
+    private void sendResponse(HttpServletResponse response, String payload) {
+        try {
+            OutputStream out = response.getOutputStream();
+            out.write(payload.getBytes());
+            out.flush();
+        } catch (Exception e) {
+            throw new RuntimeException(Integer.toString(HttpServletResponse.SC_INTERNAL_SERVER_ERROR));
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.haemimont.cars.core.jwttresult;
+package com.haemimont.cars.core.jwttapiresult;
 
 public class ApiResult {
     private boolean successful;
@@ -16,9 +16,10 @@ public class ApiResult {
     public String getMessage() {
         return message;
     }
+    public void setMessage(String message){this.message = message;}
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void appendMessage(String message) {
+        this.message += message;
     }
 
     public int getResponseCode() {
