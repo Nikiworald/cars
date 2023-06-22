@@ -1,11 +1,10 @@
 package com.haemimont.cars.core.jwttapi;
 
-import com.haemimont.cars.core.jwttapiresult.ApiConnectionResult;
-import com.haemimont.cars.core.jwttapiresult.ApiLogInResult;
-import com.haemimont.cars.core.jwttapiresult.ApiRegisterResult;
+import com.haemimont.cars.core.jwttapiresult.ApiResult;
 import org.apache.http.StatusLine;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -19,8 +18,8 @@ import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
 
 public class ApiOperations {
-    public static ApiConnectionResult connect(URL url){
-        ApiConnectionResult apiConnectionResult = new ApiConnectionResult();
+    public static ApiResult connect(URL url){
+        ApiResult apiConnectionResult = new ApiResult();
         try {
             URLConnection connection = url.openConnection();
             connection.connect();
@@ -31,8 +30,8 @@ public class ApiOperations {
         }
         return apiConnectionResult;
     }
-    public static ApiRegisterResult register(URL url, JSONObject jsonObject) {
-        ApiRegisterResult apiRegisterResult = new ApiRegisterResult();
+    public static ApiResult register(URL url, JSONObject jsonObject) {
+        ApiResult apiRegisterResult = new ApiResult();
         HttpPost httpPost = new HttpPost(url.toString());
         HttpClient httpClient = HttpClientBuilder.create().build();
         StringEntity stringEntity = null;
@@ -49,7 +48,7 @@ public class ApiOperations {
         try (CloseableHttpResponse response = (CloseableHttpResponse) httpClient.execute(httpPost)) {
             StatusLine statusLine = response.getStatusLine();
             apiRegisterResult.setSuccessful(statusLine.getStatusCode() == HttpURLConnection.HTTP_OK);
-            apiRegisterResult.setResponseCode(statusLine.getStatusCode());
+//            apiRegisterResult.setResponseCode(statusLine.getStatusCode());
             apiRegisterResult.appendMessage(EntityUtils.toString(response.getEntity(), StandardCharsets.UTF_8));//response Body
 
         } catch (Exception e) {
@@ -58,11 +57,11 @@ public class ApiOperations {
         }
         return apiRegisterResult;
     }
-    public static ApiLogInResult login(URL url, JSONObject jsonObject){
+    public static ApiResult login(URL url, JSONObject jsonObject){
         JSONObject loginJson = new JSONObject();
         loginJson.put("username",jsonObject.get("username"));
         loginJson.put("password",jsonObject.get("password"));
-        ApiLogInResult apiLogInResult = new ApiLogInResult();
+        ApiResult apiLogInResult = new ApiResult();
         HttpPost httpPost = new HttpPost(url.toString());
         HttpClient httpClient = HttpClientBuilder.create().build();
         StringEntity stringEntity = null;
@@ -79,7 +78,7 @@ public class ApiOperations {
         try (CloseableHttpResponse response = (CloseableHttpResponse) httpClient.execute(httpPost)) {
             StatusLine statusLine = response.getStatusLine();
             apiLogInResult.setSuccessful(statusLine.getStatusCode() == HttpURLConnection.HTTP_OK);
-            apiLogInResult.setResponseCode(statusLine.getStatusCode());
+//            apiLogInResult.setResponseCode(statusLine.getStatusCode());
             apiLogInResult.appendMessage(EntityUtils.toString(response.getEntity(), StandardCharsets.UTF_8));//response Body
 
         } catch (Exception e) {
@@ -87,5 +86,42 @@ public class ApiOperations {
             apiLogInResult.appendMessage(e.toString());
         }
         return apiLogInResult;
+    }
+    public static ApiResult authorizationTest(URL url, String jwtToken){
+        ApiResult apiResult = new ApiResult();
+//        HttpPost httpPost = new HttpPost(url.toString());
+        HttpGet httpGet = new HttpGet(url.toString());
+        HttpClient httpClient = HttpClientBuilder.create().build();
+        httpGet.addHeader("Authorization", jwtToken);
+        try (CloseableHttpResponse response = (CloseableHttpResponse) httpClient.execute(httpGet)) {
+            StatusLine statusLine = response.getStatusLine();
+            apiResult.setSuccessful(statusLine.getStatusCode() == HttpURLConnection.HTTP_OK);
+//            apiResult.setResponseCode(statusLine.getStatusCode());
+            apiResult.appendMessage(EntityUtils.toString(response.getEntity(), StandardCharsets.UTF_8));//response Body
+
+        } catch (Exception e) {
+            apiResult.setSuccessful(false);
+            apiResult.appendMessage(e.toString());
+        }
+        return apiResult;
+    }
+    @Deprecated
+    public static ApiResult userTest(URL url, String jwtToken){
+        ApiResult apiResult = new ApiResult();
+//        HttpPost httpPost = new HttpPost(url.toString());
+        HttpGet httpGet = new HttpGet(url.toString());
+        HttpClient httpClient = HttpClientBuilder.create().build();
+        httpGet.addHeader("Authorization", jwtToken);
+        try (CloseableHttpResponse response = (CloseableHttpResponse) httpClient.execute(httpGet)) {
+            StatusLine statusLine = response.getStatusLine();
+            apiResult.setSuccessful(statusLine.getStatusCode() == HttpURLConnection.HTTP_OK);
+//            apiResult.setResponseCode(statusLine.getStatusCode());
+            apiResult.appendMessage(EntityUtils.toString(response.getEntity(), StandardCharsets.UTF_8));//response Body
+
+        } catch (Exception e) {
+            apiResult.setSuccessful(false);
+            apiResult.appendMessage(e.toString());
+        }
+        return apiResult;
     }
 }

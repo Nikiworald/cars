@@ -24,9 +24,11 @@ public class CarService<Car> extends CrudService<Car> {
         ArrayList<Car> arrayList = new ArrayList<>();
         if (criteria != null && !criteria.equals("")) {//check if we have criteria
             if (criteria.equals("all")) {
+                //noinspection unchecked
                 arrayList = (ArrayList<Car>) carStatements.getAllCarsFromDb(connection);
             }
             if (criteria.equals("id")) {
+                //noinspection unchecked
                 arrayList = (ArrayList<Car>) carStatements.getCarsFromDb(criteria, value, connection);
             }
         }
@@ -91,6 +93,7 @@ public class CarService<Car> extends CrudService<Car> {
             Generator.vinGenerator(car, new Storage<>());
         }
         int id = carStatements.updateCar(car, connection);
+        //noinspection unchecked
         return (Car) carStatements.getCarById(id, connection);
     }
 

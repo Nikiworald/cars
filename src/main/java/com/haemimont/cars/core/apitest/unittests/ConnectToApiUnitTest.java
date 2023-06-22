@@ -1,11 +1,11 @@
 package com.haemimont.cars.core.apitest.unittests;
 
-import com.haemimont.cars.core.jwttapi.ApiOperations;
-import com.haemimont.cars.core.jwttapi.ConnectToApi;
-
-import java.net.URL;
+@Deprecated//doesn't add anything useful
 public class ConnectToApiUnitTest extends ApiUnitTest {
-    public static boolean test(URL url){
-     return ApiOperations.connect(url).isSuccessful();
-    }
+
+// --Commented out by Inspection START (6/22/2023 2:58 PM):
+//    public static boolean test(URL url){
+//     return ApiOperations.connect(url).isSuccessful();
+//    }
+// --Commented out by Inspection STOP (6/22/2023 2:58 PM)
 }

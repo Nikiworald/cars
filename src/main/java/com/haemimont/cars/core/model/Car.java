@@ -30,9 +30,11 @@ public class Car {
         return identification;
     }
 
-    public String getId(){
-        return getIdentification().getId();
-    }
+// --Commented out by Inspection START (6/22/2023 2:58 PM):
+//    public String getId(){
+//        return getIdentification().getId();
+//    }
+// --Commented out by Inspection STOP (6/22/2023 2:58 PM)
     public int getYear(){
         return getIdentification().getYear();
     }

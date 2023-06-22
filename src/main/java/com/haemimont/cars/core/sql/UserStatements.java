@@ -140,7 +140,7 @@ public class UserStatements {
         String hashedPassword = PasswordManager.generateEncryptedPassword(saltedPassword);
         try {
             preparedStatement = connection.prepareStatement("Insert into cars.user(name,password,email,phoneNumber,salt) values (?,?,?,?,?)");
-            preparedStatement.setString(1, user.getName());
+            preparedStatement.setString(1, user.getNAME());
             preparedStatement.setString(2, hashedPassword);
             preparedStatement.setString(3, user.getEmail());
             preparedStatement.setString(4, user.getPhoneNumber());
@@ -148,7 +148,7 @@ public class UserStatements {
             preparedStatement.execute();
             preparedStatement.close();
         } catch (SQLException e) {
-            CustomLogger.logError("Could not insert USER:" + user.getName() + " into USER" + e);
+            CustomLogger.logError("Could not insert USER:" + user.getNAME() + " into USER" + e);
         }
     }
 

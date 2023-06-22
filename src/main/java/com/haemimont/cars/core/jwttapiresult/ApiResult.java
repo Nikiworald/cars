@@ -3,7 +3,7 @@ package com.haemimont.cars.core.jwttapiresult;
 public class ApiResult {
     private boolean successful;
     private String message;
-    private int responseCode;
+
 
     public boolean isSuccessful() {
         return successful;
@@ -16,17 +16,12 @@ public class ApiResult {
     public String getMessage() {
         return message;
     }
-    public void setMessage(String message){this.message = message;}
 
     public void appendMessage(String message) {
-        this.message += message;
-    }
-
-    public int getResponseCode() {
-        return responseCode;
-    }
-
-    public void setResponseCode(int responseCode) {
-        this.responseCode = responseCode;
+        if (this.message == null) {
+            this.message = message;
+        } else {
+            this.message += message;
+        }
     }
 }

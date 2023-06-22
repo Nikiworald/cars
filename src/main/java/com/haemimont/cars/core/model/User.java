@@ -1,46 +1,54 @@
 package com.haemimont.cars.core.model;
 
 public class User {
-    private String name;
-    private String password;
-    private String email;
+    private final String NAME;
+    private final String PASSWORD;
+    private final String EMAIL;
     private String phoneNumber;
 
     public User(String name, String password, String email, String phoneNumber) {
-        this.name = name;
-        this.password = password;
-        this.email = email;
+        this.NAME = name;
+        this.PASSWORD = password;
+        this.EMAIL = email;
         this.phoneNumber = phoneNumber;
     }
 
-    public String getName() {
-        return name;
+    public String getNAME() {
+        return NAME;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
+// --Commented out by Inspection START (6/22/2023 2:58 PM):
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+// --Commented out by Inspection START (6/22/2023 2:58 PM):
+//// --Commented out by Inspection STOP (6/22/2023 2:58 PM)
+//
     public String getPassword() {
-        return password;
+// --Commented out by Inspection STOP (6/22/2023 2:58 PM)
+        return PASSWORD;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
+//    public void setPASSWORD(String PASSWORD) {
+// --Commented out by Inspection START (6/22/2023 2:58 PM):
+//        this.password = password;
+//    }
+//
     public String getEmail() {
-        return email;
+        return EMAIL;
     }
+// --Commented out by Inspection STOP (6/22/2023 2:58 PM)
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+// --Commented out by Inspection START (6/22/2023 2:58 PM):
+//    public void setEmail(String email) {
+//        this.email = email;
+//    }
+// --Commented out by Inspection STOP (6/22/2023 2:58 PM)
 
     public String getPhoneNumber() {
         return phoneNumber;
     }
-
+@Deprecated
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }

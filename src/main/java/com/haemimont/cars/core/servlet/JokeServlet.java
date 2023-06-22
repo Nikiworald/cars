@@ -21,10 +21,12 @@ public class JokeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         ArrayList<Joke> jokes = new ArrayList<>();
+        //noinspection deprecation
         JsonParser jsonParser = new JsonParser();
         String jsonArrString = JokesApi.getTenJokes();
 //        JsonObject jsonObject =(JsonObject) new JsonParser().parse(jsonJokes);
         try {
+            //noinspection deprecation
             JsonArray jsonArray = (JsonArray) jsonParser.parse(jsonArrString);
             for (Object json : jsonArray) {
                 JsonObject jsonJoke = (JsonObject) json;

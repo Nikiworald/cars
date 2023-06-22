@@ -1,5 +1,5 @@
 package com.haemimont.cars.core.apitest.unittests;
-@Deprecated//maybe not needed
+@Deprecated//doesn't add anything useful
 public class ApiUnitTest {
-   public static boolean test(){return false;}
+   // --Commented out by Inspection (6/22/2023 2:58 PM):public static boolean test(){return false;}
 }
