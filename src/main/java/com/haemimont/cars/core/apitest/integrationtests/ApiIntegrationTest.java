@@ -1,21 +1,13 @@
 package com.haemimont.cars.core.apitest.integrationtests;
 
+import com.haemimont.cars.core.config.Config;
 import com.haemimont.cars.core.jwttapi.ApiOperations;
 import com.haemimont.cars.core.jwttapiresult.ApiIntegrationTestResult;
 import com.haemimont.cars.core.jwttapiresult.ApiResult;
 import org.json.JSONObject;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-
 public class ApiIntegrationTest {
-    public static ApiIntegrationTestResult registerLoginAndAuthTest(URL url, JSONObject jsonObject) throws MalformedURLException {//todo clean up
-        URL registerUrl = new URL(url.toString() + "api/auth/signup");
-        URL loginUrl = new URL(url + "api/auth/signin");
-        URL allTestUrl = new URL(url + "api/test/all");
-        URL userTestUrl = new URL(url + "api/test/user");//todo put in config
-        URL modTestUrl = new URL(url + "api/test/mod");
-        URL adminTestUrl = new URL(url + "api/test/admin");
+    public static ApiIntegrationTestResult registerLoginAndAuthTest(String url, JSONObject jsonObject) {
         ApiIntegrationTestResult apiIntegrationTestResult = new ApiIntegrationTestResult();
         boolean register;
         boolean login;
@@ -23,12 +15,11 @@ public class ApiIntegrationTest {
         boolean user;
         boolean mod;
         boolean admin;
-//        if (ConnectToApiUnitTest.test(url)) {
         if (ApiOperations.connect(url).isSuccessful()) {
-            ApiResult apiRegisterResult = ApiOperations.register(registerUrl, jsonObject);//register test
+            ApiResult apiRegisterResult = ApiOperations.register(url + Config.getPropertyByName("registerUrl"), jsonObject);//register test
             register = apiRegisterResult.isSuccessful();
             apiIntegrationTestResult.addApiResultToList(apiRegisterResult);
-            ApiResult apiLogInResult = ApiOperations.login(loginUrl, jsonObject);//login test
+            ApiResult apiLogInResult = ApiOperations.login(url + Config.getPropertyByName("loginUrl"), jsonObject);//login test
             login = apiLogInResult.isSuccessful();
             apiIntegrationTestResult.addApiResultToList(apiLogInResult);
             if (register || login) {
@@ -36,13 +27,13 @@ public class ApiIntegrationTest {
                 String token = (String) loginJsonMessage.get("accessToken");
                 String tokenType = (String) loginJsonMessage.get("tokenType");
                 String jwttoken = tokenType + " " + token;
-                ApiResult allTestApiResult = ApiOperations.authorizationTest(allTestUrl, jwttoken);
+                ApiResult allTestApiResult = ApiOperations.authorizationTest(url + Config.getPropertyByName("allTestUrl"), jwttoken);
                 all = allTestApiResult.isSuccessful();
-                ApiResult userTestApiResult = ApiOperations.authorizationTest(userTestUrl, jwttoken);
+                ApiResult userTestApiResult = ApiOperations.authorizationTest(url + Config.getPropertyByName("userTestUrl"), jwttoken);
                 user = userTestApiResult.isSuccessful();
-                ApiResult modTestApiResult = ApiOperations.authorizationTest(modTestUrl, jwttoken);
+                ApiResult modTestApiResult = ApiOperations.authorizationTest(url + Config.getPropertyByName("modTestUrl"), jwttoken);
                 mod = modTestApiResult.isSuccessful();
-                ApiResult adminTestApiResult = ApiOperations.authorizationTest(adminTestUrl, jwttoken);
+                ApiResult adminTestApiResult = ApiOperations.authorizationTest(url + Config.getPropertyByName("adminTestUrl"), jwttoken);
                 admin = adminTestApiResult.isSuccessful();
                 if (all || user || mod || admin) {
                     apiIntegrationTestResult.setSuccessful(true);

@@ -1,6 +1,7 @@
 package com.haemimont.cars.core.servlet;
 
 import com.haemimont.cars.core.apitest.integrationtests.ApiIntegrationTest;
+import com.haemimont.cars.core.config.Config;
 import com.haemimont.cars.core.jwttapiresult.ApiIntegrationTestResult;
 import com.haemimont.cars.core.tools.ApiRequest;
 import jakarta.servlet.annotation.WebServlet;
@@ -32,8 +33,7 @@ public class ApiTestServlet extends HttpServlet {
             jsonObject.put("email", email.trim());
             jsonObject.put("password", password.trim());
             jsonObject.put("role", userTypesSplit);
-            URL url = new URL("http://192.168.250.206:8080/");
-          ApiIntegrationTestResult apiIntegrationTestResult = ApiIntegrationTest.registerLoginAndAuthTest(url,jsonObject);
+          ApiIntegrationTestResult apiIntegrationTestResult = ApiIntegrationTest.registerLoginAndAuthTest(Config.getPropertyByName("apiUrl"),jsonObject);
             apiIntegrationTestResult.getApiResults().forEach(System.out::println);
           if(apiIntegrationTestResult.isSuccessful()){
               sendResponse(resp,"nomer 1");

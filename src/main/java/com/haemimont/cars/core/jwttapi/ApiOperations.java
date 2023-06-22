@@ -18,10 +18,10 @@ import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
 
 public class ApiOperations {
-    public static ApiResult connect(URL url){
+    public static ApiResult connect(String url){
         ApiResult apiConnectionResult = new ApiResult();
         try {
-            URLConnection connection = url.openConnection();
+            URLConnection connection = new URL(url).openConnection();
             connection.connect();
             apiConnectionResult.setSuccessful(true);
 //            apiConnectionResult.setResponseCode(connection.getResponseCode);
@@ -30,9 +30,9 @@ public class ApiOperations {
         }
         return apiConnectionResult;
     }
-    public static ApiResult register(URL url, JSONObject jsonObject) {
+    public static ApiResult register(String url, JSONObject jsonObject) {
         ApiResult apiRegisterResult = new ApiResult();
-        HttpPost httpPost = new HttpPost(url.toString());
+        HttpPost httpPost = new HttpPost(url);
         HttpClient httpClient = HttpClientBuilder.create().build();
         StringEntity stringEntity = null;
         try {
@@ -57,12 +57,12 @@ public class ApiOperations {
         }
         return apiRegisterResult;
     }
-    public static ApiResult login(URL url, JSONObject jsonObject){
+    public static ApiResult login(String url, JSONObject jsonObject){
         JSONObject loginJson = new JSONObject();
         loginJson.put("username",jsonObject.get("username"));
         loginJson.put("password",jsonObject.get("password"));
         ApiResult apiLogInResult = new ApiResult();
-        HttpPost httpPost = new HttpPost(url.toString());
+        HttpPost httpPost = new HttpPost(url);
         HttpClient httpClient = HttpClientBuilder.create().build();
         StringEntity stringEntity = null;
         try {
@@ -87,10 +87,10 @@ public class ApiOperations {
         }
         return apiLogInResult;
     }
-    public static ApiResult authorizationTest(URL url, String jwtToken){
+    public static ApiResult authorizationTest(String url, String jwtToken){
         ApiResult apiResult = new ApiResult();
 //        HttpPost httpPost = new HttpPost(url.toString());
-        HttpGet httpGet = new HttpGet(url.toString());
+        HttpGet httpGet = new HttpGet(url);
         HttpClient httpClient = HttpClientBuilder.create().build();
         httpGet.addHeader("Authorization", jwtToken);
         try (CloseableHttpResponse response = (CloseableHttpResponse) httpClient.execute(httpGet)) {
@@ -106,10 +106,10 @@ public class ApiOperations {
         return apiResult;
     }
     @Deprecated
-    public static ApiResult userTest(URL url, String jwtToken){
+    public static ApiResult userTest(String url, String jwtToken){
         ApiResult apiResult = new ApiResult();
 //        HttpPost httpPost = new HttpPost(url.toString());
-        HttpGet httpGet = new HttpGet(url.toString());
+        HttpGet httpGet = new HttpGet(url);
         HttpClient httpClient = HttpClientBuilder.create().build();
         httpGet.addHeader("Authorization", jwtToken);
         try (CloseableHttpResponse response = (CloseableHttpResponse) httpClient.execute(httpGet)) {
