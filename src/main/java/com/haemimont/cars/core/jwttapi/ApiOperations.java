@@ -18,13 +18,14 @@ import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
 
 public class ApiOperations {
+    private static final HttpClient HTTP_CLIENT = HttpClientBuilder.create().build();
+
     public static ApiResult connect(String url) {
         ApiResult apiConnectionResult = new ApiResult();
         try {
             URLConnection connection = new URL(url).openConnection();
             connection.connect();
             apiConnectionResult.setSuccessful(true);
-//            apiConnectionResult.setResponseCode(connection.getResponseCode);
         } catch (Exception e) {
             apiConnectionResult.appendMessage(e.toString());
         }
@@ -34,7 +35,6 @@ public class ApiOperations {
     public static ApiResult register(String url, JSONObject jsonObject) {
         ApiResult apiRegisterResult = new ApiResult();
         HttpPost httpPost = new HttpPost(url);
-        HttpClient httpClient = HttpClientBuilder.create().build();
         StringEntity stringEntity = null;
         try {
             stringEntity = new StringEntity(jsonObject.toString());
@@ -46,10 +46,9 @@ public class ApiOperations {
         httpPost.addHeader("content-type", "application/json");
         httpPost.addHeader("Accept", "application/json");
         httpPost.setEntity(stringEntity);
-        try (CloseableHttpResponse response = (CloseableHttpResponse) httpClient.execute(httpPost)) {
+        try (CloseableHttpResponse response = (CloseableHttpResponse) HTTP_CLIENT.execute(httpPost)) {
             StatusLine statusLine = response.getStatusLine();
             apiRegisterResult.setSuccessful(statusLine.getStatusCode() == HttpURLConnection.HTTP_OK);
-//            apiRegisterResult.setResponseCode(statusLine.getStatusCode());
             apiRegisterResult.appendMessage(EntityUtils.toString(response.getEntity(), StandardCharsets.UTF_8));//response Body
 
         } catch (Exception e) {
@@ -65,7 +64,6 @@ public class ApiOperations {
         loginJson.put("password", jsonObject.get("password"));
         ApiResult apiLogInResult = new ApiResult();
         HttpPost httpPost = new HttpPost(url);
-        HttpClient httpClient = HttpClientBuilder.create().build();
         StringEntity stringEntity = null;
         try {
             stringEntity = new StringEntity(loginJson.toString());
@@ -77,10 +75,9 @@ public class ApiOperations {
         httpPost.addHeader("content-type", "application/json");
         httpPost.addHeader("Accept", "application/json");
         httpPost.setEntity(stringEntity);
-        try (CloseableHttpResponse response = (CloseableHttpResponse) httpClient.execute(httpPost)) {
+        try (CloseableHttpResponse response = (CloseableHttpResponse) HTTP_CLIENT.execute(httpPost)) {
             StatusLine statusLine = response.getStatusLine();
             apiLogInResult.setSuccessful(statusLine.getStatusCode() == HttpURLConnection.HTTP_OK);
-//            apiLogInResult.setResponseCode(statusLine.getStatusCode());
             apiLogInResult.appendMessage(EntityUtils.toString(response.getEntity(), StandardCharsets.UTF_8));//response Body
 
         } catch (Exception e) {
@@ -92,15 +89,11 @@ public class ApiOperations {
 
     public static ApiResult authorizationTest(String url, String jwtToken) {
         ApiResult apiResult = new ApiResult();
-//        HttpPost httpPost = new HttpPost(url.toString());
         HttpGet httpGet = new HttpGet(url);
-        HttpClient httpClient = HttpClientBuilder.create().build();
-
         httpGet.setHeader("Authorization", jwtToken);
-        try (CloseableHttpResponse response = (CloseableHttpResponse) httpClient.execute(httpGet)) {
+        try (CloseableHttpResponse response = (CloseableHttpResponse) HTTP_CLIENT.execute(httpGet)) {
             StatusLine statusLine = response.getStatusLine();
             apiResult.setSuccessful(statusLine.getStatusCode() == HttpURLConnection.HTTP_OK);
-//            apiResult.setResponseCode(statusLine.getStatusCode());
             apiResult.appendMessage(EntityUtils.toString(response.getEntity(), StandardCharsets.UTF_8));//response Body
 
         } catch (Exception e) {
