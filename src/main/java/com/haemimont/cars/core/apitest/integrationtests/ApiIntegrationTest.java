@@ -17,27 +17,32 @@ public class ApiIntegrationTest {
         boolean admin;
         if (ApiOperations.connect(url).isSuccessful()) {
             ApiResult apiRegisterResult = ApiOperations.register(url + Config.getPropertyByName("registerUrl"), jsonObject);//register test
+            apiRegisterResult.setName("registration test");
             register = apiRegisterResult.isSuccessful();
             apiIntegrationTestResult.addApiResultToList(apiRegisterResult);
             ApiResult apiLogInResult = ApiOperations.login(url + Config.getPropertyByName("loginUrl"), jsonObject);//login test
+            apiLogInResult.setName("login test");
             login = apiLogInResult.isSuccessful();
             apiIntegrationTestResult.addApiResultToList(apiLogInResult);
             if (register || login) {
                 JSONObject loginJsonMessage = new JSONObject(apiLogInResult.getMessage());
-                String token = (String) loginJsonMessage.get("accessToken");
-                String tokenType = (String) loginJsonMessage.get("tokenType");
-                String jwttoken = tokenType + " " + token;
+                String jwttoken = loginJsonMessage.get("tokenType")  + " " + loginJsonMessage.get("accessToken");
                 ApiResult allTestApiResult = ApiOperations.authorizationTest(url + Config.getPropertyByName("allTestUrl"), jwttoken);
+                allTestApiResult.setName("public access test");
                 all = allTestApiResult.isSuccessful();
+                apiIntegrationTestResult.addApiResultToList(allTestApiResult);
                 ApiResult userTestApiResult = ApiOperations.authorizationTest(url + Config.getPropertyByName("userTestUrl"), jwttoken);
+                userTestApiResult.setName("user access test");
                 user = userTestApiResult.isSuccessful();
+                apiIntegrationTestResult.addApiResultToList(userTestApiResult);
                 ApiResult modTestApiResult = ApiOperations.authorizationTest(url + Config.getPropertyByName("modTestUrl"), jwttoken);
+                modTestApiResult.setName("mod access test");
                 mod = modTestApiResult.isSuccessful();
+                apiIntegrationTestResult.addApiResultToList(modTestApiResult);
                 ApiResult adminTestApiResult = ApiOperations.authorizationTest(url + Config.getPropertyByName("adminTestUrl"), jwttoken);
+                adminTestApiResult.setName("admin access test");
                 admin = adminTestApiResult.isSuccessful();
-                if (all || user || mod || admin) {
-                    apiIntegrationTestResult.setSuccessful(true);
-                }
+                apiIntegrationTestResult.addApiResultToList(adminTestApiResult);
             }
         }
         return apiIntegrationTestResult;

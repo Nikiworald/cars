@@ -1,3 +1,7 @@
+<%@ page import = "com.haemimont.cars.core.jwttapiresult.ApiResult"%>
+<%@ page import ="java.util.List"%>
+
+
 <center>
 <form action="ApiTest" method="post">
 <table border=1>
@@ -10,5 +14,27 @@
 </table>
 <input type="submit" value="test"/>
 </form>
+<table>
+<table border=1>
+<tbody>
+<%
+        List<ApiResult> apiResultList = (List<ApiResult>) request.getAttribute("apiResultList");
+        if (apiResultList != null) {
+            for (ApiResult result : apiResultList) {
+                out.println("<tr><td>");
+                if (result.isSuccessful()) {
+                    out.println("*");
+                } else {
+                    out.println("!");
+                }
+                out.println("<td>");
+                out.println(result.getName() + ":");
+                out.println(result.getMessage());
+                out.println("</td></td></tr>");
+            }
+        }
 
+%>
+</tbody>
+</table>
 </center>

@@ -4,6 +4,7 @@ import com.haemimont.cars.core.apitest.integrationtests.ApiIntegrationTest;
 import com.haemimont.cars.core.config.Config;
 import com.haemimont.cars.core.jwttapiresult.ApiIntegrationTestResult;
 import com.haemimont.cars.core.tools.ApiRequest;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -12,7 +13,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.OutputStream;
-import java.net.URL;
 
 @WebServlet("/ApiTest")
 public class ApiTestServlet extends HttpServlet {
@@ -21,8 +21,8 @@ public class ApiTestServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        if (ApiRequest.validate(req)) {//todo do the api request and get the jwttoken and test the thing
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+        if (ApiRequest.validate(req)) {
             String name = req.getParameter("name");
             String password = req.getParameter("password");
             String email = req.getParameter("email");
@@ -33,15 +33,14 @@ public class ApiTestServlet extends HttpServlet {
             jsonObject.put("email", email.trim());
             jsonObject.put("password", password.trim());
             jsonObject.put("role", userTypesSplit);
-          ApiIntegrationTestResult apiIntegrationTestResult = ApiIntegrationTest.registerLoginAndAuthTest(Config.getPropertyByName("apiUrl"),jsonObject);
-            apiIntegrationTestResult.getApiResults().forEach(System.out::println);
-          if(apiIntegrationTestResult.isSuccessful()){
-              sendResponse(resp,"nomer 1");
-          }
+            ApiIntegrationTestResult apiIntegrationTestResult = ApiIntegrationTest.registerLoginAndAuthTest(Config.getPropertyByName("apiUrl"), jsonObject);
+            req.setAttribute("apiResultList",apiIntegrationTestResult.getApiResults());
+            req.getRequestDispatcher("apitest.jsp").forward(req,resp);
         } else {
-            sendResponse(resp,"incorrect inputs");
+            sendResponse(resp, "incorrect inputs");
         }
     }
+
     private void sendResponse(HttpServletResponse response, String payload) {
         try {
             OutputStream out = response.getOutputStream();

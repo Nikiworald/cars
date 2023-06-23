@@ -3,7 +3,15 @@ package com.haemimont.cars.core.jwttapiresult;
 public class ApiResult {
     private boolean successful;
     private String message;
+    private String name;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public boolean isSuccessful() {
         return successful;
@@ -17,9 +25,13 @@ public class ApiResult {
         return message;
     }
 
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
     public void appendMessage(String message) {
-        if (this.message == null) {
-            this.message = message;
+        if (getMessage()== null) {
+            setMessage(message);
         } else {
             this.message += message;
         }

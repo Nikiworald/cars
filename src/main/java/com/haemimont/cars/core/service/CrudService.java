@@ -4,11 +4,12 @@ import java.util.ArrayList;
 
 public class CrudService<T> {
 
-    public ArrayList<T> get(String criteria,String value) {
+    public ArrayList<T> get(String criteria, String value) {
         return null;
     }
 
 
+    @SuppressWarnings("unused")
     public String put(T obj) {
         return null;
 

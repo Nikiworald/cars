@@ -461,7 +461,8 @@ public class CarStatements {//preset of queries
         }
         return check;
     }
-    public Car getCarByVin(String vin,Connection connection){
+
+    public Car getCarByVin(String vin, Connection connection) {
 
         Car car = null;
         PreparedStatement preparedStatement;
@@ -516,9 +517,6 @@ public class CarStatements {//preset of queries
             throw new RuntimeException(e);
         }
         return car;
-
-
-
 
 
     }

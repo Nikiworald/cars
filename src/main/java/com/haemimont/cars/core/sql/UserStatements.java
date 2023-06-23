@@ -36,7 +36,7 @@ public class UserStatements {
         return check;
     }
 
-    public HashMap<String,String> checkForMatchingNameAndReturnHashMap(String name, Connection connection) {
+    public HashMap<String, String> checkForMatchingNameAndReturnHashMap(String name, Connection connection) {
         PreparedStatement preparedStatement;
         HashMap<String, String> hashMap = new HashMap<>();
 
@@ -154,7 +154,7 @@ public class UserStatements {
 
     public boolean checkIfValidNameAndPassword(String name, String password, Connection connection) {
         boolean check = false;
-        Map<String,String> hashMap = checkForMatchingNameAndReturnHashMap(name, connection);
+        Map<String, String> hashMap = checkForMatchingNameAndReturnHashMap(name, connection);
         if (hashMap.size() > 0) {
             String salt = hashMap.get("salt");
             String hashedDbPassword = hashMap.get("hashedDbPassword");

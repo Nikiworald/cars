@@ -18,49 +18,53 @@ import java.io.OutputStream;
 public class SftpServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        try{
+        try {
 //            NewCachedThreadPool
 
             Runnable idk = () -> System.out.println("running");//todo:multiThreading
             Thread toDispatch = new Thread(idk); // actually get it from pool, but for simplicity
             toDispatch.start();
 
-        FileSystemManager manager = VFS.getManager();
-        String serverAddress = Config.getPropertyByName("serverAddress").trim();
-        String userId = Config.getPropertyByName("userId").trim();
-        String password = Config.getPropertyByName("password").trim();
-        String downloadPath = Config.getPropertyByName("downloadPath");
-        String sftpPort = Config.getPropertyByName("sftpPort");
+            FileSystemManager manager = VFS.getManager();
+            String serverAddress = Config.getPropertyByName("serverAddress").trim();
+            String userId = Config.getPropertyByName("userId").trim();
+            String password = Config.getPropertyByName("password").trim();
+            String downloadPath = Config.getPropertyByName("downloadPath");
+            String sftpPort = Config.getPropertyByName("sftpPort");
 
-        //Setup our SFTP configuration
-        FileSystemOptions opts = new FileSystemOptions();
-        SftpFileSystemConfigBuilder.getInstance().setStrictHostKeyChecking(
-                opts, "no");
+            //Setup our SFTP configuration
+            FileSystemOptions opts = new FileSystemOptions();
+            SftpFileSystemConfigBuilder.getInstance().setStrictHostKeyChecking(
+                    opts, "no");
 
-        //Create the SFTP URI using the host name, userid, password,  remote path and file name
-        String sftpUri = "sftp://" + userId + ":" + password + "@" + serverAddress + ":"+sftpPort+"/";
+            //Create the SFTP URI using the host name, userid, password,  remote path and file name
+            String sftpUri = "sftp://" + userId + ":" + password + "@" + serverAddress + ":" + sftpPort + "/";
 
 
-        FileObject sftpFiles = manager.resolveFile(sftpUri);
-        FileObject[] files = sftpFiles.getChildren();
-        for (FileObject remoteFile:files
-        ) {
-            String fileName = remoteFile.getName().getBaseName();
+            FileObject sftpFiles = manager.resolveFile(sftpUri);
+            FileObject[] files = sftpFiles.getChildren();
+            for (FileObject remoteFile : files
+            ) {
+                String fileName = remoteFile.getName().getBaseName();
 
-            File file = new File(downloadPath);
-            FileObject localFile = manager.resolveFile(file.getAbsolutePath());
-            FileObject localDownload = localFile.resolveFile(fileName);
+                File file = new File(downloadPath);
+                FileObject localFile = manager.resolveFile(file.getAbsolutePath());
+                FileObject localDownload = localFile.resolveFile(fileName);
 
-            localDownload.copyFrom(remoteFile,Selectors.SELECT_SELF);
-            CustomLogger.logInfo("File downloaded "+fileName);
+                localDownload.copyFrom(remoteFile, Selectors.SELECT_SELF);
+                CustomLogger.logInfo("File downloaded " + fileName);
+            }
+            sendResponse(resp, "files downloaded successfully");
+        } catch (Exception e) {
+            sendResponse(resp, "something went wrong:" + e);
         }
-        sendResponse(resp,"files downloaded successfully");}catch (Exception e ){sendResponse(resp,"something went wrong:"+e);}
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doPost(req, resp);
     }
+
     private void sendResponse(HttpServletResponse response, String payload) {
         try {
             OutputStream out = response.getOutputStream();

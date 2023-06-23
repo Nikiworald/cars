@@ -3,7 +3,6 @@ package com.haemimont.cars.core.main;
 import com.haemimont.cars.core.config.Config;
 import com.haemimont.cars.core.tools.InitDB;
 import org.apache.commons.vfs2.*;
-
 import org.apache.commons.vfs2.provider.sftp.SftpFileSystemConfigBuilder;
 
 import java.io.File;
@@ -13,7 +12,7 @@ public class Main {
     public static void main(String[] args) throws FileSystemException {
 
         // CustomLogger customLogger = new CustomLogger();
-         InitDB.initializeDb();
+        InitDB.initializeDb();
         FileSystemManager manager = VFS.getManager();
         String serverAddress = Config.getPropertyByName("serverAddress").trim();
         String userId = Config.getPropertyByName("userId").trim();
@@ -31,20 +30,17 @@ public class Main {
 
         FileObject sftpFiles = manager.resolveFile(sftpUri);
         FileObject[] files = sftpFiles.getChildren();
-        for (FileObject remoteFile:files
-             ) {
+        for (FileObject remoteFile : files
+        ) {
             String fileName = remoteFile.getName().getBaseName();
 
-           File file = new File(downloadPath);
-           FileObject localFile = manager.resolveFile(file.getAbsolutePath());
+            File file = new File(downloadPath);
+            FileObject localFile = manager.resolveFile(file.getAbsolutePath());
             FileObject localDownload = localFile.resolveFile(fileName);
 
-            localDownload.copyFrom(remoteFile,Selectors.SELECT_SELF);
+            localDownload.copyFrom(remoteFile, Selectors.SELECT_SELF);
             System.out.println("File downloaded successful");
         }
-
-
-
 
 
     }

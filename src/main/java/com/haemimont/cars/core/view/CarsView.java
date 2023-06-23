@@ -1,5 +1,6 @@
 package com.haemimont.cars.core.view;
 
+import com.haemimont.cars.core.jwttapiresult.ApiResult;
 import com.haemimont.cars.core.model.Car;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -7,6 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import static java.lang.System.out;
 
@@ -53,28 +55,23 @@ public class CarsView {
     }
 
     @Deprecated
-    private void test(HttpServletRequest request, HttpServletResponse response, ArrayList<Object> cars) {     //testing java code for jsp
-        try {
-            for (Object object : cars) {
-                Car car = (Car) object;
-                out.println("<td>" + car.getIdentification().getVin() + "</td>");
-                out.println("<td>" + car.getIdentification().getMake() + "</td>");
-                out.println("<td>" + car.getIdentification().getModelYear() + "</td>");
-                out.println("<td>" + car.getIdentification().getClassification() + "</td>");
-                out.println("<td>" + car.getFuelInformation().getFuelType() + "</td>");
-                out.println("<td>" + car.getEngineInformation().getTransmission() + "</td>");
-                out.println("<td>" + car.getEngineInformation().getDriveLine() + "</td>");
-                out.println("<td>" + car.getEngineInformation().getEngineType() + "</td>");
-                out.println("<td>" + car.getIdentification().getPrice() + "</td>");
-                out.println("<td>");
-                out.println("<form action=" + "VinServlet" + " method=" + "get" + ">" +
-                        "<input type=" + "hidden" + " name=" + "vin" + " value=" + car.getIdentification().getVin() + " />" +
-                        "<input type=" + "submit" + " value=view>" +
-                        "</form>");
-                out.println("</td>");
+    private void test(HttpServletRequest request, HttpServletResponse response, List<ApiResult> apiResultList) {     //testing java code for jsp
+        apiResultList = (List<ApiResult>) request.getAttribute("apiResultList");
+        if (apiResultList != null) {
+            for (ApiResult result : apiResultList) {
+                out.println("<tr>");
+                if (result.isSuccessful()) {
+                    out.println("* ");
+                } else {
+                    out.println("! ");
+                }
+                out.println(result.getName() + ":");
+                out.println(result.getMessage());
+
+
             }
-        } catch (Exception e) {
-            out.println("no cars found(" + e + ")");
+
+
         }
 
     }

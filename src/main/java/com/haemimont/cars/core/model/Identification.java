@@ -1,12 +1,13 @@
 package com.haemimont.cars.core.model;
+
 public class Identification {
-    private  String classification;
+    private String classification;
     private String id;
     private String make;
     private String modelYear;
     private int year;
     private String color;
-    private double price ;
+    private double price;
     private String vin;
 
     public String getClassification() {
@@ -44,6 +45,7 @@ public class Identification {
     public void setYear(int year) {
         this.year = year;
     }
+
     public int getYear() {
         return year;
     }
@@ -59,13 +61,16 @@ public class Identification {
     public double getPrice() {
         return price;
     }
-    public void setColor(String color){
+
+    public void setColor(String color) {
         this.color = color;
     }
-    public void setVin(String vin){
+
+    public void setVin(String vin) {
         this.vin = vin;
     }
-    public String getVin(){
+
+    public String getVin() {
         return vin;
     }
 

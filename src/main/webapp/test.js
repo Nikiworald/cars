@@ -4,3 +4,4 @@ function op(param_div_id,stringToReplace){
 k.textContent = stringToReplace;
  }
 }
+//javax

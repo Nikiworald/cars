@@ -17,7 +17,7 @@ public class User {
         return NAME;
     }
 
-// --Commented out by Inspection START (6/22/2023 2:58 PM):
+    // --Commented out by Inspection START (6/22/2023 2:58 PM):
 //    public void setName(String name) {
 //        this.name = name;
 //    }
@@ -29,7 +29,7 @@ public class User {
         return PASSWORD;
     }
 
-//    public void setPASSWORD(String PASSWORD) {
+    //    public void setPASSWORD(String PASSWORD) {
 // --Commented out by Inspection START (6/22/2023 2:58 PM):
 //        this.password = password;
 //    }
@@ -48,7 +48,8 @@ public class User {
     public String getPhoneNumber() {
         return phoneNumber;
     }
-@Deprecated
+
+    @Deprecated
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }

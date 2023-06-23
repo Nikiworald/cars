@@ -40,6 +40,7 @@ public class SqlBuilder {
             parameterCount++;
         }
     }
+
     public void biggerThan(String dbFieldName, String value) {
         if (value != null && !value.equals("")) {
             sql = whereOrAnd(sql);

@@ -1,7 +1,10 @@
-    package com.haemimont.cars.core.autocomplete;
+package com.haemimont.cars.core.autocomplete;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
+
+@SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
 @Deprecated//currently not implemented
 public class DummyDB {
     public DummyDB() {
@@ -9,7 +12,7 @@ public class DummyDB {
         String data = "Afghanistan,	Albania, Zimbabwe";
         StringTokenizer st = new StringTokenizer(data, ",");
 
-        while(st.hasMoreTokens()) {
+        while (st.hasMoreTokens()) {
             countries.add(st.nextToken().trim());
         }
 //        int totalCountries = countries.size();

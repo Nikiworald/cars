@@ -45,8 +45,6 @@ public class JokeServlet extends HttpServlet {
     }
 
 
-
-
     private void sendResponse(HttpServletResponse response, String payload) {
         try {
             OutputStream out = response.getOutputStream();

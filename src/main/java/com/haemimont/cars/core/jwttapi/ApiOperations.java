@@ -18,7 +18,7 @@ import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
 
 public class ApiOperations {
-    public static ApiResult connect(String url){
+    public static ApiResult connect(String url) {
         ApiResult apiConnectionResult = new ApiResult();
         try {
             URLConnection connection = new URL(url).openConnection();
@@ -30,6 +30,7 @@ public class ApiOperations {
         }
         return apiConnectionResult;
     }
+
     public static ApiResult register(String url, JSONObject jsonObject) {
         ApiResult apiRegisterResult = new ApiResult();
         HttpPost httpPost = new HttpPost(url);
@@ -40,7 +41,7 @@ public class ApiOperations {
             stringEntity.setContentType("application/json");
         } catch (UnsupportedEncodingException e) {
             apiRegisterResult.setSuccessful(false);
-            apiRegisterResult.appendMessage(e +"--\n");
+            apiRegisterResult.appendMessage(e + "--\n");
         }
         httpPost.addHeader("content-type", "application/json");
         httpPost.addHeader("Accept", "application/json");
@@ -57,10 +58,11 @@ public class ApiOperations {
         }
         return apiRegisterResult;
     }
-    public static ApiResult login(String url, JSONObject jsonObject){
+
+    public static ApiResult login(String url, JSONObject jsonObject) {
         JSONObject loginJson = new JSONObject();
-        loginJson.put("username",jsonObject.get("username"));
-        loginJson.put("password",jsonObject.get("password"));
+        loginJson.put("username", jsonObject.get("username"));
+        loginJson.put("password", jsonObject.get("password"));
         ApiResult apiLogInResult = new ApiResult();
         HttpPost httpPost = new HttpPost(url);
         HttpClient httpClient = HttpClientBuilder.create().build();
@@ -70,7 +72,7 @@ public class ApiOperations {
             stringEntity.setContentType("application/json");
         } catch (UnsupportedEncodingException e) {
             apiLogInResult.setSuccessful(false);
-            apiLogInResult.appendMessage(e +"--\n");
+            apiLogInResult.appendMessage(e + "--\n");
         }
         httpPost.addHeader("content-type", "application/json");
         httpPost.addHeader("Accept", "application/json");
@@ -87,31 +89,14 @@ public class ApiOperations {
         }
         return apiLogInResult;
     }
-    public static ApiResult authorizationTest(String url, String jwtToken){
-        ApiResult apiResult = new ApiResult();
-//        HttpPost httpPost = new HttpPost(url.toString());
-        HttpGet httpGet = new HttpGet(url);
-        HttpClient httpClient = HttpClientBuilder.create().build();
-        httpGet.addHeader("Authorization", jwtToken);
-        try (CloseableHttpResponse response = (CloseableHttpResponse) httpClient.execute(httpGet)) {
-            StatusLine statusLine = response.getStatusLine();
-            apiResult.setSuccessful(statusLine.getStatusCode() == HttpURLConnection.HTTP_OK);
-//            apiResult.setResponseCode(statusLine.getStatusCode());
-            apiResult.appendMessage(EntityUtils.toString(response.getEntity(), StandardCharsets.UTF_8));//response Body
 
-        } catch (Exception e) {
-            apiResult.setSuccessful(false);
-            apiResult.appendMessage(e.toString());
-        }
-        return apiResult;
-    }
-    @Deprecated
-    public static ApiResult userTest(String url, String jwtToken){
+    public static ApiResult authorizationTest(String url, String jwtToken) {
         ApiResult apiResult = new ApiResult();
 //        HttpPost httpPost = new HttpPost(url.toString());
         HttpGet httpGet = new HttpGet(url);
         HttpClient httpClient = HttpClientBuilder.create().build();
-        httpGet.addHeader("Authorization", jwtToken);
+
+        httpGet.setHeader("Authorization",jwtToken);
         try (CloseableHttpResponse response = (CloseableHttpResponse) httpClient.execute(httpGet)) {
             StatusLine statusLine = response.getStatusLine();
             apiResult.setSuccessful(statusLine.getStatusCode() == HttpURLConnection.HTTP_OK);

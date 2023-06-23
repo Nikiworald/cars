@@ -30,24 +30,28 @@ public class Car {
         return identification;
     }
 
-// --Commented out by Inspection START (6/22/2023 2:58 PM):
+    // --Commented out by Inspection START (6/22/2023 2:58 PM):
 //    public String getId(){
 //        return getIdentification().getId();
 //    }
 // --Commented out by Inspection STOP (6/22/2023 2:58 PM)
-    public int getYear(){
+    public int getYear() {
         return getIdentification().getYear();
     }
+
     public String getModel() {
         return getIdentification().getModelYear();
     }
-    public String getMake(){
+
+    public String getMake() {
         return getIdentification().getMake();
     }
-    public String getDriveLin(){
+
+    public String getDriveLin() {
         return getEngineInformation().getDriveLine();
     }
-    public String getClassification(){
+
+    public String getClassification() {
         return getIdentification().getClassification();
     }
 

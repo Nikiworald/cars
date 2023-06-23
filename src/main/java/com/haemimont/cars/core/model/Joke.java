@@ -5,7 +5,8 @@ public class Joke {
     private final String SETUP;
     private String punchLine;
     private int id;
-    public Joke(JokeBuilder jokeBuilder){
+
+    public Joke(JokeBuilder jokeBuilder) {
         this.id = jokeBuilder.getId();
         this.TYPE = jokeBuilder.getType();
         this.punchLine = jokeBuilder.getPunchLine();
@@ -34,7 +35,7 @@ public class Joke {
 //// --Commented out by Inspection STOP (6/22/2023 2:58 PM)
 // --Commented out by Inspection STOP (6/22/2023 2:58 PM)
 
- //   public void setSetUp(String setUp) {
+    //   public void setSetUp(String setUp) {
 // --Commented out by Inspection START (6/22/2023 2:58 PM):
 //        this.setUp = setUp;
 //    }

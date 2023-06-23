@@ -27,7 +27,7 @@ public class EditServlet extends HttpServlet {
             sendResponse(resp, "no vin");
         } else {
             CarStatements carStatements = new CarStatements();
-            Car car = carStatements.getCarByVin(vin,DbUtil.getConnection());
+            Car car = carStatements.getCarByVin(vin, DbUtil.getConnection());
             if (car == null) {
                 sendResponse(resp, "no car with matching vin");
             } else {
