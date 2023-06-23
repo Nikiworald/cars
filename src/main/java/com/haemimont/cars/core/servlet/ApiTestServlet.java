@@ -41,7 +41,7 @@ public class ApiTestServlet extends HttpServlet {
         }
     }
 
-    private void sendResponse(HttpServletResponse response, String payload) {
+    private void sendResponse(HttpServletResponse response, @SuppressWarnings("SameParameterValue") String payload) {
         try {
             OutputStream out = response.getOutputStream();
             out.write(payload.getBytes());

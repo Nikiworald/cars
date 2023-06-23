@@ -43,6 +43,7 @@ public class LoginServlet extends HttpServlet {
         super.doDelete(req, resp);
     }
 
+    @SuppressWarnings("SameParameterValue")
     private void sendResponse(HttpServletResponse response, String payload) {
         try {
             OutputStream out = response.getOutputStream();
