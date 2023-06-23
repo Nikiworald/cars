@@ -30,7 +30,7 @@ public class ApiResult {
     }
 
     public void appendMessage(String message) {
-        if (getMessage()== null) {
+        if (getMessage() == null) {
             setMessage(message);
         } else {
             this.message += message;

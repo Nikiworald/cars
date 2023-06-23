@@ -34,8 +34,8 @@ public class ApiTestServlet extends HttpServlet {
             jsonObject.put("password", password.trim());
             jsonObject.put("role", userTypesSplit);
             ApiIntegrationTestResult apiIntegrationTestResult = ApiIntegrationTest.registerLoginAndAuthTest(Config.getPropertyByName("apiUrl"), jsonObject);
-            req.setAttribute("apiResultList",apiIntegrationTestResult.getApiResults());
-            req.getRequestDispatcher("apitest.jsp").forward(req,resp);
+            req.setAttribute("apiResultList", apiIntegrationTestResult.getApiResults());
+            req.getRequestDispatcher("apitest.jsp").forward(req, resp);
         } else {
             sendResponse(resp, "incorrect inputs");
         }

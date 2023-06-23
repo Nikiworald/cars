@@ -96,7 +96,7 @@ public class ApiOperations {
         HttpGet httpGet = new HttpGet(url);
         HttpClient httpClient = HttpClientBuilder.create().build();
 
-        httpGet.setHeader("Authorization",jwtToken);
+        httpGet.setHeader("Authorization", jwtToken);
         try (CloseableHttpResponse response = (CloseableHttpResponse) httpClient.execute(httpGet)) {
             StatusLine statusLine = response.getStatusLine();
             apiResult.setSuccessful(statusLine.getStatusCode() == HttpURLConnection.HTTP_OK);
