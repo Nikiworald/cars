@@ -2,7 +2,7 @@ package com.haemimont.cars.core.tools;
 
 import jakarta.servlet.http.HttpServletRequest;
 
-public class ApiRequest {
+public class ApiCredentials {
     public static boolean validate(HttpServletRequest request) {
         boolean check = false;
         String name = request.getParameter("name");

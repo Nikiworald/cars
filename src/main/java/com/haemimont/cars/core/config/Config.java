@@ -3,27 +3,24 @@ package com.haemimont.cars.core.config;
 import com.haemimont.cars.core.logger.CustomLogger;
 
 public class Config {
-    static String name;
-    static String password;
-    static String dbUrl;
-    static String csvFilePath;
-    static String loggerFilePath;
+    static private String name;
+    static private String password;
+    static private  String dbUrl;
+    static private String csvFilePath;
+    static private String loggerFilePath;
+    private static boolean loaded = false;
     private static final java.util.Properties prop = new java.util.Properties();
 
     static {
         Config.loadProperties();
-    }
-
-    public Config() {//get the info from the properties file
-
-
         name = prop.getProperty("name");
         password = prop.getProperty("password");
         dbUrl = prop.getProperty("dbUrl");
         csvFilePath = prop.getProperty("csvFilePath");
         loggerFilePath = prop.getProperty("loggerFilePath");
-        loggerFilePath = prop.getProperty("loggerFilePath");
+    }
 
+    private Config() {
     }
 
     private static void loadProperties() {
@@ -38,10 +35,13 @@ public class Config {
         try {
             assert url != null;
             prop.load(url.openStream());
+            loaded = true;
         } catch (Exception e) {
             System.err.println("Could not load configuration file: " + propFile);
         }
+        System.out.println(loaded);
     }
+    public static boolean isLoaded(){return loaded;}
 
     public static String getUserName() {
         return name;

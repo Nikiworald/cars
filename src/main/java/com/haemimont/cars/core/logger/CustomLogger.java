@@ -13,8 +13,10 @@ public class CustomLogger {
             .getName());
 
     static {
+
         FileHandler fh;
         try {
+            while(!Config.isLoaded()){}
             fh = new FileHandler(Config.getLoggerFilePath());
         } catch (IOException e) {
             throw new RuntimeException(e);

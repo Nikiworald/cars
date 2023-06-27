@@ -9,7 +9,7 @@ import com.haemimont.cars.core.storage.Storage;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-
+@Deprecated//move to DBUtil
 public class InitDB {
     public static void initializeDb() {
 //        Config config = new Config();

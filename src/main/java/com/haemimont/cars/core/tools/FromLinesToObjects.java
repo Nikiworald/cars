@@ -5,6 +5,7 @@ import com.haemimont.cars.core.model.*;
 import java.util.Random;
 
 //converts lines from CSV to objects
+@Deprecated//moved to DbUtil
 public class FromLinesToObjects {
     //reads lines one by one trims each and makes an object out of it
     //and then returns an array of all the objects

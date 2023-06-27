@@ -1,298 +1,2008 @@
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:02 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: could not connect to DB:javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or as an applet parameter, or in an application resource file:  java.naming.factory.initial
+Jun 27, 2023 2:42:03 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Connecting to the DB
+Jun 27, 2023 2:42:03 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Turned off autocommit
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carCdo10RMAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:03 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAA811AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:03 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carCdo10RMBis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:03 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNix10FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:03 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carBX510AAAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:03 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAA811AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:03 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carCss10RAAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:03 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer10RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:03 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carCdo11RAAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:03 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan10FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:03 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carAA309FMAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:03 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer10RAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:03 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carNpe11RMAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:03 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan10FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:03 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carCss11AAAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNpe11RMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carC0010RAAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan10FAD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carC0010RABis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan10FAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carC0010RACis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNpe11RMC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carAA309AACis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNpe11RMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carV3010FAAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer10RAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carAA309AABis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV4010AMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carAA309AAAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNpe11RMD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carBX610AAAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer10RAD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carAan09AMAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCo510FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carAA509AMAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCo510FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carCss11RAAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAA509AMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carBX511AAAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV8010AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carCss11RABis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV8010AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carCss11RACis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carM6210RAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carCdo10RAAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTry11FMC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carNpe09RMAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carM5710RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carATL12AAAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carM6210RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carV3010FMAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTry11FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carCss12AAAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carM5710RAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carBX611AAAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carM6210RAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carBds10RAAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carM5710RAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carCdo12RMAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHck11FMC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carV3011FAAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCdo10RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carCdo12RMBis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHck11FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carAQ709AABis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHck11FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carCss12RAAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV6012AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carAQ709AAAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta10FMH is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carAA509AAAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV6012AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carV3011FMAis already in the db
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:48 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta10FMG is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carAan09AABis already in the db
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV6012AAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carAan09AAAis already in the db
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta10FMF is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carC0011RAAis already in the db
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carBur10AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carCdo11RMBis already in the db
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV6012AAD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carCdo11RMAis already in the db
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta10FME is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carAA309FAAis already in the db
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carBur10AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carCdo12RAAis already in the db
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta10FMD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carC0011RABis already in the db
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta10FMC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carNpe10RMAis already in the db
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta10FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carC0011RACis already in the db
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCss12AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carATL12FAAis already in the db
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta10FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogError
-SEVERE: carCss10AAAis already in the db
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
-INFO: Rolling back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTla11FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Rolled back changes
-Jan 25, 2023 4:42:49 PM com.haemimont.cars.core.loger.CustomLogger LogInfo
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTla11FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCss12RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHck12FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan12FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHck12FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carBGT10AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carBGT10AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNer11RMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAA309FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNer11RMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAA810AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAA810AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer10FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTix11FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer11RAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTix11FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer11RAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHra10FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer11RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHra10FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNpe10RMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNpe10RMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNpe10RMC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAQ510AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHra11FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carM5711RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTry10FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTry10FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carM5711RAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHpe10FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNer10RMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTry10FMC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHpe10FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNer10RMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta11FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carLLS11AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHck10FMC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carLLS11AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHck10FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV6011AAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCdo11RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV6011AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV6011AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHck10FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHra11FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta11FMF is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta11FME is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta11FMD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta11FMC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta11FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV8012FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAQ509AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV3010FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV3010FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTix11AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta10FMI is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carM6211RAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carM6211RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV5010AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV3011FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTry11FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer11FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTV411FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTV411FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTV411FAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTV411FAD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCeo11FMC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTV411FAE is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCeo11FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTV411FAF is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCeo11FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTV411FAG is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTV411FAH is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTV411FAI is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV3011FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTV411FAJ is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTV411FAK is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTV411FAL is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carBpe12AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:04 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVen11FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVen11FMC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTix10FMC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVen11FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTix10FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTix10FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAet11AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHpe10FMD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCdo12RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHpe10FMC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV6010AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV6010AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan11FAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan11FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan11FAD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan11FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAQ712AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAQ712AAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAQ712AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carBGT12AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAA309FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carLLS10RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carLLS10RAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAA309AAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTix10AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAA309AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAA309AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carBX610AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAQ511AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAQ511AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNda10FAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNda10FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNda10FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carLpe11FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carLLS10AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carLpe11FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carLLS10AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carRst11RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAQ512AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAQ512AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carBX611AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carLLS11RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHup11FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHup11FMF is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHup11FMG is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHup11FMD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHup11FME is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHup11FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHup11FMC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAet10AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAA509AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carApe10AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carApe10AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carRst10RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFpe10FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFpe10FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHpe10FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHpe10FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHpe10FAD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHpe10FAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carLLS11RAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan10FME is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan10FMD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan10FMC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCdo10RMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan10FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan10FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCdo10RMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAan12AMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carRpe11RAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carRpe11RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carBur11AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTry11FAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTry11FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTry11FAE is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTry11FAD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHck11FAD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHck11FAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTry11FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHck11FAE is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHck11FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHck11FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV9011AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTry11FAG is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTry11FAF is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCo511FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carApe11AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTix11FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCo511FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTix11FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carB T10RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHck12FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHck12FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFck12FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFck12FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAA310FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV7012AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAan11AMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTla10FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTla10FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carC0011RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV8012AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTla10FMC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCdo11RMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan11FMC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCdo11RMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan11FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan11FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carRpe10RAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carRpe10RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAQ711AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAQ711AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVCC10FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAQ711AAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVCC10FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carBle11AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carBur12AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carBur12AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carC0011RAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carC0011RAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTry10FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTry10FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTry10FAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTry10FAD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHck10FAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHck10FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHck10FAE is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHck10FAD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNpe09RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNpe09RAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHck10FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carBX510AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTla10FAE is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTla10FAD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTla10FAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAA312FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan10FAG is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan10FAF is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan10FAE is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTix10FAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNer10RAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan10FAD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTix10FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNer10RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan10FAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTix10FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carC0010RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan10FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTry10FAE is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carC0010RAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan10FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTry10FAF is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carC0010RAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTry10FAG is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carApe12AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:05 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNbe11FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNbe11FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV6010FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFck11FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFck11FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV7010FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV5010AMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCdo12RMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCdo12RMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAQ709AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCo511FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCeo11FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCeo11FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCo511FMC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAQ709AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV9010AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAan10AMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCo511FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVen11FAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVen11FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVen11FAD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAQ710AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAQ710AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAQ710AAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carBle12AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVen11FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan11FMF is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan11FMC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan11FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan11FME is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan11FMD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan11FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTla10FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTla10FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAA311FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan11FAH is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan11FAG is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan11FAF is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan11FAE is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan11FAD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV7011AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan11FAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan11FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carATL12FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan11FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNpe10FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNpe10FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNda11FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNda11FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNda11FAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNbe10FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV4010AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNbe10FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNpe11RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNbe09FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNbe09FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV7010AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV7010AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAan09AMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carBTC10AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carBTC10AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCo510FMC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carBX511AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCo510FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCo510FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHan12FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carBds10RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV9012FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV9012FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan12FME is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan12FMC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan12FMD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carBTC11AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan12FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan12FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTla11FAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTla11FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTla11FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV4010FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNpe10RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carRan11RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNpe10RAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carApe10AMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carRan11RAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carLpe10RMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV9010FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer10FAD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer10FAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV9010FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer10FAF is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer10FAE is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer10FAH is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer10FAG is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer10FAJ is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer10FAI is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV8011FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer10FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carRan10RAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer10FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carRan10RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCss10RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV7012FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer10FAL is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer10FAK is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAan12AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer10FAN is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAan12AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer10FAM is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV3010FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTon10FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNpe11FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta11FAE is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV3010FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTon10FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta11FAD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTon10FAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta11FAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta11FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta11FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAnt12AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNpe11FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta11FAF is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carApe11AMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta10FAD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV3011FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTon11FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta10FAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta10FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta10FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV3011FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTon11FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta10FAH is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carMet09RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV4010FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta10FAG is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV4010FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta10FAF is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAnt11AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAnt11AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVta10FAE is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV9011FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer11FAF is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer11FAG is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVCC10FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer11FAD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carVCC10FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV9011FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer11FAE is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer11FAJ is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer11FAK is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carBts10AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer11FAH is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer11FAI is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer11FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer11FAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer11FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAan11AAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAan11AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAan11AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer11FAL is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carTer11FAM is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carMet10RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV6012FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV6012FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan10FMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan10FMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan10FMD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFan10FMC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV5010FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carApe12AMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCss11AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCss11RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV4011FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHup11FAD is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHup11FAE is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCss11RAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHup11FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNpe09RMC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNda11RAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCss11RAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHup11FAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNda11RAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNpe09RMA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carATL12AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHup11FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNpe09RMB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV7011FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV7011FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHup11FAH is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNda11RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHup11FAF is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carHup11FAG is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNda10RAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAan10AAC is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAan10AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNda10RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAan10AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNda10RAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV7010FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV7010FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAan09AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAan09AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carMet11RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV6011FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV6011FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFpe10FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carFpe10FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAnt10AAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV8010FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAnt10AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carAA712AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV5011FAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNer11RAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carV5011FAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carNer11RAB is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: carCss10AAA is already in the db|Rolling back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Rolled back changes
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
 INFO: Turned on autocommit
+Jun 27, 2023 2:42:06 PM com.haemimont.cars.core.logger.CustomLogger logInfo
+INFO: Disconnecting from the DB
+Jun 27, 2023 2:42:09 PM com.haemimont.cars.core.logger.CustomLogger logError
+SEVERE: something went wrong while transferring files:org.apache.commons.vfs2.FileSystemException: Could not connect to SFTP server at "sftp://sftp:***@192.168.250.44:2222/".

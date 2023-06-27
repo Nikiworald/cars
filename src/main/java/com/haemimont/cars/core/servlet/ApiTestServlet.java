@@ -3,7 +3,7 @@ package com.haemimont.cars.core.servlet;
 import com.haemimont.cars.core.apitest.integrationtests.ApiIntegrationTest;
 import com.haemimont.cars.core.config.Config;
 import com.haemimont.cars.core.jwttapiresult.ApiIntegrationTestResult;
-import com.haemimont.cars.core.tools.ApiRequest;
+import com.haemimont.cars.core.tools.ApiCredentials;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -22,7 +22,7 @@ public class ApiTestServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        if (ApiRequest.validate(req)) {
+        if (ApiCredentials.validate(req)) {
             String name = req.getParameter("name");
             String password = req.getParameter("password");
             String email = req.getParameter("email");
