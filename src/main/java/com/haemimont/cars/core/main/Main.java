@@ -3,7 +3,6 @@ package com.haemimont.cars.core.main;
 import com.haemimont.cars.core.config.Config;
 import com.haemimont.cars.core.logger.CustomLogger;
 import com.haemimont.cars.core.tools.DbUtil;
-import com.haemimont.cars.core.tools.InitDB;
 import org.apache.commons.vfs2.*;
 import org.apache.commons.vfs2.provider.sftp.SftpFileSystemConfigBuilder;
 

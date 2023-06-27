@@ -1,16 +1,15 @@
 package com.haemimont.cars.core.model;
 
+@SuppressWarnings("unused")//they are used in jsp
 public class Joke {
-    private final String TYPE;
-    private final String SETUP;
     private String punchLine;
     private int id;
 
     public Joke(JokeBuilder jokeBuilder) {
         this.id = jokeBuilder.getId();
-        this.TYPE = jokeBuilder.getType();
+        String TYPE = jokeBuilder.getType();
         this.punchLine = jokeBuilder.getPunchLine();
-        this.SETUP = jokeBuilder.getSetUp();
+        String SETUP = jokeBuilder.getSetUp();
     }
 
 // --Commented out by Inspection START (6/22/2023 2:58 PM):

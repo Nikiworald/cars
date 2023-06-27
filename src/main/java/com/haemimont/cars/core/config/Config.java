@@ -3,21 +3,20 @@ package com.haemimont.cars.core.config;
 import com.haemimont.cars.core.logger.CustomLogger;
 
 public class Config {
-    static private String name;
-    static private String password;
-    static private  String dbUrl;
-    static private String csvFilePath;
-    static private String loggerFilePath;
-    private static boolean loaded = false;
+    static private final String NAME;
+    static private final String PASSWORD;
+    static private final String DB_URL;
+    static private final String CSV_FILE_PATH;
+    static private final String LOGGER_FILE_PATH;
     private static final java.util.Properties prop = new java.util.Properties();
 
     static {
         Config.loadProperties();
-        name = prop.getProperty("name");
-        password = prop.getProperty("password");
-        dbUrl = prop.getProperty("dbUrl");
-        csvFilePath = prop.getProperty("csvFilePath");
-        loggerFilePath = prop.getProperty("loggerFilePath");
+        NAME = prop.getProperty("name");
+        PASSWORD = prop.getProperty("password");
+        DB_URL = prop.getProperty("dbUrl");
+        CSV_FILE_PATH = prop.getProperty("csvFilePath");
+        LOGGER_FILE_PATH = prop.getProperty("loggerFilePath");
     }
 
     private Config() {
@@ -35,32 +34,29 @@ public class Config {
         try {
             assert url != null;
             prop.load(url.openStream());
-            loaded = true;
         } catch (Exception e) {
             System.err.println("Could not load configuration file: " + propFile);
         }
-        System.out.println(loaded);
     }
-    public static boolean isLoaded(){return loaded;}
 
     public static String getUserName() {
-        return name;
+        return NAME;
     }
 
     public static String getPassword() {
-        return password;
+        return PASSWORD;
     }
 
     public static String getDbUrl() {
-        return dbUrl;
+        return DB_URL;
     }
 
     public static String getCsvFilePath() {
-        return csvFilePath;
+        return CSV_FILE_PATH;
     }
 
     public static String getLoggerFilePath() {
-        return loggerFilePath;
+        return LOGGER_FILE_PATH;
     }
 
     public static String getPropertyByName(String name) {

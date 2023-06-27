@@ -7,7 +7,7 @@ import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-@SuppressWarnings("SpellCheckingInspection")
+//@SuppressWarnings("SpellCheckingInspection")
 public class CustomLogger {
     public static final Logger logger = Logger.getLogger(CustomLogger.class
             .getName());
@@ -16,7 +16,6 @@ public class CustomLogger {
 
         FileHandler fh;
         try {
-            while(!Config.isLoaded()){}
             fh = new FileHandler(Config.getLoggerFilePath());
         } catch (IOException e) {
             throw new RuntimeException(e);

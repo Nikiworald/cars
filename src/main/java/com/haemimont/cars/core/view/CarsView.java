@@ -54,6 +54,7 @@ public class CarsView {
         }
     }
 
+    @SuppressWarnings("all")
     @Deprecated
     private void test(HttpServletRequest request, HttpServletResponse response, List<ApiResult> apiResultList) {     //testing java code for jsp
         apiResultList = (List<ApiResult>) request.getAttribute("apiResultList");
