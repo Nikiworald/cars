@@ -42,36 +42,36 @@ public class Identification {
         this.modelYear = modelYear;
     }
 
-    public void setYear(int year) {
-        this.year = year;
-    }
-
     public int getYear() {
         return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 
     public String getColor() {
         return this.color;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public double getPrice() {
         return price;
     }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public void setVin(String vin) {
-        this.vin = vin;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public String getVin() {
         return vin;
+    }
+
+    public void setVin(String vin) {
+        this.vin = vin;
     }
 
 }

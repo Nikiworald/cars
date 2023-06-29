@@ -9,6 +9,7 @@ import com.haemimont.cars.core.storage.Storage;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+
 @SuppressWarnings("unused")
 @Deprecated//move to DBUtil
 public class InitDB {

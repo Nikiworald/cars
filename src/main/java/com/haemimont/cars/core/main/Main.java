@@ -18,7 +18,7 @@ public class Main {
         try {
             manager = VFS.getManager();
         } catch (FileSystemException e) {
-            CustomLogger.logError("could not get vfs manager:"+e);
+            CustomLogger.logError("could not get vfs manager:" + e);
         }
         String serverAddress = Config.getPropertyByName("serverAddress").trim();
         String userId = Config.getPropertyByName("userId").trim();
@@ -51,7 +51,7 @@ public class Main {
             }
 
         } catch (FileSystemException e) {
-            CustomLogger.logError("something went wrong while transferring files:"+e);
+            CustomLogger.logError("something went wrong while transferring files:" + e);
         }
 
 

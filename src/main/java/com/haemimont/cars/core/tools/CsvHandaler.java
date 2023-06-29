@@ -38,6 +38,7 @@ public class CsvHandaler {
         }
         return cars;
     }
+
     public static String[] readAndReturnLines(String path, int row) {
         File file = new File(path);
         String[] outputOfLines = new String[row];

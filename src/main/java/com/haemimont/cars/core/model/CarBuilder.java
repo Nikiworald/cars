@@ -7,24 +7,12 @@ public class CarBuilder {
     private FuelInformation fuelInformation;
     private Identification identification;
 
-    public Dimension getDimension() {
-        return dimension;
-    }
-
-    public EngineInformation getEngineInformation() {
-        return engineInformation;
-    }
-
-    public FuelInformation getFuelInformation() {
-        return fuelInformation;
-    }
-
-    public Identification getIdentification() {
-        return identification;
-    }
-
     public static CarBuilder newInstance() {
         return new CarBuilder();
+    }
+
+    public Dimension getDimension() {
+        return dimension;
     }
 
     public CarBuilder setDimension(final Dimension dimension) {
@@ -32,14 +20,26 @@ public class CarBuilder {
         return this;
     }
 
+    public EngineInformation getEngineInformation() {
+        return engineInformation;
+    }
+
     public CarBuilder setEngineInformation(final EngineInformation engineInformation) {
         this.engineInformation = engineInformation;
         return this;
     }
 
+    public FuelInformation getFuelInformation() {
+        return fuelInformation;
+    }
+
     public CarBuilder setFuelInformation(final FuelInformation fuelInformation) {
         this.fuelInformation = fuelInformation;
         return this;
+    }
+
+    public Identification getIdentification() {
+        return identification;
     }
 
     public CarBuilder setIdentification(final Identification identification) {

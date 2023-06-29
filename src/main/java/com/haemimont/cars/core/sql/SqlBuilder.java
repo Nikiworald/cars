@@ -8,9 +8,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SqlBuilder {
+    final Map<Integer, String> map = new HashMap<>();
     private final Connection connection;
     boolean whereClause = false;
-    final Map<Integer, String> map = new HashMap<>();
     PreparedStatement preparedStatement;
     private String sql;
     private int parameterCount = 1;

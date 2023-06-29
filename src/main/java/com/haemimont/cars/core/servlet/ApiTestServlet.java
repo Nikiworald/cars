@@ -1,6 +1,6 @@
 package com.haemimont.cars.core.servlet;
 
-import com.haemimont.cars.core.apitest.integrationtests.ApiIntegrationTest;
+import com.haemimont.cars.core.apitest.integrationtests.MultiThreadApiIntegrationTest;
 import com.haemimont.cars.core.config.Config;
 import com.haemimont.cars.core.jwttapiresult.ApiIntegrationTestResult;
 import com.haemimont.cars.core.tools.ApiCredentials;
@@ -33,7 +33,8 @@ public class ApiTestServlet extends HttpServlet {
             jsonObject.put("email", email.trim());
             jsonObject.put("password", password.trim());
             jsonObject.put("role", userTypesSplit);
-            ApiIntegrationTestResult apiIntegrationTestResult = ApiIntegrationTest.registerLoginAndAuthTest(Config.getPropertyByName("apiUrl"), jsonObject);
+//            ApiIntegrationTestResult apiIntegrationTestResult = ApiIntegrationTest.registerLoginAndAuthTest(Config.getPropertyByName("apiUrl"), jsonObject);
+            ApiIntegrationTestResult apiIntegrationTestResult = MultiThreadApiIntegrationTest.registerLoginAndAuthTest(Config.getPropertyByName("apiUrl"), jsonObject);
             req.setAttribute("apiResultList", apiIntegrationTestResult.getApiResults());
             req.getRequestDispatcher("apitest.jsp").forward(req, resp);
         } else {

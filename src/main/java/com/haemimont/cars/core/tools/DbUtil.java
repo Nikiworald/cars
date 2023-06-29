@@ -23,9 +23,10 @@ public class DbUtil {
             DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/cars");
             connection = ds.getConnection();
         } catch (NamingException | SQLException b) {
-            CustomLogger.logError("could not connect to DB:"+b);
+            CustomLogger.logError("could not connect to DB:" + b);
         }
     }
+
     public static void initializeDb() {
 //        Config config = new Config();
         Car[] cars = CsvHandaler.linesToCars(Config.getCsvFilePath(), 500);//There is no data on the first line (n-1)

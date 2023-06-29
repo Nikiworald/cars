@@ -87,10 +87,10 @@ public class ApiOperations {
         return apiLogInResult;
     }
 
-    public static ApiResult authorizationTest(String url, String jwtToken) {
+    public static ApiResult authorizationTest(String url, String JWTToken) {
         ApiResult apiResult = new ApiResult();
         HttpGet httpGet = new HttpGet(url);
-        httpGet.setHeader("Authorization", jwtToken);
+        httpGet.setHeader("Authorization", JWTToken);
         try (CloseableHttpResponse response = (CloseableHttpResponse) HTTP_CLIENT.execute(httpGet)) {
             StatusLine statusLine = response.getStatusLine();
             apiResult.setSuccessful(statusLine.getStatusCode() == HttpURLConnection.HTTP_OK);

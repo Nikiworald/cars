@@ -6,8 +6,11 @@ import com.haemimont.cars.core.jwttapiresult.ApiIntegrationTestResult;
 import com.haemimont.cars.core.jwttapiresult.ApiResult;
 import org.json.JSONObject;
 
+@Deprecated//replaced by multiThread
+@SuppressWarnings("all")
+
 public class ApiIntegrationTest {
-    public static ApiIntegrationTestResult registerLoginAndAuthTest(String url, JSONObject jsonObject) {
+    public static ApiIntegrationTestResult registerLoginAndAuthTest(String url, JSONObject jsonObject) {//todo multi treating /live update
         ApiIntegrationTestResult apiIntegrationTestResult = new ApiIntegrationTestResult();
         JSONObject loginJsonMessage;
         if (ApiOperations.connect(url).isSuccessful()) {
@@ -15,11 +18,11 @@ public class ApiIntegrationTest {
             ApiResult loginResult = loginTest(apiIntegrationTestResult, url, jsonObject);
             if (registerResult.isSuccessful() || loginResult.isSuccessful()) {
                 loginJsonMessage = new JSONObject(loginResult.getMessage());
-                String jwttoken = loginJsonMessage.get("tokenType") + " " + loginJsonMessage.get("accessToken");
+                String JWTToken = loginJsonMessage.get("tokenType") + " " + loginJsonMessage.get("accessToken");
                 publicTest(apiIntegrationTestResult, url);
-                userTest(apiIntegrationTestResult, url, jwttoken);
-                modTest(apiIntegrationTestResult, url, jwttoken);
-                adminTest(apiIntegrationTestResult, url, jwttoken);
+                userTest(apiIntegrationTestResult, url, JWTToken);
+                modTest(apiIntegrationTestResult, url, JWTToken);
+                adminTest(apiIntegrationTestResult, url, JWTToken);
             }
         }
         return apiIntegrationTestResult;
@@ -45,21 +48,21 @@ public class ApiIntegrationTest {
         apiIntegrationTestResult.addApiResultToList(allTestApiResult);
     }
 
-    private static void userTest(ApiIntegrationTestResult apiIntegrationTestResult, String url, String jwttoken) {
-        ApiResult userTestApiResult = ApiOperations.authorizationTest(url + Config.getPropertyByName("userTestUrl"), jwttoken);
+    private static void userTest(ApiIntegrationTestResult apiIntegrationTestResult, String url, String JWTToken) {
+        ApiResult userTestApiResult = ApiOperations.authorizationTest(url + Config.getPropertyByName("userTestUrl"), JWTToken);
         userTestApiResult.setName("user access test");
         apiIntegrationTestResult.addApiResultToList(userTestApiResult);
     }
 
-    private static void modTest(ApiIntegrationTestResult apiIntegrationTestResult, String url, String jwttoken) {
-        ApiResult modTestApiResult = ApiOperations.authorizationTest(url + Config.getPropertyByName("modTestUrl"), jwttoken);
+    private static void modTest(ApiIntegrationTestResult apiIntegrationTestResult, String url, String JWTToken) {
+        ApiResult modTestApiResult = ApiOperations.authorizationTest(url + Config.getPropertyByName("modTestUrl"), JWTToken);
         modTestApiResult.setName("mod access test");
         apiIntegrationTestResult.addApiResultToList(modTestApiResult);
 
     }
 
-    private static void adminTest(ApiIntegrationTestResult apiIntegrationTestResult, String url, String jwttoken) {
-        ApiResult adminTestApiResult = ApiOperations.authorizationTest(url + Config.getPropertyByName("adminTestUrl"), jwttoken);
+    private static void adminTest(ApiIntegrationTestResult apiIntegrationTestResult, String url, String JWTToken) {
+        ApiResult adminTestApiResult = ApiOperations.authorizationTest(url + Config.getPropertyByName("adminTestUrl"), JWTToken);
         adminTestApiResult.setName("admin access test");
         apiIntegrationTestResult.addApiResultToList(adminTestApiResult);
     }

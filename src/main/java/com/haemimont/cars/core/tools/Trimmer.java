@@ -1,4 +1,5 @@
 package com.haemimont.cars.core.tools;
+
 @Deprecated//found a better way to do it
 public class Trimmer {
     //splits a line and returns the chunks
