@@ -13,10 +13,14 @@ public class AjaxTestServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("dobre");
-        if (req.getAttribute("data") != null) {
-            System.out.println("mnogo dobre");
+        if (req.getParameter("test") != null) {
+            resp.getWriter().write("op");
+            System.out.println("op");
+        } else {
             resp.getWriter().write("aaa");
+            System.out.println("aaa");
         }
 
     }
+
 }

@@ -1,9 +1,19 @@
 package com.haemimont.cars.core.jwttapiresult;
 
 public class ApiResult {
+    private int id;//a way to replace the default result(loading..) with the actual result when the test is done
+    //and the order that the results are going to be displayed on the page 1 register 2 login ...
     private boolean successful;
     private String message;
     private String name;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
