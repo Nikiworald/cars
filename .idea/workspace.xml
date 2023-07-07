@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef3bf76b-8d8b-4f5a-8b3f-3165c1ba23b5" name="Changes" comment="1.8.3">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/apitest/callables/AuthTestCallable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/apitest/callables/AuthTestCallable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/apitest/callables/LogInCallable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/apitest/callables/LogInCallable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/apitest/callables/RegistrationCallable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/apitest/callables/RegistrationCallable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/apitest/integrationtests/MultiThreadApiIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/apitest/integrationtests/MultiThreadApiIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/livetestupdate/LiveTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/livetestupdate/LiveTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/AjaxTestServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/AjaxTestServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/ApiTestServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/ApiTestServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/LiveTestUpdateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/LiveTestUpdateServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,13 +179,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670509806645</updated>
-    </task>
-    <task id="LOCAL-00014" summary="1.3.6">
-      <created>1673279376603</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1673279376603</updated>
     </task>
     <task id="LOCAL-00015" summary="1.3.6">
       <created>1673365234207</created>
@@ -529,7 +516,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688647590443</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="1.8.3">
+      <created>1688729029857</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1688729029857</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -835,7 +829,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/LiveTestUpdateServlet.java</url>
-          <line>18</line>
+          <line>17</line>
           <properties class="com.haemimont.cars.core.servlet.LiveTestUpdateServlet" method="doGet">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

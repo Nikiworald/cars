@@ -15,7 +15,7 @@ import java.util.concurrent.Future;
 
 @Deprecated//remade with real time update
 public class MultiThreadApiIntegrationTest {
-@SuppressWarnings("all")
+    @SuppressWarnings("all")
     public static ApiIntegrationTestResult registerLoginAndAuthTest(String id, String url, JSONObject jsonObject) {//todo locked? or wait with while
         ApiIntegrationTestResult apiIntegrationTestResult = new ApiIntegrationTestResult();
         int processorCnt = Runtime.getRuntime().availableProcessors();
