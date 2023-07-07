@@ -26,8 +26,8 @@ public class MultiThreadApiIntegrationTest {
         futureList.add(LoginFuture);
         try {
             if (LoginFuture.get().isSuccessful()) {//if logging was successful test else do nothing
-//                JSONObject loginJsonMessage = new JSONObject(LoginFuture.get().getMessage());//todo not sure my logic is correct btw 2 logins and registrations
-//                String JWTToken = loginJsonMessage.get("tokenType") + " " + loginJsonMessage.get("accessToken");//todo make the test take ApiIntegrationTest and when they are done update the live test with it
+//                JSONObject loginJsonMessage = new JSONObject(LoginFuture.get().getMessage());//
+//                String JWTToken = loginJsonMessage.get("tokenType") + " " + loginJsonMessage.get("accessToken");//
 //                AuthTestCallable allTest = new AuthTestCallable(id, apiIntegrationTestResult, url, JWTToken, "allTestUrl", "public access test");
 //                AuthTestCallable userTest = new AuthTestCallable(id, apiIntegrationTestResult, url, JWTToken, "userTestUrl", "user access test");
 //                AuthTestCallable modTest = new AuthTestCallable(id, apiIntegrationTestResult, url, JWTToken, "modTestUrl", "mod access test");

@@ -30,7 +30,7 @@ public class AuthTestCallable implements Callable<ApiResult> {
     }
 
     @Override
-    public ApiResult call() throws Exception {
+    public ApiResult call() {
         try {
             // Adding a 3-second delay (3000 milliseconds)
             Thread.sleep(3000);

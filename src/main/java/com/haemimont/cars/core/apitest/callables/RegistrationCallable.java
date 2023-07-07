@@ -25,7 +25,7 @@ public class RegistrationCallable implements Callable<ApiResult> {
 
 
     @Override
-    public ApiResult call() throws Exception {
+    public ApiResult call() {
         synchronized (JSONOBJECT) {
             ApiResult apiRegisterResult = ApiOperations.register(URL + Config.getPropertyByName("registerUrl"), JSONOBJECT);
             apiRegisterResult.setName("registration test");

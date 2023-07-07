@@ -1,6 +1,4 @@
 package com.haemimont.cars.core.servlet;
-
-import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -11,7 +9,7 @@ import java.io.IOException;
 @WebServlet("/AjaxTestServlet")
 public class AjaxTestServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         System.out.println("dobre");
         if (req.getParameter("test") != null) {
             resp.getWriter().write("op");

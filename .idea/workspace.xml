@@ -5,21 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef3bf76b-8d8b-4f5a-8b3f-3165c1ba23b5" name="Changes" comment="1.8.3">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/apitest/integrationtests/RealTimeUpdateMultiThreadApiIntegrationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/livetestupdate/LiveTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/LiveTestUpdateServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/apitestmanager.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/apitest/callables/AuthTestCallable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/apitest/callables/AuthTestCallable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/apitest/callables/LogInCallable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/apitest/callables/LogInCallable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/apitest/callables/RegistrationCallable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/apitest/callables/RegistrationCallable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/apitest/integrationtests/MultiThreadApiIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/apitest/integrationtests/MultiThreadApiIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttapiresult/ApiIntegrationTestResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttapiresult/ApiIntegrationTestResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttapiresult/ApiResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/jwttapiresult/ApiResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/livetestupdate/LiveTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/livetestupdate/LiveTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/AjaxTestServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/AjaxTestServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/ApiTestServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/ApiTestServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ajaxtest.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ajaxtest.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/apitest.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/apitest.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/LiveTestUpdateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/LiveTestUpdateServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +45,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -192,13 +185,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670509806645</updated>
-    </task>
-    <task id="LOCAL-00013" summary="1.3.5">
-      <created>1673017616246</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1673017616246</updated>
     </task>
     <task id="LOCAL-00014" summary="1.3.6">
       <created>1673279376603</created>
@@ -536,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688116520198</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="1.8.3">
+      <created>1688647590442</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1688647590443</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -776,7 +769,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/servlet/ApiTestServlet.java</url>
-          <line>62</line>
+          <line>56</line>
           <option name="timeStamp" value="278" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -806,7 +799,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/livetestupdate/LiveTests.java</url>
-          <line>12</line>
+          <line>13</line>
           <option name="timeStamp" value="300" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -827,7 +820,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/com/haemimont/cars/core/livetestupdate/LiveTests.java</url>
-          <line>8</line>
+          <line>9</line>
           <properties field="TEST_MAP" class="com.haemimont.cars.core.livetestupdate.LiveTests" />
           <option name="timeStamp" value="294" />
         </line-breakpoint>

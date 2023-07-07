@@ -24,7 +24,7 @@ public class LogInCallable implements Callable<ApiResult> {
     }
 
     @Override
-    public ApiResult call() throws Exception {
+    public ApiResult call() {
         synchronized (JSONOBJECT) {
             ApiResult apiLoginResult = ApiOperations.register(URL + Config.getPropertyByName("loginUrl"), JSONOBJECT);
             apiLoginResult.setName("login test");

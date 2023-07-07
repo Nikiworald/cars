@@ -44,14 +44,8 @@ public class ApiTestServlet extends HttpServlet {
             jsonObject.put("email", email.trim());
             jsonObject.put("password", password.trim());
             jsonObject.put("role", userTypesSplit);
-//            ApiIntegrationTestResult apiIntegrationTestResult = ApiIntegrationTest.registerLoginAndAuthTest(Config.getPropertyByName("apiUrl"), jsonObject);
-//            ApiIntegrationTestResult apiIntegrationTestResult = MultiThreadApiIntegrationTest.registerLoginAndAuthTest(Config.getPropertyByName("apiUrl"), jsonObject);
-//            req.setAttribute("apiResultList", apiIntegrationTestResult.getApiResults());
-//            MultiThreadApiIntegrationTest.registerLoginAndAuthTest(String.valueOf(id), Config.getPropertyByName("apiUrl"), jsonObject);
-
             RealTimeUpdateMultiThreadApiIntegrationTest.registerLoginAndAuthTest(String.valueOf(id), Config.getPropertyByName("apiUrl"), jsonObject);
             req.setAttribute("tId", String.valueOf(id));
-
             req.getRequestDispatcher("apitestmanager.jsp").forward(req, resp);
         } else {
             sendResponse(resp, "incorrect inputs");
