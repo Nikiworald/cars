@@ -1,4 +1,4 @@
-package com.haemimont.cars.core.apitest.callables;
+package com.haemimont.cars.core.jwttapi.apitest.callables;
 
 import com.haemimont.cars.core.config.Config;
 import com.haemimont.cars.core.jwttapi.ApiOperations;

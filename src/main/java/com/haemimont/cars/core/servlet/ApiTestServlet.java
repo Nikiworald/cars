@@ -1,6 +1,6 @@
 package com.haemimont.cars.core.servlet;
 
-import com.haemimont.cars.core.apitest.integrationtests.RealTimeUpdateMultiThreadApiIntegrationTest;
+import com.haemimont.cars.core.jwttapi.apitest.integrationtests.RealTimeUpdateMultiThreadApiIntegrationTest;
 import com.haemimont.cars.core.config.Config;
 import com.haemimont.cars.core.jwttapiresult.ApiIntegrationTestResult;
 import com.haemimont.cars.core.livetestupdate.LiveTests;
@@ -44,7 +44,8 @@ public class ApiTestServlet extends HttpServlet {
             jsonObject.put("email", email.trim());
             jsonObject.put("password", password.trim());
             jsonObject.put("role", userTypesSplit);
-            RealTimeUpdateMultiThreadApiIntegrationTest.registerLoginAndAuthTest(String.valueOf(id), Config.getPropertyByName("apiUrl"), jsonObject);
+            RealTimeUpdateMultiThreadApiIntegrationTest.registerLoginAndAuthTest(String.valueOf(id),
+                    Config.getPropertyByName("apiUrl"), jsonObject);
             req.setAttribute("tId", String.valueOf(id));
             req.getRequestDispatcher("apitestmanager.jsp").forward(req, resp);
         } else {

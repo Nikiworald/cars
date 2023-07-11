@@ -1,8 +1,8 @@
-package com.haemimont.cars.core.apitest.integrationtests;
+package com.haemimont.cars.core.jwttapi.apitest.integrationtests;
 
-import com.haemimont.cars.core.apitest.callables.AuthTestCallable;
-import com.haemimont.cars.core.apitest.callables.LogInCallable;
-import com.haemimont.cars.core.apitest.callables.RegistrationCallable;
+import com.haemimont.cars.core.jwttapi.apitest.callables.AuthTestCallable;
+import com.haemimont.cars.core.jwttapi.apitest.callables.LogInCallable;
+import com.haemimont.cars.core.jwttapi.apitest.callables.RegistrationCallable;
 import com.haemimont.cars.core.jwttapiresult.ApiIntegrationTestResult;
 import com.haemimont.cars.core.jwttapiresult.ApiResult;
 import com.haemimont.cars.core.livetestupdate.LiveTests;
