@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import java.util.Random;
 import java.util.Scanner;
 
-public class CsvHandaler {
+public class CsvHandler {
     //reads from a file and returns all the lines
     public static Car[] linesToCars(String path, int numberOfRows) {
         Car[] cars = new Car[numberOfRows];

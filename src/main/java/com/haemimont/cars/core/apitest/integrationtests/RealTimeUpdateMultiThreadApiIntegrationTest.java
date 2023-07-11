@@ -15,21 +15,24 @@ import java.util.concurrent.Future;
 
 public class RealTimeUpdateMultiThreadApiIntegrationTest {
     public static void registerLoginAndAuthTest(String id, String url, JSONObject jsonObject) {
-        //add delay
         ApiIntegrationTestResult apiIntegrationTestResult = LiveTests.getLiveTest(id);
         ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
         RegistrationCallable registrationCallable = new RegistrationCallable(id, apiIntegrationTestResult, url, jsonObject);
         LogInCallable logInCallable = new LogInCallable(id, apiIntegrationTestResult, url, jsonObject);
         executorService.submit(registrationCallable);
-        Future<ApiResult> loginFuture = executorService.submit(logInCallable);//because we need the JWTToken from the login
+        Future<ApiResult> loginFuture = executorService.submit(logInCallable);//JWTToken needed from login
         try {
             if (loginFuture.get().isSuccessful()) {
                 JSONObject loginJsonMessage = new JSONObject(loginFuture.get().getMessage());
                 String JWTToken = loginJsonMessage.get("tokenType") + " " + loginJsonMessage.get("accessToken");
-                AuthTestCallable allTest = new AuthTestCallable(id, 3, apiIntegrationTestResult, url, JWTToken, "allTestUrl", "public access test");
-                AuthTestCallable userTest = new AuthTestCallable(id, 4, apiIntegrationTestResult, url, JWTToken, "userTestUrl", "user access test");
-                AuthTestCallable modTest = new AuthTestCallable(id, 5, apiIntegrationTestResult, url, JWTToken, "modTestUrl", "mod access test");
-                AuthTestCallable adminTest = new AuthTestCallable(id, 6, apiIntegrationTestResult, url, JWTToken, "adminTestUrl", "admin access test");
+                AuthTestCallable allTest = new AuthTestCallable(id, 3, apiIntegrationTestResult, url,
+                        JWTToken, "allTestUrl", "public access test");
+                AuthTestCallable userTest = new AuthTestCallable(id, 4, apiIntegrationTestResult, url,
+                        JWTToken, "userTestUrl", "user access test");
+                AuthTestCallable modTest = new AuthTestCallable(id, 5, apiIntegrationTestResult, url,
+                        JWTToken, "modTestUrl", "mod access test");
+                AuthTestCallable adminTest = new AuthTestCallable(id, 6, apiIntegrationTestResult, url,
+                        JWTToken, "adminTestUrl", "admin access test");
                 executorService.submit(allTest);
                 executorService.submit(userTest);
                 executorService.submit(modTest);

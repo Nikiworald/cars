@@ -16,7 +16,8 @@ public class LogInCallable implements Callable<ApiResult> {
     private final String ID;
 
 
-    public LogInCallable(String integrationTestId, ApiIntegrationTestResult apiIntegrationTestResult, String url, JSONObject jsonObject) {
+    public LogInCallable(String integrationTestId, ApiIntegrationTestResult apiIntegrationTestResult,
+                         String url, JSONObject jsonObject) {
         this.URL = url;
         this.JSONOBJECT = jsonObject;
         this.API_INTEGRATION_TEST_RESULT = apiIntegrationTestResult;
@@ -26,7 +27,8 @@ public class LogInCallable implements Callable<ApiResult> {
     @Override
     public ApiResult call() {
         synchronized (JSONOBJECT) {
-            ApiResult apiLoginResult = ApiOperations.register(URL + Config.getPropertyByName("loginUrl"), JSONOBJECT);
+            ApiResult apiLoginResult = ApiOperations.register(URL + Config.getPropertyByName("loginUrl"),
+                    JSONOBJECT);
             apiLoginResult.setName("login test");
             synchronized (API_INTEGRATION_TEST_RESULT) {
                 API_INTEGRATION_TEST_RESULT.replaceApiResultById(2, apiLoginResult);

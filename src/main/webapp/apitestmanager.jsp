@@ -13,7 +13,7 @@ var testId=document.getElementById("tId").value;
    url: "http://192.168.250.44:8080/cars/LiveTestUpdateServlet",
    data: "testId="+testId,
    success: function(response){
-   document.getElementById("text").innerHTML = response;
+   document.getElementById("text").innerHTML = response;//todo json to table
    }
  });
 }

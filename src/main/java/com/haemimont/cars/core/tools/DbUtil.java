@@ -29,7 +29,7 @@ public class DbUtil {
 
     public static void initializeDb() {
 //        Config config = new Config();
-        Car[] cars = CsvHandaler.linesToCars(Config.getCsvFilePath(), 500);//There is no data on the first line (n-1)
+        Car[] cars = CsvHandler.linesToCars(Config.getCsvFilePath(), 500);//There is no data on the first line (n-1)
         Storage<String, Car> storageForCars = new Storage<>();//creating a new storage for cars
         StorageTools.putCarsInStorage(storageForCars, cars);//importing cars in to the storage
         String[] keys = storageForCars.keySet().toArray(new String[0]);//getting all the keys for the storage

@@ -16,7 +16,8 @@ public class RegistrationCallable implements Callable<ApiResult> {
     private final String ID;
 
 
-    public RegistrationCallable(String integrationTestId, ApiIntegrationTestResult apiIntegrationTestResult, String url, JSONObject jsonObject) {
+    public RegistrationCallable(String integrationTestId, ApiIntegrationTestResult apiIntegrationTestResult,
+                                String url, JSONObject jsonObject) {
         this.URL = url;
         this.JSONOBJECT = jsonObject;
         this.API_INTEGRATION_TEST_RESULT = apiIntegrationTestResult;
@@ -27,7 +28,8 @@ public class RegistrationCallable implements Callable<ApiResult> {
     @Override
     public ApiResult call() {
         synchronized (JSONOBJECT) {
-            ApiResult apiRegisterResult = ApiOperations.register(URL + Config.getPropertyByName("registerUrl"), JSONOBJECT);
+            ApiResult apiRegisterResult = ApiOperations.register(URL + Config.getPropertyByName("registerUrl"),
+                    JSONOBJECT);
             apiRegisterResult.setName("registration test");
             synchronized (API_INTEGRATION_TEST_RESULT) {
                 API_INTEGRATION_TEST_RESULT.replaceApiResultById(1, apiRegisterResult);

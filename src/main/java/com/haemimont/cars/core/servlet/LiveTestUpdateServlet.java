@@ -24,9 +24,9 @@ public class LiveTestUpdateServlet extends HttpServlet {
             } else {
                 for (ApiResult a : apiIntegrationTestResult.getApiResults()
                 ) {
-                    resp.getWriter().print("");//todo null message != no test running get the id and populate a table idk
+                    resp.getWriter().print("");
                     if (a.getMessage() != null) {
-                        resp.getWriter().write(a.getMessage());
+                        resp.getWriter().write(a.getMessage());//todo json maybe
                     } else {
                         resp.getWriter().write("no message");
                     }

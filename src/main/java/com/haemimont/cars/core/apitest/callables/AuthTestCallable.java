@@ -19,7 +19,8 @@ public class AuthTestCallable implements Callable<ApiResult> {
 
     private final String ID;
 
-    public AuthTestCallable(String integrationTestId, int unitTestId, ApiIntegrationTestResult apiIntegrationTestResult, String url, String JWTToken, String urlNameInConfig, String testName) {
+    public AuthTestCallable(String integrationTestId, int unitTestId, ApiIntegrationTestResult apiIntegrationTestResult,
+                            String url, String JWTToken, String urlNameInConfig, String testName) {
         this.unitTestId = unitTestId;
         this.URL = url;
         this.JWT_TOKEN = JWTToken;
@@ -38,7 +39,8 @@ public class AuthTestCallable implements Callable<ApiResult> {
             // Handle the exception
             e.printStackTrace();
         }
-        ApiResult ApiResult = ApiOperations.authorizationTest(URL + Config.getPropertyByName(URL_NAME_IN_CONFIG), JWT_TOKEN);//no token needed for public access
+        ApiResult ApiResult = ApiOperations.authorizationTest(URL + Config.getPropertyByName(URL_NAME_IN_CONFIG),
+                JWT_TOKEN);//no token needed for public access
         ApiResult.setName(NAME_OF_THE_TEST);
         synchronized (API_INTEGRATION_TEST_RESULT) {
             API_INTEGRATION_TEST_RESULT.replaceApiResultById(unitTestId, ApiResult);
